@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=1.5in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+
+\begin{document}
+
+\title{Bewijzen - Inleveropgave 1}
+\author{B. H. J. van Boxtel}
+\date{\today \, - Week 37} 
+
+\maketitle
+\pagenumbering{gobble} %is om de paginanummering pas te laten starten na de titelpagina%
+
+\begin{enumerate}[(a)] 
+    \item $I = \{[\, 3 - \frac{1}{n}, 6 \,]\}_{n \in \mathbb{N}}$
+    \bigskip
+    \item $n \neq m \implies \frac{1}{n} \neq \frac{1}{m} \implies [3 -\frac{1}{n}, 6] \neq [3 - \frac{1}{m}] \implies A_n \neq A_m$.
+    \bigskip
+    \item Stel $n,m \in \mathbb{N}$ met $n < m$ en $n \neq m$.
+    
+    Dan $n < m \implies \frac{1}{n} > \frac{1}{m} \implies 3 - \frac{1}{n} < 3 - \frac{1}{m}$.
+
+    Dus $A_m \subseteq A_n$.
+
+    Omdat $1 \leq x$ voor alle $x \in \mathbb{N}$, $ A_m \subseteq A_1$ voor elke $m \in \mathbb{N}$.
+
+    Dus $\bigcup_{n \in \mathbb{N}} A_n \subseteq A_1 \iff \bigcup_{n \in \mathbb{N}} A_n \subseteq [2,6]$.
+    \bigskip
+
+    $n = 1 \implies A_n = [2,6]$, dus $[2,6] \subseteq \bigcup_{n \in \mathbb{N}} A_n$.
+
+    Dus $\bigcup_{n \in \mathbb{N}} A_n = [2,6]$.
+    \bigskip
+
+    \item Er bestaat geen getal $n \in \mathbb{N}$ waarvoor $3 - \frac{1}{n} > 3$, dus $[3,6] \subseteq A_n$ voor elke $n \in \mathbb{N}$. Dus $[3,6] \subseteq \bigcap_{n \in \mathbb{N}} A_n$.
+    \bigskip
+
+    \item Omdat $\lvert \mathbb{N} \rvert = \infty$, geldt:
+    \begin{equation} \label{eq:1}
+        \bigcap_{n \in \mathbb{N}} A_n = \lim_{a\to\infty}\bigcap_{k = 1}^{a} A_k
+    \end{equation}
+
+    Neem nu $n,m \in \mathbb{N}$ met $n < m$ en $n \neq m$.
+
+    $n < m \implies 3 - \frac{1}{n} < 3 - \frac{1}{m} \implies [3 - \frac{1}{m}, 6] \subseteq [3 - \frac{1}{n}, 6]$ en $[3 - \frac{1}{n}, 6] \nsubseteq [3 - \frac{1}{m}, 6]$, 
+    
+    dus $n < m \implies [3 - \frac{1}{m}, 6] \bigcap \, [3 - \frac{1}{n}, 6] = [3 - \frac{1}{m}, 6]$.
+
+    Dus $\bigcap_{k = 1}^{a} A_k = A_a$, samen met (\ref{eq:1}) geeft dit:
+
+    \begin{equation}
+        \bigcap_{n \in \mathbb{N}} A_n = \lim_{a\to\infty}A_a = \lim_{a\to\infty} [3 - \frac{1}{a}, 6] = [3 , 6]
+    \end{equation}
+
+\end{enumerate}
+
+
+\end{document}
