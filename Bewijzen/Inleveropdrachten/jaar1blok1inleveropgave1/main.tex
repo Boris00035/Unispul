@@ -49,12 +49,14 @@
 
     Neem nu $n,m \in \mathbb{N}$ met $n < m$ en $n \neq m$.
 
-    $n < m \implies 3 - \frac{1}{n} < 3 - \frac{1}{m} \implies [3 - \frac{1}{m}, 6] \subseteq [3 - \frac{1}{n}, 6]$ en $[3 - \frac{1}{n}, 6] \nsubseteq [3 - \frac{1}{m}, 6]$, 
+    $n < m \implies 3 - \frac{1}{n} < 3 - \frac{1}{m} \implies [3 - \frac{1}{m}, 6] \subseteq [3 - \frac{1}{n}, 6]$ en $[3 - \frac{1}{n}, 6] \nsubseteq [3 - \frac{1}{m}, 6]$
     
-    dus $n < m \implies [3 - \frac{1}{m}, 6] \bigcap \, [3 - \frac{1}{n}, 6] = [3 - \frac{1}{m}, 6]$.
+    $\implies [3 - \frac{1}{m}, 6] \bigcap \, [3 - \frac{1}{n}, 6] = [3 - \frac{1}{m}, 6].$ 
+    
+    Dus $n < m \implies A_m \bigcap A_n = A_m$ $\implies \bigcap_{k = 1}^{a} A_k = A_a$.
+    \bigskip
 
-    Dus $\bigcap_{k = 1}^{a} A_k = A_a$, samen met (\ref{eq:1}) geeft dit:
-
+    Samen met (\ref{eq:1}) geeft dit:
     \begin{equation}
         \bigcap_{n \in \mathbb{N}} A_n = \lim_{a\to\infty}A_a = \lim_{a\to\infty} [3 - \frac{1}{a}, 6] = [3 , 6]
     \end{equation}
