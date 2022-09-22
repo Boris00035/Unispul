@@ -23,18 +23,18 @@
 
 \begin{enumerate}[(a).]
     \item \label{opdrachta}
-    Stel $z^n = 1$ met $z \in \mathbb{C}$ en $n \in \mathbb{N}$. Dan is $z$ te schrijven als volgt: $z = re^{i\phi}$, dus $z^n = r^ne^{in\phi} = 1$.
+    Stel $z^n = 1$ met $z \in \mathbb{C}$ en $n \in \mathbb{N}$. Dan is $z$ als volgt te schrijven: $z = re^{i\phi}$, dus $z^n = r^ne^{in\phi} = 1$.
 
-    Omdat $w_1 = w_2$ met $w_1,w_2 \in \mathbb{C} \implies |w_1|=|w_2| \land \text{arg($w_1$)} = \text{arg($w_2$)}$, geldt:
+    Voor twee willekeurige getallen $w_1,w_2 \in \mathbb{C}$ met $w_1 = w_2$ geldt $|w_1|=|w_2|$ en  $\text{arg($w_1$)} = \text{arg($w_2$)}$, dus:
     \begin{equation}
         \begin{split}
             |z^n| &= |1| \\
             \text{arg}(z) &= \text{arg}(1)
         \end{split}
     \end{equation}
-    $|z^n| = r^n$ dus $r^n = 1$, en omdat $r \in \mathbb{R}$, $r = 1$. arg($z$) $= im\phi$ en arg(1) = $2k\pi$ met $k \in \mathbb{N}$, dus $n\phi = 2k\pi$. Dus $\phi = \frac{2k\pi}{n}$.
+    We weten dat $|z^n| = r^n$, dus $r^n = 1$, en omdat $r \in \mathbb{R}$, $r = 1$. Ook geldt dat arg($z$) $= in\phi$ en arg(1) = $2k\pi$ met $k \in \mathbb{N}$, dus $n\phi = 2k\pi$. Hieruit volgt dat $\phi = \frac{2k\pi}{n}$.
 
-    $r = 1$ en $\phi = \frac{2k\pi i}{n}$ geven $z = e^{\frac{2k\pi i}{n}}$ voor een gekozen $n \in \mathbb{N}$.
+    Voor een willekeurige $n \in \mathbb{N}$ geldt $r = 1$ en $\phi = \frac{2k\pi i}{n}$. Hieruit volgt dat $z = e^{\frac{2k\pi i}{n}}$. Voor $n = 3$ en $n = 6$ krijg je de volgende eenheidswortels:
 
     \begin{center}
         \begin{tabular}{c c}
@@ -119,49 +119,12 @@
                 \end{axis}
             \end{tikzpicture}
         \end{tabular}
-        
     \end{center}
     \newpage
-    De som van de n eenheidswortels is 0, omdat alle vectoren opgetelt elkaar opheffen. Wanneer $n$ even is, zoals bij $n = 6$, heffen alle getallen met een complex deel niet gelijk aan 0 elkaar op, en blijven alleen -1 en 1 over die elkaar vervolgens opheffen. Wanneer $n$ oneven is, is de som van alle complexe getallen -1, wat vervolgens de overgebleven 1 opheft.
+    De som van de n n-de eenheidswortels is 0, omdat alle vectoren opgeteld elkaar opheffen. Voor elke n is 1 een eenheidswortel. Wanneer $n$ even is, zoals bij $n = 6$, heffen alle getallen met een complex deel niet gelijk aan 0 elkaar op, en blijven alleen -1 en 1 over, die elkaar vervolgens opheffen. Wanneer $n$ oneven is, is de som van alle getallen waarvan het complexe deel niet gelijk is aan nul, -1. Deze heft vervolgens de overgebleven eenheidswortel met waarde 1 op.
     
     Voorbeelden:
-    \begin{center}
-        $n = 3$
-    \end{center}
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}[
-                font=\small,
-                xmin=-1.5,
-                xmax=1.5,
-                ymin=-1.5,
-                ymax=1.5,
-                axis equal,
-                axis lines=middle,
-                xlabel=Re($z$),
-                ylabel=Im($z$),
-                ]
-
-                \fill [red] ({cos(0)},{(sin(0))}) circle (2pt);
-                \node [anchor=south] at ({cos(0) - 0.2},{(sin(0))}) {$z = 1$};
-
-                \fill [red] ({cos(1 * 360/3)},{(sin(1 * 360/3))}) circle (2pt);
-                \node [anchor=east] at ({cos(1 * 360/3)},{(sin(1 * 360/3))}) {$z = e^{2\pi i/3}$};
-
-                \fill [red] ({cos(2 * 360/3)},{(sin(2 * 360/3))}) circle (2pt);
-                \node [anchor=east] at ({cos(2 * 360/3)},{(sin(2 * 360/3))}) {$z = e^{4\pi i/3}$};
-
-                \draw[dashed, ->] (0,0) -- ({cos(2 * 360/3)},{(sin(2 * 360/3))});
-                \draw[->] (0,0) -- ({cos(1 * 360/3)},{(sin(1 * 360/3))});
-                \draw[->] ({cos(1 * 360/3)},{(sin(1 * 360/3))}) -- (-1,0);
-            \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{center}
-        \footnotesize We zien hier dat de som van de twee complexe getallen behalve 1, samen opgetelt -1 zijn. Dit heft op met de overgebleven eenheidswortel 1, en houden we 0 over.        
-    \end{center}
-
-    \begin{center}
+       \begin{center}
         $n = 6$
     \end{center}
     \begin{center}
@@ -204,31 +167,96 @@
         \end{tikzpicture}
     \end{center}
     \begin{center}
-        \footnotesize We zien hier dat de som van de complexe getallen die niet op de reële as liggen 0 is, en vervolgens -1 en 1 overblijven. Deze twee heffen elkaar op, en houden we 0 over.
+        \footnotesize We zien hier dat de som van de complexe getallen die niet op de reële as liggen 0 is, en vervolgens -1 en 1 overblijven. Deze twee heffen elkaar op, en dus houden we 0 over.
+    \end{center}
+    \begin{center}
+        $n = 3$
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                font=\small,
+                xmin=-1.5,
+                xmax=1.5,
+                ymin=-1.5,
+                ymax=1.5,
+                axis equal,
+                axis lines=middle,
+                xlabel=Re($z$),
+                ylabel=Im($z$),
+                ]
+
+                \fill [red] ({cos(0)},{(sin(0))}) circle (2pt);
+                \node [anchor=south] at ({cos(0) - 0.2},{(sin(0))}) {$z = 1$};
+
+                \fill [red] ({cos(1 * 360/3)},{(sin(1 * 360/3))}) circle (2pt);
+                \node [anchor=east] at ({cos(1 * 360/3)},{(sin(1 * 360/3))}) {$z = e^{2\pi i/3}$};
+
+                \fill [red] ({cos(2 * 360/3)},{(sin(2 * 360/3))}) circle (2pt);
+                \node [anchor=east] at ({cos(2 * 360/3)},{(sin(2 * 360/3))}) {$z = e^{4\pi i/3}$};
+
+                \draw[dashed, ->] (0,0) -- ({cos(2 * 360/3)},{(sin(2 * 360/3))});
+                \draw[->] (0,0) -- ({cos(1 * 360/3)},{(sin(1 * 360/3))});
+                \draw[->] ({cos(1 * 360/3)},{(sin(1 * 360/3))}) -- (-1,0);
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \footnotesize We zien hier dat de som van de twee complexe getallen behalve 1, samen opgeteld -1 zijn. Dit heft op met de overgebleven eenheidswortel 1, en dus houden we 0 over.        
     \end{center}
     \bigskip
     \item 
-    De n-de eenheidswortels zijn $z = e^{\frac{2k\pi i}{n}}$ met $k \in \mathbb{N}$. Voor afleiding zie opdracht \ref{opdrachta}
+    De n-de eenheidswortels zijn $z = e^{\frac{2k\pi i}{n}}$ met $k \in \mathbb{N}$. Zie opdracht \ref{opdrachta} voor de afleiding hiervan.
 
     De n-de eenheidswortels zijn weer te geven in het complexe vlak als punten die gelijkmatig zijn verdeeld over de eenheidscirkel. Er zijn altijd n aantal eenheidswortels. De hoek tussen twee opeenvolgende eenheidswortels is altijd $\frac{2\pi}{n}$.
 
     \item 
-    Neem $w = e^{\frac{2\pi i}{n}}$ de eenheidswortel met het kleinste positieve argument, dan zijn de overige eenheidswortels te schrijven als $w^k$ voor een $k \in \mathbb{N}$, want ${(e^{\frac{2\pi i}{n}})}^k = e^{\frac{2k\pi i}{n}}$ is de algemene vorm van de eenheidswortels.
+    Neem $\omega = e^{\frac{2\pi i}{n}}$ de eenheidswortel met het kleinste positieve argument, dan zijn de overige eenheidswortels te schrijven als $\omega^k$ voor een $k \in \mathbb{N}$, want ${(e^{\frac{2\pi i}{n}})}^k = e^{\frac{2k\pi i}{n}}$ is de algemene vorm van de eenheidswortels.
     \newpage
     \item \label{opdrachtd}
-    Te bewijzen: $1 + w + w^2 + \dots + w^{n - 1} = 0$.
+    Te bewijzen: $1 + \omega + \omega^2 + \dots + \omega^{n - 1} = 0$.
 
     \begin{proof}
         $ $\newline
-        Neem $S = 1 + w + w^2 + \dots + w^{n - 1}$. \newline
-        Dan $S \cdot w = w + w^2 + \dots + w^n = S - 1 + w^n$. \newline
-        Dan kunnen we schrijven $S\cdot w - S = -1 + w^n$. \newline
-        Omdat $w^n = {(e^{\frac{2\pi i}{n}})}^n = e^{2\pi i} = 1$, $-1 + w^n = 0$. \newline
-        Dus $s(w - 1) = 0$ geeft $S = 1 + w + w^2 + \dots + w^{n - 1} = 0$.
+        Neem $S = 1 + \omega + \omega^2 + \dots + \omega^{n - 1}$. \newline
+        Dan $S \cdot \omega = \omega + \omega^2 + \dots + \omega^n = S - 1 + \omega^n$. \newline
+        Dan kunnen we schrijven $S\cdot \omega - S = -1 + \omega^n$. \newline
+        Omdat $\omega^n = {(e^{\frac{2\pi i}{n}})}^n = e^{2\pi i} = 1$, $-1 + \omega^n = 0$. \newline
+        Dus $S(\omega - 1) = 0$. \newline 
+        Omdat $\text{arg(1)}= 0$, en $\omega$ de eenheidswortel is met het kleinste postitieve argument, is $\omega$ niet 1. \newline Hieruit volgt dat $(\omega - 1)$ niet gelijk is aan nul. \newline Dus $S = 1 + \omega + \omega^2 + \dots + \omega^{n - 1} = 0$.
     \end{proof}
 
     \item 
-    Elke term in de som $1 + w + w^2 + \dots + w^{n - 1}$ corrospondeerd exact met een eenheidswortel en alle eenheidswortels corrosponderen exact met een term in deze som. Bij \ref{opdrachtd} \!hebben we bewezen dat deze som gelijk is aan 0, dus de som van alle eenheidswortels is 0.
+    Elke term in de som $1 + \omega + \omega^2 + \dots + \omega^{n - 1}$ corrospondeert exact met een eenheidswortel en alle eenheidswortels corrosponderen exact met een term in deze som. Bij \ref{opdrachtd} \!hebben we bewezen dat deze som gelijk is aan 0, dus de som van alle eenheidswortels is 0.
+    
+    \item 
+    De eenheidswortels van $x^3+x^2+x+1$, zijn de oplossingen van de vergelijking $x^3+x^2+x+1=0$ met $x \in \mathbb{C}$.
+    Het is duidelijk dat een van de oplossingen is $x=-1$. Dus $(x+1)$ is een factor. Door middel van een staartdeling vinden we dat    $x^3+x^2+x+1=(x+1)(x^2+1)$. Dit kunnen we verder factoriseren naar $(x+1)(x+i)(x-i)$. Hieruit volgt dat $x+1=0$ of $x+i=0$ of $x-i=0$. Dus $x=-1, x=-i$ of $x=i$.
+    
+    \begin{center}
+        \begin{tikzpicture}
+                \begin{axis}[
+                    font=\small,
+                    xmin=-1.5,
+                    xmax=1.5,
+                    ymin=-1.5,
+                    ymax=1.5,
+                    axis equal,
+                    axis lines=middle,
+                    xlabel=Re($z$),
+                    ylabel=Im($z$),
+                    ]
+                    \fill [red] ({cos(180)},{(sin(180))}) circle (2pt);
+                    \node [anchor=south] at ({cos(180)},{(sin(180))}) {$z = -1$};
+
+                    \fill [red] ({cos(90)},{(sin(90))}) circle (2pt);
+                    \node [anchor=west] at ({cos(90)},{(sin(90))}) {$z = i$};
+
+                    \fill [red] ({cos(-90)},{(sin(-90))}) circle (2pt);
+                    \node [anchor=west] at ({cos(-90)},{(sin(-90))}) {$z = -i$};
+                \end{axis}
+            \end{tikzpicture}
+    \end{center}
 \end{enumerate}
 
 
