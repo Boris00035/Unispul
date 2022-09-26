@@ -53,7 +53,7 @@ $3 \: | \: n \implies 3 \: | \: n^2$.
     Als we links en rechts kwadrateren, 
     vinden we $n^2 = 9q^2$. \newline
     Dit kunnen we ook schrijven als $n^2 = 3 \cdot 3q^2$. \newline
-    Hieruit blijkt dat $3 \: | \: n^2$. \newline 
+    $3q^2 \in \mathbb{Z}$, dus hieruit volgt dat $3 \: | \: n^2$. \newline 
     Dus $3 \: | \: n \implies 3 \: | \: n^2$. \newline
     Dus $3 \nmid n^2 \implies 3 \nmid n$.
 \end{proof}
@@ -64,7 +64,7 @@ kan \textbf{\cref{implicatie1lemma}} worden bewezen.
     Stel $n^2 \equiv 1 \pmod{3}$. \newline
     Dit betekent dat $n^2$ gelijk is aan $3k+1$ met $k \in \mathbb{Z}$. \newline
     $3 \nmid 3k + 1$, dus $3 \nmid n^2$. \newline
-    Volgens \textbf{\cref{implicatie1lemma}} betekent dit dat $3 \nmid n$. \newline
+    Volgens \textbf{\cref{sublemma1}} betekent dit dat $3 \nmid n$. \newline
     Dus $n^2 \equiv 1 \pmod{3} \implies 3 \nmid n$ voor elke $n \in \mathbb{Z}$.
 \end{proof}
 
@@ -81,11 +81,15 @@ van deze gevallen bewijs ik dat hieruit volgt dat $n^2 \equiv 1 \pmod{3}$.
 \begin{proof} 
     \begin{case} $n = 3k + 1$ met $k \in \mathbb{Z}$. \newline
         $n = 3k + 1 \implies n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$ \newline
-        $\implies n^2 \equiv 1 \pmod{3}$.
+        $k \in \mathbb{Z}$, dus $3k^2 + 2k \in \mathbb{Z}$. \newline 
+        Na delen door 3 blijft er dus 1 als rest over. \newline 
+        Dit betekent $n^2 \equiv 1 \pmod{3}$.
     \end{case}
     \begin{case} $n = 3k + 2$ met $k \in \mathbb{Z}$. \newline
         $n = 3k + 2 \implies n^2 = 9k^2 + 12k + 1 = 3(3k^2 + 6k) + 1$ \newline
-        $\implies n^2 \equiv 1 \pmod{3}$.
+        $k \in \mathbb{Z}$, dus $3k^2 + 6k \in \mathbb{Z}$. \newline 
+        Na delen door 3 blijft er dus 1 als rest over. \newline 
+        Dit betekent $n^2 \equiv 1 \pmod{3}$.
     \end{case}
     Dus $n^2 \equiv 1 \pmod{3}$ geldt voor elk geval. \newline
     Dus $3 \nmid n^2 \implies n^2 \equiv 1 \pmod{3}$.
