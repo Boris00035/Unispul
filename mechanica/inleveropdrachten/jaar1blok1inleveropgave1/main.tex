@@ -1,0 +1,85 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in, bmargin=0.8in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{pgfplots}
+\pgfplotsset{width=7.5cm, compat=1.18}
+\usepackage{amsthm}
+
+\begin{document}
+
+\title{Mechanica - Inleveropgave 1}
+\author{Boris van Boxtel - Jean Croes - Mike - Lotte Gritter}
+\date{28 september 2022 - Week 39}
+
+\maketitle
+\pagenumbering{gobble}
+
+\begin{enumerate}[(a).]
+    \item \label{itema}
+    $(x,y, t) = (L ,h ,\frac{h}{c})$ of $(x,y, t) = (L ,-h ,\frac{h}{c})$.
+
+    \item
+    Het toepassen van een Lorentz transformatie op de bij \ref{itema} 
+    gevonden ruimte-tijd coördinaten, 
+    geeft als coördinaten in stelsel $\mathcal{O}^{'}$:
+    $(L,\: \gamma h(1-\frac{v}{c}),\: \gamma \frac{h}{c}(1-\frac{v}{c}))$ en 
+    $(L, \:-\gamma h(1+\frac{v}{c}), \: \gamma \frac{h}{c}(1+\frac{v}{c}))$.
+
+    \item 
+    De tijd die het licht erover doet om van het lampje naar het papiertje 
+    te gaan is $\frac{h}{c}$. De tijd die het licht erover doet om van het papiertje 
+    naar de oorsprong te gaan is $\frac{\sqrt{c^2 + h^2}}{c}$. 
+    Het tijdstip waarop de waarnemer in $\mathcal{O}$ de lichtflits via 
+    het papiertje ziet wordt dus gegeven door:
+    \begin{equation} \label{tijdinO} 
+        t = \frac{h}{c} + \frac{\sqrt{c^2 + h^2}}{c} 
+    \end{equation}
+
+    \item \label{itemd}
+    Door lengtecontractie is $h' \neq h$, dus is de tijd die het licht erover doet 
+    om bij de oorsprong te komen anders. Door een lorentztransformatie toe te passen
+    vinden we:
+    \begin{equation} \label{lorentzh}
+        h' = \gamma h\left( 1-\beta\right) 
+    \end{equation}
+    Waar $\beta = \frac{v}{c}$.
+
+    Nu kunnen we in \eqref{tijdinO} de substitutie $h = h'$ maken om de tijd 
+    gemeten door $\mathcal{O}^{'}$ te vinden. Hieruit volgt dat het tijdstip 
+    waarop $\mathcal{O}$ de lichtflits waarneemt gegeven wordt door:
+    \begin{equation} \label{tijdinO'} 
+        t' = \frac{\gamma h\left( 1-\frac{v}{c}\right)}{c} + 
+        \frac{\sqrt{c^2 + (\gamma h\left( 1-\frac{v}{c}\right))^2}}{c}
+    \end{equation}
+
+    \item \label{iteme}
+    De afstand van het lampje tot het papiertje volgens de waarnemer in $\mathcal{O}'$ 
+    is $h'$. En de afstand van het papiertje tot de oorsprong van $\mathcal{O}'$ is 
+    $\sqrt{L^2 + (vt-h')^2}$. Dus de afgelegde afstand van het licht is 
+    $\sqrt{L^2 + (vt-h')^2} + h'$. 
+    De tijd die het licht hierover doet is dus gegeven door:
+    \begin{equation}
+        \Delta t' = \frac{\sqrt{L^2 + (vt-h')^2} + h'}{c}
+    \end{equation}
+    En met (\ref{lorentzh}) zien we dan dit gelijk is aan de volgende vergelijking:
+    \begin{equation}
+        \Delta t' = \frac{\sqrt{L^2 + (vt-\gamma h\left( 1-\beta\right))^2} +
+        \gamma h\left( 1-\beta\right)}{c}
+    \end{equation}
+    Voor een bepaalde $t$.
+
+    \item 
+    De antwoorden van \ref{itemd} en \ref{iteme} zijn niet hetzelfde, 
+    omdat de afstand die het licht aflegt naar $\mathcal{O}'$ niet voor elke $t$
+    hetzelfde is als de afgelegde afstand naar $\mathcal{O}$.
+\end{enumerate}
+
+
+\end{document}
