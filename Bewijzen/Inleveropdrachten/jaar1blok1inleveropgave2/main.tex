@@ -41,7 +41,7 @@ als \textbf{\cref{implicatie1lemma}} en \textbf{\cref{implicatie2lemma}} bewijze
 Voor het bewijs van deze implicatie heb ik nog een supplementeel argument nodig, 
 wat ik als eerst bewijs. 
 
-\begin{sublemma}
+\begin{sublemma} \label{sublemma1}
     $3 \nmid n^2 \implies 3 \nmid n$.
 \end{sublemma}
 
@@ -58,7 +58,8 @@ $3 \: | \: n \implies 3 \: | \: n^2$.
     Dus $3 \nmid n^2 \implies 3 \nmid n$.
 \end{proof}
 
-Met dit bewezen, kan \textbf{\cref{implicatie1lemma}} worden bewezen.
+Met \textbf{\cref{sublemma1}} bewezen, 
+kan \textbf{\cref{implicatie1lemma}} worden bewezen.
 \begin{proof} $ $\newline
     Stel $n^2 \equiv 1 \pmod{3}$. \newline
     Dit betekent dat $n^2$ gelijk is aan $3k+1$ met $k \in \mathbb{Z}$. \newline
@@ -93,7 +94,7 @@ van deze gevallen bewijs ik dat hieruit volgt dat $n^2 \equiv 1 \pmod{3}$.
 Nu kan \textbf{Theorem \ref{maintheorem}} bewezen worden.
 \begin{proof} $ $ \newline
     Omdat alle twee de implicaties 
-    (\textbf{\cref{implicatie1lemma}} en (\textbf{\cref{implicatie2lemma}}))
+    (\textbf{\cref{implicatie1lemma}} en \textbf{\cref{implicatie2lemma}})
     nu zijn bewezen, betekent dit dat
     $n^2 \equiv 1 \pmod{3} \iff 3 \nmid n$ voor elke $n \in \mathbb{Z}$.
 \end{proof}
