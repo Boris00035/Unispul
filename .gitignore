@@ -1,5 +1,4 @@
 **.aux
-**.log
 **.bcf
 **.run.xml
 **.synctex.gz
@@ -11,7 +10,6 @@
 **.tex.blg
 **.dvi
 **.fdb_latexmk
-**.log
 **.log
 **.xdv
 **.out
