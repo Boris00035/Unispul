@@ -15,7 +15,7 @@
 \begin{document}
 
 \title{Mechanica - Inleveropgave 1}
-\author{Boris van Boxtel - Jean Croes - Mike - Lotte Gritter}
+\author{Boris van Boxtel - Jean Croes - Mike van Eck - Lotte Gritter}
 \date{28 september 2022 - Week 39}
 
 \maketitle
@@ -23,23 +23,26 @@
 
 \begin{enumerate}[(a).]
     \item \label{itema}
-    $(x,y, t) = (L ,h ,\frac{h}{c})$ of $(x,y, t) = (L ,-h ,\frac{h}{c})$.
+    De ruimtetijdcoördinaten van de events in stelsel O zijn:
+    $(x,y, ct) = (L ,h ,h)$ en $(x,y, ct) = (L ,-h ,h)$.
 
     \item
-    Het toepassen van een Lorentz transformatie op de bij \ref{itema} 
+    Het toepassen van een Lorentztransformatie op de bij \ref{itema} 
     gevonden ruimte-tijd coördinaten, 
     geeft als coördinaten in stelsel $\mathcal{O}^{'}$:
-    $(L,\: \gamma h(1-\frac{v}{c}),\: \gamma \frac{h}{c}(1-\frac{v}{c}))$ en 
-    $(L, \:-\gamma h(1+\frac{v}{c}), \: \gamma \frac{h}{c}(1+\frac{v}{c}))$.
+    $(L,\: \gamma h(1-\frac{v}{c}),\: \gamma h(1-\frac{v}{c}))$ en 
+    $(L, \:-\gamma h(1+\frac{v}{c}), \: \gamma h(1+\frac{v}{c}))$. 
+    Waar $v$ de snelheid van $\mathcal{O}'$ is ten opzichte van 
+    $\mathcal{O}$.
 
     \item 
     De tijd die het licht erover doet om van het lampje naar het papiertje 
     te gaan is $\frac{h}{c}$. De tijd die het licht erover doet om van het papiertje 
-    naar de oorsprong te gaan is $\frac{\sqrt{c^2 + h^2}}{c}$. 
+    naar de oorsprong te gaan is $\frac{\sqrt{L^2 + h^2}}{c}$. 
     Het tijdstip waarop de waarnemer in $\mathcal{O}$ de lichtflits via 
     het papiertje ziet wordt dus gegeven door:
     \begin{equation} \label{tijdinO} 
-        t = \frac{h}{c} + \frac{\sqrt{c^2 + h^2}}{c} 
+        t = \frac{h}{c} + \frac{\sqrt{L^2 + h^2}}{c} 
     \end{equation}
 
     \item \label{itemd}
@@ -56,29 +59,103 @@
     waarop $\mathcal{O}$ de lichtflits waarneemt gegeven wordt door:
     \begin{equation} \label{tijdinO'} 
         t' = \frac{\gamma h\left( 1-\frac{v}{c}\right)}{c} + 
-        \frac{\sqrt{c^2 + (\gamma h\left( 1-\frac{v}{c}\right))^2}}{c}
+        \frac{\sqrt{L^2 + \left(\gamma h\left( 1-\frac{v}{c}\right)\right)^2}}{c}
     \end{equation}
 
     \item \label{iteme}
-    De afstand van het lampje tot het papiertje volgens de waarnemer in $\mathcal{O}'$ 
-    is $h'$. En de afstand van het papiertje tot de oorsprong van $\mathcal{O}'$ is 
-    $\sqrt{L^2 + (vt-h')^2}$. Dus de afgelegde afstand van het licht is 
-    $\sqrt{L^2 + (vt-h')^2} + h'$. 
-    De tijd die het licht hierover doet is dus gegeven door:
+    % De afstand van het lampje tot het papiertje volgens de waarnemer in $\mathcal{O}'$ 
+    % is $h'$. En de afstand van het papiertje tot de oorsprong van $\mathcal{O}'$ is 
+    % $\sqrt{L^2 + (vt \pm h')^2}$. Dus de afgelegde afstand van het licht is 
+    % $\sqrt{L^2 + (vt \pm h')^2} + h'$. 
+    % De tijd die het licht hierover doet is dus gegeven door:
+    % \begin{equation}
+    %     \Delta t' = \frac{\sqrt{L^2 + (vt \pm h')^2} + h'}{c}
+    % \end{equation}
+    % En met (\ref{lorentzh}) zien we dan dit gelijk is aan de volgende vergelijking:
+    % \begin{equation}
+    %     \Delta t' = \frac{\sqrt{L^2 + (vt \pm \gamma h\left( 1-\beta\right))^2} +
+    %     \gamma h\left( 1-\beta\right)}{c}
+    % \end{equation}
+    % Voor een bepaalde $t$.
+    Volgens de waarnemer in $\mathcal{O}$ is de tijd die het licht erover doet om bij
+    het papiertje aan te komen gelijk aan $\frac{h}{c}$. 
+    De snelheid van $\mathcal{O}'$ ten opzichte van $\mathcal{O}$ is $v$,
+    dus $v \Delta t$ is de afgelegde afstand over een tijd $\Delta t$.
+    Dus de tijd die het licht erover doet om van het papiertje naar de oorsprong van
+    $\mathcal{O}$ te komen, is gelijk aan $\frac{\sqrt{L^2 + (vt \pm h)}}{c}$.
+    Dus de tijd die het licht erover doet om in $\mathcal{O}'$ aan te komen 
+    wordt gegeven door:
     \begin{equation}
-        \Delta t' = \frac{\sqrt{L^2 + (vt-h')^2} + h'}{c}
+        t = \frac{h}{c} + \frac{\sqrt{L^2 + \left(v \Delta t \pm h\right)^2}}{c}
     \end{equation}
-    En met (\ref{lorentzh}) zien we dan dit gelijk is aan de volgende vergelijking:
+    
+    \newpage
+    Omdat de tijd die het licht erover doet om in $\mathcal{O}'$ aan te komen,
+    en de tijd die $\mathcal{O}'$ erover doet om in dat punt te komen gelijk zijn,
+    geldt $t = \Delta t$. Dus de volgende vergelijking geldt:
+
     \begin{equation}
-        \Delta t' = \frac{\sqrt{L^2 + (vt-\gamma h\left( 1-\beta\right))^2} +
-        \gamma h\left( 1-\beta\right)}{c}
+        t = \frac{h}{c} + \frac{\sqrt{L^2 + \left(vt \pm h\right)^2}}{c}
     \end{equation}
-    Voor een bepaalde $t$.
+
+    Deze vergelijking resulteert in een kwadratische vergelijking in $t$, 
+    die kan worden opgelost om de volgende oplossingen te vinden:
+
+    \begin{equation}
+        \begin{split}
+            t = \frac{h}{v+c}\ +\sqrt{\frac{h^{2}}{\left(v+c\right)^{2}}-\frac{l^{2}}{v^{2}-c^{2}}}\  \\
+            \lor \:
+            t = -\frac{h}{v-c}+\sqrt{\frac{h^{2}}{\left(v-c\right)^{2}}-\frac{l^{2}}{v^{2}-c^{2}}}  
+        \end{split}
+    \end{equation}
+    
+    Waar we de oplossingen die een negatieve waarden voor $t$ aannemen buiten beschouwing
+    hebben gelaten.
+
+    Dit is de tijd wanneer dat het licht in $\mathcal{O}'$ aankomt volgens een waarnemer in $\mathcal{O}$.
+    Dit moeten we dus nog vertalen naar een tijd in $\mathcal{O}'$.
+    Omdat het event waar het licht en de oorsprong van $\mathcal{O}'$ samenkomen per definitie
+    in de oorsprong van $\mathcal{O}'$ ligt, 
+    is de tijd waarop dit gebeurt een eigentijd van $\mathcal{O}'$.
+    Dus geldt $\tau' = t / \gamma$ waar $\tau'$ de eigentijd van $\mathcal{O}'$ is.
+    
+    Dus het tijdstip waarop de waarnemer in $\mathcal{O}'$
+    de lichtflits via de papiertjes waarneemt, is gegeven door:
+    \begin{equation}
+        \begin{split}
+            \left. t' = \sqrt{1 - \frac{v^2}{c^2}} \middle/ \left[\frac{h}{v+c} +
+            \sqrt{\frac{h^{2}}{\left(v+c\right)^{2}}-\frac{l^{2}}{v^{2}-c^{2}}}\right] \right.\\
+            \lor \:
+            \left. t' = \sqrt{1 - \frac{v^2}{c^2}} \middle/ \left[-\frac{h}{v-c}+
+            \sqrt{\frac{h^{2}}{\left(v-c\right)^{2}}-\frac{l^{2}}{v^{2}-c^{2}}}\right] \right.
+        \end{split}
+    \end{equation}
+    En dit kunnen we herschrijven tot het volgende:
+    \begin{equation}
+        \begin{split}
+            t' = \frac{h}{c}\sqrt{\frac{c-v}{c+v}}+
+            \frac{1}{c}\sqrt{h^{2}\left(\frac{c-v}{c+v}\right)+l^{2}}\\
+            \lor \:
+            t' = \frac{h}{c}\sqrt{\frac{\left(c+v\right)}{c-v}}+
+            \frac{1}{c}\sqrt{h^{2}\frac{\left(c+v\right)}{\left(c-v\right)}+l^{2}}
+        \end{split}
+    \end{equation}
 
     \item 
-    De antwoorden van \ref{itemd} en \ref{iteme} zijn niet hetzelfde, 
-    omdat de afstand die het licht aflegt naar $\mathcal{O}'$ niet voor elke $t$
-    hetzelfde is als de afgelegde afstand naar $\mathcal{O}$.
+    
+    Bij \ref{itemd} en \ref{iteme} worden verschillende dingen beschreven. 
+    Bij \ref{itemd} beschrijf je de tijd die het licht er, volgens de waarnemer in 
+    $\mathcal{O}'$, in $\mathcal{O}$ over doet om de waarnemer in de oorsprong van 
+    $\mathcal{O}$ te bereiken. 
+    Dit is korter dan de tijd die de waarnemer in $\mathcal{O}$ waarneemt omdat 
+    de afstand $h$ tot de papiertjes volgens de waarnemer in $\mathcal{O}'$ 
+    korter is vanwege lengtecontractie. 
+    
+    Bij \ref{iteme} wordt de tijd beschreven die het licht erover doet om 
+    via de papiertjes bij de waarnemer in de oorsprong van $\mathcal{O}'$ te komen. 
+    Dit is iets heel anders en geeft dus ook een andere tijd.
+    
+    
 \end{enumerate}
 
 
