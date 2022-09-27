@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, dutch, a4paper]{article}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage[tmargin=0.8in, bmargin=1in]{geometry}
@@ -11,6 +11,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{width=7.5cm, compat=1.18}
 \usepackage{amsthm}
+\usepackage{cleveref}
 
 \begin{document}
 
@@ -35,7 +36,7 @@
     Waar $v$ de snelheid van $\mathcal{O}'$ is ten opzichte van 
     $\mathcal{O}$.
 
-    \item 
+    \item \label{itemc}
     De tijd die het licht erover doet om van het lampje naar het papiertje 
     te gaan is $\frac{h}{c}$. De tijd die het licht erover doet om van het papiertje 
     naar de oorsprong te gaan is $\frac{\sqrt{L^2 + h^2}}{c}$. 
@@ -101,8 +102,8 @@
     die kan worden opgelost om de volgende oplossingen te vinden:
     \begin{equation}
         \begin{split}
-            t_1 = \frac{h}{v+c}\ +\sqrt{\frac{h^{2}}{\left(v+c\right)^{2}}-\frac{L^{2}}{v^{2}-c^{2}}}\\
-            t_2 = -\frac{h}{v-c}+\sqrt{\frac{h^{2}}{\left(v-c\right)^{2}}-\frac{L^{2}}{v^{2}-c^{2}}}  
+            t_1 = \frac{h}{c + v}+\sqrt{\frac{h^{2}}{\left(c + v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}\\
+            t_2 = -\frac{h}{c - v}+\sqrt{\frac{h^{2}}{\left(c - v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}  
         \end{split}
     \end{equation}
     
@@ -120,10 +121,10 @@
     de lichtflits via de papiertjes waarneemt, is gegeven door:
     \begin{equation}
         \begin{split}
-            t'_1 = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{v+c} +
-            \sqrt{\frac{h^{2}}{\left(v+c\right)^{2}}-\frac{L^{2}}{v^{2}-c^{2}}}\right]\\
-            t'_2 = \sqrt{1 - \frac{v^2}{c^2}} \left[-\frac{h}{v-c}+
-            \sqrt{\frac{h^{2}}{\left(v-c\right)^{2}}-\frac{L^{2}}{v^{2}-c^{2}}}\right]
+            t'_1 = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c + v} +
+            \sqrt{\frac{h^{2}}{\left(c + v\right)^{2}}+\frac{L^{2}}{c^{2}- v^{2}}}\right]\\
+            t'_2 = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c-v}+
+            \sqrt{\frac{h^{2}}{\left(c-v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}\right]
         \end{split}
     \end{equation}
     En dit kunnen we herschrijven tot het volgende:
@@ -131,13 +132,31 @@
         \begin{split}
             t'_1 = \frac{h}{c}\sqrt{\frac{c-v}{c+v}}+
             \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c-v}{c+v}\right)}\\
-            t'_2 = \frac{h}{c}\sqrt{\frac{\left(c+v\right)}{c-v}}+
-            \frac{1}{c}\sqrt{L^{2} + h^{2}\frac{\left(c+v\right)}{\left(c-v\right)}}
+            t'_2 = \frac{h}{c}\sqrt{\frac{c+v}{c-v}}+
+            \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c+v}{c-v}\right)}
         \end{split}
     \end{equation}
+    Om te testen of we de goede formule hebben, kunnen we $v = 0$ invullen, en dan zouden 
+    we dezelfde vergelijking moeten krijgen als \cref{tijdinO}.
+    \newpage
+    Als we $v = 0$ nemen geeft dit:
+    \begin{equation}
+        \begin{split}
+            t'_1 = \frac{h}{c}\sqrt{\frac{c-0}{c+0}}+
+            \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c-0}{c+0}\right)}\\
+            t'_2 = \frac{h}{c}\sqrt{\frac{c+0}{c-0}}+
+            \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c+0}{c-0}\right)}
+        \end{split}
+    \end{equation}
+    Omdat $t'_1$ en $t'_2$ samenvallen, geven deze allebei:
+    \begin{equation}
+        t' = \frac{h}{c}+
+        \frac{1}{c}\sqrt{L^{2} + h^{2}} = \frac{h}{c} + \frac{\sqrt{L^2 + h^2}}{c}
+    \end{equation}
+
+    Wat hetzelfde is als \cref{tijdinO}.
 
     \item 
-    
     Bij \ref{itemd} en \ref{iteme} worden verschillende dingen beschreven. 
     Bij \ref{itemd} beschrijf je de tijd die het licht er, volgens de waarnemer in 
     $\mathcal{O}'$, in $\mathcal{O}$ over doet om de waarnemer in de oorsprong van 
