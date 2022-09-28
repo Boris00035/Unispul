@@ -22,62 +22,61 @@
 \maketitle
 \pagenumbering{arabic}
 
+Gegeven zijn twee stelsels: $\mathcal{O}$ en $\mathcal{O'}$, waarbij $\mathcal{O'}$ met een snelheid $v$
+in y-richting beweegt. Afgesproken is dat op $t=0$ de oorsprong van $\mathcal{O'}$ in de oorsprong 
+van $\mathcal{O}$ ligt.
+\bigskip
+
 \begin{enumerate}[(a).]
-    \item \label{itema}
-    De ruimtetijdcoördinaten van de events in stelsel O zijn:
+    \item \label{itema} 
+    De tijd kan berekend worden door de afstand te delen door de tijd. 
+    De tijd is dus gelijk aan $\frac{h}{c}$. Hieruit volgt dat $ct=h$.
+    De ruimtetijdcoördinaten van de events in stelsel $\mathcal{O}$ zijn:
     $(x,y, ct) = (L ,h ,h)$ en $(x,y, ct) = (L ,-h ,h)$.
 
     \item
-    Het toepassen van een Lorentztransformatie op de bij \ref{itema} 
+    Het toepassen van een lorentztransformatie op de bij \ref{itema} 
     gevonden ruimte-tijd coördinaten, 
     geeft als coördinaten in stelsel $\mathcal{O}^{'}$:
     $(L,\: \gamma h(1-\frac{v}{c}),\: \gamma h(1-\frac{v}{c}))$ en 
     $(L, \:-\gamma h(1+\frac{v}{c}), \: \gamma h(1+\frac{v}{c}))$. 
-    Waar $v$ de snelheid van $\mathcal{O}'$ is ten opzichte van 
-    $\mathcal{O}$.
+    Omdat $\mathcal{O}'$ uitsluitend in de y-richting beweegt,
+    verandert alleen het y-coördinaat na het toepassen van de lorentztransformatie.  
 
     \item \label{itemc}
     De tijd die het licht erover doet om van het lampje naar het papiertje 
-    te gaan is $\frac{h}{c}$. De tijd die het licht erover doet om van het papiertje 
-    naar de oorsprong te gaan is $\frac{\sqrt{L^2 + h^2}}{c}$. 
+    te gaan is $\frac{h}{c}$. 
+    De afstand van het papiertje tot de oorsprong van $\mathcal{O}$ is te
+    berekenen met de stelling van Pythagoras. Dit geeft $\sqrt{L^2 + h^2}$.
+    De tijd die het licht erover doet om van het papiertje 
+    naar de oorsprong te gaan is dan $\frac{\sqrt{L^2 + h^2}}{c}$. 
     Het tijdstip waarop de waarnemer in $\mathcal{O}$ de lichtflits via 
-    het papiertje ziet wordt dus gegeven door:
+    het papiertje ziet wordt dus gegeven door: 
     \begin{equation} \label{tijdinO} 
-        t = \frac{h}{c} + \frac{\sqrt{L^2 + h^2}}{c} 
+        t_{\mathcal{O}} = \frac{h}{c} + \frac{\sqrt{L^2 + h^2}}{c} 
     \end{equation}
 
+    Waar het subscript staat voor de oorsprong van het stelsel 
+    waar de lichtflits heen beweegt.
+
     \item \label{itemd}
-    Door lengtecontractie is $h' \neq h$, dus is de tijd die het licht erover doet 
-    om bij de oorsprong te komen anders. Door een lorentztransformatie toe te passen
-    vinden we:
+    Doordat stelsel $\mathcal{O'}$ in de y-richting beweegt, is $h' \neq h$, dus is de tijd die 
+    het licht erover doet om in de oorsprong van $\mathcal{O'}$ te komen anders. Door een 
+    lorentztransformatie toe te passen vinden we:
     \begin{equation} \label{lorentzh}
         h' = \gamma h\left( 1-\beta\right) 
     \end{equation}
     Waar $\beta = \frac{v}{c}$.
 
-    Nu kunnen we in \eqref{tijdinO} de substitutie $h = h'$ maken om de tijd 
+    Nu kunnen we in \eqref{tijdinO} $h$ vervangen door $h'$ om de tijd 
     gemeten door $\mathcal{O}^{'}$ te vinden. Hieruit volgt dat het tijdstip 
-    waarop $\mathcal{O}$ de lichtflits waarneemt gegeven wordt door:
+    waarop de waarnemer in $\mathcal{O}$ de lichtflits waarneemt volgens $\mathcal{O'}$ gegeven wordt door:
     \begin{equation} \label{tijdinO'} 
-        t' = \frac{\gamma h\left( 1-\frac{v}{c}\right)}{c} + 
+        t'_\mathcal{O} = \frac{\gamma h\left( 1-\frac{v}{c}\right)}{c} + 
         \frac{\sqrt{L^2 + \left(\gamma h\left( 1-\frac{v}{c}\right)\right)^2}}{c}
     \end{equation}
 
     \item \label{iteme}
-    % De afstand van het lampje tot het papiertje volgens de waarnemer in $\mathcal{O}'$ 
-    % is $h'$. En de afstand van het papiertje tot de oorsprong van $\mathcal{O}'$ is 
-    % $\sqrt{L^2 + (vt \pm h')^2}$. Dus de afgelegde afstand van het licht is 
-    % $\sqrt{L^2 + (vt \pm h')^2} + h'$. 
-    % De tijd die het licht hierover doet is dus gegeven door:
-    % \begin{equation}
-    %     \Delta t' = \frac{\sqrt{L^2 + (vt \pm h')^2} + h'}{c}
-    % \end{equation}
-    % En met (\ref{lorentzh}) zien we dan dit gelijk is aan de volgende vergelijking:
-    % \begin{equation}
-    %     \Delta t' = \frac{\sqrt{L^2 + (vt \pm \gamma h\left( 1-\beta\right))^2} +
-    %     \gamma h\left( 1-\beta\right)}{c}
-    % \end{equation}
-    % Voor een bepaalde $t$.
     Volgens de waarnemer in $\mathcal{O}$ is de tijd die het licht erover doet om bij
     het papiertje aan te komen gelijk aan $\frac{h}{c}$. 
     De snelheid van $\mathcal{O}'$ ten opzichte van $\mathcal{O}$ is $v$,
@@ -87,23 +86,22 @@
     Dus de tijd die het licht erover doet om in $\mathcal{O}'$ aan te komen 
     wordt gegeven door:
     \begin{equation}
-        t = \frac{h}{c} + \frac{\sqrt{L^2 + \left(v \Delta t \pm h\right)^2}}{c}
+        t_{\mathcal{O}'}= \frac{h}{c} + \frac{\sqrt{L^2 + \left(v \Delta t \pm h\right)^2}}{c}
     \end{equation}
     
-    \newpage
     Omdat de tijd die het licht erover doet om in $\mathcal{O}'$ aan te komen,
     en de tijd die $\mathcal{O}'$ erover doet om in dat punt te komen gelijk zijn,
     geldt $t = \Delta t$. Dus de volgende vergelijking geldt:
     \begin{equation}
-        t = \frac{h}{c} + \frac{\sqrt{L^2 + \left(vt \pm h\right)^2}}{c}
+        t_{\mathcal{O}'} = \frac{h}{c} + \frac{\sqrt{L^2 + \left(vt \pm h\right)^2}}{c}
     \end{equation}
 
     Deze vergelijking resulteert in een kwadratische vergelijking in $t$, 
     die kan worden opgelost om de volgende oplossingen te vinden:
     \begin{equation}
         \begin{split}
-            t_1 = \frac{h}{c + v}+\sqrt{\frac{h^{2}}{\left(c + v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}\\
-            t_2 = -\frac{h}{c - v}+\sqrt{\frac{h^{2}}{\left(c - v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}  
+            t_{\mathcal{O}',1} = \frac{h}{c + v}+\sqrt{\frac{h^{2}}{\left(c + v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}\\
+            t_{\mathcal{O}',2} = -\frac{h}{c - v}+\sqrt{\frac{h^{2}}{\left(c - v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}  
         \end{split}
     \end{equation}
     
@@ -121,49 +119,49 @@
 
     Dus het tijdstip waarop de waarnemer in $\mathcal{O}'$
     de lichtflits via de papiertjes waarneemt, is gegeven door:
-    \begin{equation}
+    \begin{equation} 
         \begin{split}
-            t'_1 = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c + v} +
+            t'_{\mathcal{O}',1} = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c + v} +
             \sqrt{\frac{h^{2}}{\left(c + v\right)^{2}}+\frac{L^{2}}{c^{2}- v^{2}}}\right]\\
-            t'_2 = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c-v}+
+            t'_{\mathcal{O}',2} = \sqrt{1 - \frac{v^2}{c^2}} \left[\frac{h}{c-v}+
             \sqrt{\frac{h^{2}}{\left(c-v\right)^{2}}+\frac{L^{2}}{c^{2}-v^{2}}}\right]
         \end{split}
-    \end{equation}
+    \end{equation} 
     En dit kunnen we herschrijven tot het volgende:
-    \begin{equation}
+    \begin{equation} \label{eq8}
         \begin{split}
-            t'_1 = \frac{h}{c}\sqrt{\frac{c-v}{c+v}}+
+            t'_{\mathcal{O}',1} = \frac{h}{c}\sqrt{\frac{c-v}{c+v}}+
             \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c-v}{c+v}\right)}\\
-            t'_2 = \frac{h}{c}\sqrt{\frac{c+v}{c-v}}+
+            t'_{\mathcal{O}',2} = \frac{h}{c}\sqrt{\frac{c+v}{c-v}}+
             \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c+v}{c-v}\right)}
         \end{split}
     \end{equation}
     En dit is ook weer te herschrijven als:
     \begin{equation}
         \begin{split}
-            t'_1 = \frac{h}{c} \, k(-\beta)+
+            t'_{\mathcal{O}',1} = \frac{h}{c} \, k(-\beta)+
             \frac{1}{c}\sqrt{L^{2} + h^2\,k(-\beta)^2}\\
-            t'_2 = \frac{h}{c} \, k(\beta)+
+            t'_{\mathcal{O}',2} = \frac{h}{c} \, k(\beta)+
             \frac{1}{c}\sqrt{L^{2} + h^2\,k(\beta)^2}
         \end{split}
     \end{equation}
     Waar $k(\beta) = \sqrt{\frac{1+\beta}{1-\beta}}$.
 
-    Om te testen of we de goede formule hebben, kunnen we $v = 0$ invullen, en dan zouden 
+    Om te testen of we de goede formule hebben, kunnen we $v = 0$ in \cref{eq8} invullen, en dan zouden 
     we dezelfde vergelijking moeten krijgen als \cref{tijdinO}.
-    \newpage
+
     Als we $v = 0$ nemen geeft dit:
     \begin{equation}
         \begin{split}
-            t'_1 = \frac{h}{c}\sqrt{\frac{c-0}{c+0}}+
+            t'_{\mathcal{O}',1} = \frac{h}{c}\sqrt{\frac{c-0}{c+0}}+
             \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c-0}{c+0}\right)}\\
-            t'_2 = \frac{h}{c}\sqrt{\frac{c+0}{c-0}}+
+            t'_{\mathcal{O}',2} = \frac{h}{c}\sqrt{\frac{c+0}{c-0}}+
             \frac{1}{c}\sqrt{L^{2} + h^{2}\left(\frac{c+0}{c-0}\right)}
         \end{split}
     \end{equation}
     Omdat $t'_1$ en $t'_2$ samenvallen, geven deze allebei:
     \begin{equation}
-        t' = \frac{h}{c}+
+        t'_{\mathcal{O}'} = \frac{h}{c}+
         \frac{1}{c}\sqrt{L^{2} + h^{2}} = \frac{h}{c} + \frac{\sqrt{L^2 + h^2}}{c}
     \end{equation}
 
