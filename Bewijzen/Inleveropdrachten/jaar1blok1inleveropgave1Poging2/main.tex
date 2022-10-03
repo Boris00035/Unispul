@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass[12pt, dutch, a4paper]{article}
 
 \usepackage[hidelinks]{hyperref}
 \usepackage[tmargin=0.8in,bmargin=1in]{geometry}
@@ -8,60 +8,151 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage[dutch]{babel}
 \selectlanguage{dutch}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{sublemma}{Lemma}[lemma]
+\newtheorem{case}{Geval}
+
+\newenvironment{shortthm}
+  {\refstepcounter{theorem}\textbf{Theorem~\thetheorem.}}% \begin{shortthm}
+{\enskip}
 
 \begin{document}
 
-\title{Bewijzen - Inleveropgave 1}
+\title{Bewijzen - Inleveropgave 1 - Poging 2}
 \author{B.H.J. van Boxtel}
-\date{21 september 2022 - Week 38} 
+\date{5 Oktober 2022 - Week 40} 
 
 \maketitle
-\pagenumbering{arabic}
+\pagenumbering{arabic} 
 
-\begin{enumerate}[(a).] 
-    \item $I = \{[\, 3 - \frac{1}{n}, 6 \,]\}_{n \in \mathbb{N}}$
-    \bigskip
-    \item $n \neq m \implies \frac{1}{n} \neq \frac{1}{m} \implies [3 -\frac{1}{n}, 6] \neq [3 - \frac{1}{m}] \implies A_n \neq A_m$.
-    \bigskip
-    \item Stel $n,m \in \mathbb{N}$ met $n < m$ en $n \neq m$.
-    
-    Dan $n < m \implies \frac{1}{n} > \frac{1}{m} \implies 3 - \frac{1}{n} < 3 - \frac{1}{m}$.
-
-    Dus $A_m \subseteq A_n$.
-
-    Omdat $1 \leq x$ voor alle $x \in \mathbb{N}$, $ A_m \subseteq A_1$ voor elke $m \in \mathbb{N}$.
-
-    Dus $\cup_{n \in \mathbb{N}} A_n \subseteq A_1 \iff \bigcup_{n \in \mathbb{N}} A_n \subseteq [2,6]$.
+\begin{enumerate}[(a.)]
+    \item
+    Een voorbeeld van een ge\"indiceerde collectie $\{A_n\}_{n \in \mathbb{N}}$ 
+    die voldoet aan de vereisten dat alle $A_n$ verschillend zijn,
+    $\bigcup_{n \in \mathbb{N}}A_n = [2,6]$ en $\bigcap_{n \in \mathbb{N}}A_n = [3,6]$,
+    is $I = \{[3 - \frac{1}{n}, 6]\}_{n \in \mathbb{N}}$, 
+    waar $A_n = [3 - \frac{1}{n}, 6]$.
     \bigskip
 
-    $n = 1 \implies A_n = [2,6]$, dus $[2,6] \subseteq \bigcup_{n \in \mathbb{N}} A_n$.
+    \item 
+    \begin{shortthm} \label{theoremB}
+        De verzamelingen $A_n$ zijn paarsgewijs verschillend. In andere woorden 
+        $n \neq m \implies A_n \neq A_m$. 
+    \end{shortthm}
+    \begin{proof}[Bewijs van \textbf{Theorem \ref{theoremB}.}] $ $ \newline
+        Neem $n,m \in \mathbb{N}$ zodat $n \neq m$. \newline
+        Dan is $\tfrac{1}{n}$ niet gelijk aan $\tfrac{1}{m}$, dus 
+        $3 - \tfrac{1}{n}$ is niet gelijk aan $3 - \tfrac{1}{m}$.
 
-    Dus $\bigcup_{n \in \mathbb{N}} A_n = [2,6]$.
+        Omdat de linkergrens van de intervallen niet gelijk zijn, 
+        zijn de intervallen niet gelijk.
+
+        $[3 - \tfrac{1}{n}, 6] = A_{n} \neq [3 - \tfrac{1}{m}, 6] = A_{m}$. \newline
+        Dus $n \neq m \implies A_n \neq A_m$. \newline
+    \end{proof}    
     \bigskip
 
-    \item Er bestaat geen getal $n \in \mathbb{N}$ waarvoor $3 - \frac{1}{n} > 3$, dus $[3,6] \subseteq A_n$ voor elke $n \in \mathbb{N}$. Dus $[3,6] \subseteq \bigcap_{n \in \mathbb{N}} A_n$.
+    \item 
+    \begin{shortthm} \label{theoremC}
+        De vereniging van de collectie $I$ is gelijk aan het interval $[2,6]$. 
+        In andere woorden: $\bigcup_{n \in \mathbb{N}}A_n = [2,6]$.
+    \end{shortthm}
+
+    Hiervoor is een kort subargument nodig.
+    \begin{lemma} \label{lemmaC}
+        Voor een gegeven $n$ en $m$ zodat $n < m$ geldt dat $A_m \subseteq A_n$. 
+    \end{lemma}
+
+    \begin{proof}[Bewijs van \textbf{\cref{lemmaC}}] $ $ \newline
+        Neem $n,m \in \mathbb{N}$ zodat $n < m$. \newline
+        Dan geldt $\tfrac{1}{n} > \tfrac{1}{m}$, 
+        en ook $3 - \tfrac{1}{n} < 3 - \frac{1}{m}$.
+
+        Vanuit de definitie van $A_n$ zien we dat $3-\frac{1}{n}$ de linkergrens van 
+        $A_n$ is en $3 - \frac{1}{m}$ de linkergrens van $A_m$.
+        Omdat de linkergrens van $A_n$ nu kleiner is dan de linkergrens van $A_m$
+        en de rechtergrens van beide hetzelfde is, 
+        is het interval $A_m$ een deelverzameling van het interval $A_n$. 
+
+        Dus $n < m \implies A_m \subseteq A_n$. \newline 
+    \end{proof} 
+
+    \newpage
+    Nu kan \textbf{Theorem \ref{theoremC}.} bewezen worden.
+    \begin{proof}[Bewijs van \textbf{Theorem \ref{theoremC}}] $ $ \newline
+        Omdat $1 \leq n$ voor elke $n \in \mathbb{N}$, 
+        en als gevolg van \textbf{\cref{lemmaC}}  
+        geldt $A_n \subseteq A_1$ voor elke $n$.
+        
+        $A_1 = [2,6]$,
+        dus $\bigcup_{n \in \mathbb{N}}A_n \subseteq A_1
+        \iff \bigcup_{n \in \mathbb{N}}A_n \subseteq [2,6]$. \newline
+    \end{proof}
     \bigskip
 
-    \item Omdat $\lvert \mathbb{N} \rvert = \infty$, geldt:
-    \begin{equation} \label{eq:1}
-        \bigcap_{n \in \mathbb{N}} A_n = \lim_{a\to\infty}\bigcap_{k = 1}^{a} A_k
-    \end{equation}
+    \item 
+    \begin{shortthm} \label{theoremD}
+        Het interval $[3,6]$ is een deelverzameling van $\bigcap_{n \in \mathbb{N}}A_n$.
+    \end{shortthm}
+    \begin{proof}[Bewijs van \textbf{Theorem \ref{theoremD}.}] $ $ \newline
+        Voor elke $n \in \mathbb{N}$ geldt $\tfrac{1}{n} > 0$. \newline
+        Dus $-\tfrac{1}{n} < 0$, dus $3 - \tfrac{1}{n} < 3$.
 
-    Neem nu $n,m \in \mathbb{N}$ met $n < m$ en $n \neq m$.
+        Dus er bestaat geen $n \in \mathbb{N}$ zodat $3 - \tfrac{1}{n} > 3$. \newline
+        Dus $[3,6] \subseteq A_n$ voor elke $n$.
 
-    $n < m \implies 3 - \frac{1}{n} < 3 - \frac{1}{m} \implies [3 - \frac{1}{m}, 6] \subseteq [3 - \frac{1}{n}, 6]$ en $[3 - \frac{1}{n}, 6] \nsubseteq [3 - \frac{1}{m}, 6]$
-    
-    $\implies [3 - \frac{1}{m}, 6] \bigcap \, [3 - \frac{1}{n}, 6] = [3 - \frac{1}{m}, 6].$ 
-    
-    Dus $n < m \implies A_m \bigcap A_n = A_m$ $\implies \bigcap_{k = 1}^{a} A_k = A_a$.
+        Dus $[3,6] \subseteq \bigcap_{n \in \mathbb{N}}A_n$. \newline
+    \end{proof}
     \bigskip
 
-    Samen met (\ref{eq:1}) geeft dit:
-    \begin{equation}
-        \bigcap_{n \in \mathbb{N}} A_n = \lim_{a\to\infty}A_a = \lim_{a\to\infty} [3 - \frac{1}{a}, 6] = [3 , 6]
-    \end{equation}
+    \item 
+    \begin{shortthm} \label{TheoremE}
+        De doorsnede van de collectie $I$ is een deelverzameling van het interval $[3,6]$.
+        In andere woorden: $\bigcap_{n \in \mathbb{N}}A_n \subseteq [3,6]$.
+    \end{shortthm}
 
+    Ook hier begin ik met het bewijzen van een subargument.
+
+    \begin{lemma} \label{LemmaE}
+        Voor een gegeven $n$ en $m \in \mathbb{N}$ zodat $n < m$, 
+        geldt dat de doorsnede van $A_n$ en $A_m$ gelijk is aan $A_m$.  
+        In andere woorden: \newline
+        $n < m \implies A_n \bigcap A_m = A_m$.
+    \end{lemma}
+
+    \begin{proof}[Bewijs van \textbf{\cref{LemmaE}}]
+        Neem $n,m \in \mathbb{N}$ met $n < m$. \newline
+        Dan geldt $3 - \frac{1}{n} < 3 - \frac{1}{m}$.
+
+        Dus $[3 - \frac{1}{m}, 6] \subseteq [3 - \frac{1}{n}, 6]$ en 
+        $[3 - \frac{1}{n}, 6] \nsubseteq [3 - \frac{1}{m}, 6]$.
+
+        Dus $A_m$ is een subset van $A_n$, en $A_n$ is geen subset van $A_m$. \newline
+        Dus $A_n \bigcap A_m = A_m$.
+
+        Dus $n < m \implies A_n \bigcap A_m = A_m$. \newline
+    \end{proof}
+    \bigskip
+
+    \begin{proof}[Bewijs van \textbf{Theorem \ref{TheoremE}}] $ $ \newline
+        Omdat $\lim_{x\to\infty} 3-\tfrac{1}{a} = 3$ 
+        is 3 de bovengrens van de linkergrens van het interval. In andere woorden,
+        de linkergrens van $A_n$ kan niet groter worden dan 3.
+
+        Omdat ook elke $A_n$ uniek is, 
+        betekent dit dat het interval $[3,6]$ het enige interval is 
+        dat een deelverzameling is van alle $A_n$.
+
+        Dus $\bigcap_{n \in \mathbb{N}}A_n = [3,6]$. \newline
+    \end{proof}
 \end{enumerate}
+
 
 
 \end{document}
