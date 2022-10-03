@@ -1,0 +1,108 @@
+\documentclass[12pt, dutch, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in,bmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{sublemma}{Lemma}[lemma]
+\newtheorem{case}{Geval}
+
+\begin{document}
+
+\title{Bewijzen - Inleveropgave 2}
+\author{B.H.J. van Boxtel}
+\date{28 september 2022 - Week 39} 
+
+\maketitle
+\pagenumbering{arabic} 
+
+\begin{theorem} \label{maintheorem}
+    $n^2 \equiv 1 \pmod{3} \iff 3 \nmid n$ voor elke $n \in \mathbb{Z}$. 
+\end{theorem}   
+
+Om deze stelling te bewijzen moeten allebei de implicaties 
+(van links naar rechts en van rechts naar links) worden bewezen. Deze zal ik apart
+als \textbf{\cref{implicatie1lemma}} en \textbf{\cref{implicatie2lemma}} bewijzen.
+
+\begin{lemma} \label{implicatie1lemma}
+    $n^2 \equiv 1 \pmod{3} \implies 3 \nmid n$ voor elke $n \in \mathbb{Z}$. 
+\end{lemma}
+Voor het bewijs van deze implicatie heb ik nog een supplementeel argument nodig, 
+wat ik als eerst bewijs. 
+
+\begin{sublemma} \label{sublemma1}
+    $3 \nmid n^2 \implies 3 \nmid n$.
+\end{sublemma}
+
+Dit ga ik bewijzen met behulp van contrapositie, in andere woorden ik ga bewijzen dat
+$3 \: | \: n \implies 3 \: | \: n^2$.
+\begin{proof} $ $\newline
+    Stel $3 \: | \: n$ met $n \in \mathbb{Z}$. \newline
+    Dan is $n$ te schrijven als $n = 3q$ met $q \in \mathbb{Z}$. \newline
+    Als we links en rechts kwadrateren, 
+    vinden we $n^2 = 9q^2$. \newline
+    Dit kunnen we ook schrijven als $n^2 = 3 \cdot 3q^2$. \newline
+    $3q^2 \in \mathbb{Z}$, dus hieruit volgt dat $3 \: | \: n^2$. \newline 
+    Dus $3 \: | \: n \implies 3 \: | \: n^2$. \newline
+    Dus $3 \nmid n^2 \implies 3 \nmid n$.
+\end{proof}
+
+Met \textbf{\cref{sublemma1}} bewezen, 
+kan \textbf{\cref{implicatie1lemma}} worden bewezen.
+\begin{proof} $ $\newline
+    Stel $n^2 \equiv 1 \pmod{3}$. \newline
+    Dit betekent dat $n^2$ gelijk is aan $3k+1$ met $k \in \mathbb{Z}$. \newline
+    $3 \nmid 3k + 1$, dus $3 \nmid n^2$. \newline
+    Volgens \textbf{\cref{sublemma1}} betekent dit dat $3 \nmid n$. \newline
+    Dus $n^2 \equiv 1 \pmod{3} \implies 3 \nmid n$ voor elke $n \in \mathbb{Z}$.
+\end{proof}
+
+\newpage
+\begin{lemma} \label{implicatie2lemma}
+    $3 \nmid n \implies n^2 \equiv 1 \pmod{3} $ voor elke $n \in \mathbb{Z}$. 
+\end{lemma}
+
+Dit zal ik met behulp van gevallenonderzoek bewijzen. 
+Als $n$ niet deelt door 3, geeft dit twee gevallen, een waar $n$ 1 meer is dan 
+een veelvoud van 3, en een waar $n$ 2 meer is dan een veelvoud van 3. Voor elk 
+van deze gevallen bewijs ik dat hieruit volgt dat $n^2 \equiv 1 \pmod{3}$.
+
+\begin{proof} 
+    \begin{case} $n = 3k + 1$ met $k \in \mathbb{Z}$. \newline
+        $n = 3k + 1 \implies n^2 = 9k^2 + 6k + 1 = 3(3k^2 + 2k) + 1$ \newline
+        $k \in \mathbb{Z}$, dus $3k^2 + 2k \in \mathbb{Z}$. \newline 
+        Na delen door 3 blijft er dus 1 als rest over. \newline 
+        Dit betekent $n^2 \equiv 1 \pmod{3}$.
+    \end{case}
+    \begin{case} $n = 3k + 2$ met $k \in \mathbb{Z}$. \newline
+        $n = 3k + 2 \implies n^2 = 9k^2 + 12k + 1 = 3(3k^2 + 6k) + 1$ \newline
+        $k \in \mathbb{Z}$, dus $3k^2 + 6k \in \mathbb{Z}$. \newline 
+        Na delen door 3 blijft er dus 1 als rest over. \newline 
+        Dit betekent $n^2 \equiv 1 \pmod{3}$.
+    \end{case}
+    Dus $n^2 \equiv 1 \pmod{3}$ geldt voor elk geval. \newline
+    Dus $3 \nmid n^2 \implies n^2 \equiv 1 \pmod{3}$.
+\end{proof}
+
+Nu kan \textbf{Theorem \ref{maintheorem}} bewezen worden.
+\begin{proof} $ $ \newline
+    Omdat alle twee de implicaties 
+    (\textbf{\cref{implicatie1lemma}} en \textbf{\cref{implicatie2lemma}})
+    nu zijn bewezen, betekent dit dat
+    $n^2 \equiv 1 \pmod{3} \iff 3 \nmid n$ voor elke $n \in \mathbb{Z}$.
+\end{proof}
+
+
+
+\end{document}
