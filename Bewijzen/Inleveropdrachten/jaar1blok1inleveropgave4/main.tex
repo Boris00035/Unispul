@@ -1,0 +1,100 @@
+\documentclass[12pt, dutch, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in,bmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{lemmalos}{Lemma}
+\newtheorem{sublemma}{Lemma}[lemma]
+\newtheorem{case}{Geval}
+\newtheorem{claim}{Claim}
+
+\newenvironment{shortclaim}
+  {\refstepcounter{claim}\textbf{Claim~\theclaim.}}% \begin{shortthm}
+{\enskip}
+\newenvironment{shortthm}
+  {\refstepcounter{theorem}\textbf{Theorem~\thetheorem.}}% \begin{shortthm}
+{\enskip}
+
+\begin{document}
+
+\title{Bewijzen - Inleveropgave 3}
+\author{B.H.J. van Boxtel}
+\date{5 Oktober 2022 - Week 40} 
+
+\maketitle
+\pagenumbering{arabic} 
+
+Gegeven is het volgende lemma:
+\begin{lemmalos}\label{lemma1}
+    Zij $m,n \in \mathbb{Z}$ en $p$ een priemgetal. Als $p \mid mn$, 
+    dan geldt dat $p \mid m$ of $\; p \mid n$.
+\end{lemmalos}
+
+\begin{enumerate}[(a.)]
+    \item
+    \begin{shortthm}\label{TheoremA}
+        Voor twee priemgetallen $p,q$ geldt dat $\sqrt{pq}$ irrationaal is.
+    \end{shortthm}
+    Met behulp van \textbf{\cref{lemma1}.} kan dit met behulp van contradictie worden bewezen.
+    \begin{proof}[Bewijs van \textbf{Theorem \ref{TheoremA}}] $ $ \newline
+        Stel $p,q$ zijn twee priemgetallen. \newline
+        Neem aan dat $\sqrt{pq}$ is rationaal.
+        In andere woorden $\sqrt{pq}$ is te schrijven als $\sqrt{pq} = \tfrac{a}{b}$ 
+        met $a,b \in \mathbb{R}$ zodat $a$ en $b$ geen gemeenschappelijke deler(s) hebben.
+
+        Dan $pq = \tfrac{a^2}{b^2}$ en $b^2pq = a^2$. \newline
+        Dus $p$ deelt $a^2$, 
+        en samen met \textbf{\cref{lemma1}.} volgt dat $p$ deelt $a$. \newline 
+        Omdat $p$ deelt $a$, is $a$ te schrijven als 
+        $a = pk$, met $k$ een willekeurig getal in $\mathbb{Z}$.
+        hieruit volgt dat $a^2 = p^2k^2$.
+
+        Wanneer we dit invullen in de vergelijking die we voor $a^2$ hadden gevonden, 
+        vinden we dat $b^2pq = p^2k^2$. 
+        Nu kan er aan allebei de kanten een $p$ worden weggestreept, 
+        om het volgende te vinden: $b^2q = pk^2$. Waaruit blijkt dat $p$ deelt $b^2q$.
+
+        Vanuit \textbf{\cref{lemma1}.} weten we dat dit impliceert dat $p$ deelt $b^2$, 
+        of $p$ deelt $q$. Maar omdat $q$ priem is, kan $p$ deelt $q$ niet,
+        wat leidt tot het feit dat $p$ deelt $b^2$ 
+        en dus (opnieuw volgens \textbf{\cref{lemma1}.}) ook $p$ deelt $b$.
+
+        Maar nu zien we dat $p$ deelt $a$ en $p$ deelt $b$, 
+        terwijl de aannamen was dat $a$ en $b$ geen gemeenschappelijke deler(s) hebben.
+        We hebben een tegenspraak gevonden met onze orginele aanname, 
+        dus er bestaan geen $a$ en $b$ waarvoor $\sqrt{pq} = \tfrac{a}{b}$, 
+        met $a$ en $b$ geen gemeenschappelijke deler(s).
+
+        Voor twee priemgetallen $p$ en $q$ geldt $\sqrt{pq}$ is irrationaal. \newline
+    \end{proof}
+    \newpage
+    \item 
+    \begin{shortclaim}\label{claim1}
+        \textbf{Theorem \ref{TheoremA}.} 
+        blijft gelden wanneer de twee getallen $p$ en $q$ niet priem zijn.  
+    \end{shortclaim}
+
+    Het tegendeel van deze stelling is te bewijzen door middel van een tegenvoorbeeld.
+    \begin{proof}[Bewijs van het tegendeel van \textbf{\cref{claim1}}] $ $ \newline
+        Neem twee getallen $p = 2$ en $q = 8$. \newline
+        Dan $\sqrt{pq} = \sqrt{16} = 4$. \newline
+        4 is niet irrationaal, dus \textbf{\cref{claim1}.} is onwaar. \newline
+    \end{proof}
+
+\end{enumerate}
+
+
+
+\end{document}
