@@ -13,7 +13,7 @@
 
 \theoremstyle{definition}
 
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Stelling}
 \newtheorem{lemma}{Lemma}[theorem]
 \newtheorem{lemmalos}{Lemma}
 \newtheorem{sublemma}{Lemma}[lemma]
@@ -24,7 +24,7 @@
   {\refstepcounter{claim}\textbf{Claim~\theclaim.}}% \begin{shortthm}
 {\enskip}
 \newenvironment{shortthm}
-  {\refstepcounter{theorem}\textbf{Theorem~\thetheorem.}}% \begin{shortthm}
+  {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}% \begin{shortthm}
 {\enskip}
 
 \begin{document}
@@ -45,17 +45,18 @@ Gegeven is het volgende lemma:
 \begin{enumerate}[(a.)]
     \item
     \begin{shortthm}\label{TheoremA}
-        Voor twee priemgetallen $p,q$ geldt dat $\sqrt{pq}$ irrationaal is.
+        Voor twee verschillende priemgetallen $p,q$ geldt dat $\sqrt{pq}$ irrationaal is.
     \end{shortthm}
     Met behulp van \textbf{\cref{lemma1}.} kan dit met behulp van contradictie worden bewezen.
-    \begin{proof}[Bewijs van \textbf{Theorem \ref{TheoremA}}] $ $ \newline
+    \begin{proof}[Bewijs van \textbf{Stelling \ref{TheoremA}}] $ $ \newline
         Stel $p,q$ zijn twee priemgetallen. \newline
         Neem aan dat $\sqrt{pq}$ is rationaal.
         In andere woorden $\sqrt{pq}$ is te schrijven als $\sqrt{pq} = \tfrac{a}{b}$ 
-        met $a,b \in \mathbb{R}$ zodat $a$ en $b$ geen gemeenschappelijke deler(s) hebben.
+        met $a,b \in \mathbb{Z}$ zodat $a$ en $b$ 
+        geen gemeenschappelijke deler(s) hebben en $b \neq 0$.
 
         Dan $pq = \tfrac{a^2}{b^2}$ en $b^2pq = a^2$. \newline
-        Dus $p$ deelt $a^2$, 
+        Omdat $b^2 \in \mathbb{Z}$ geldt dat $p$ deelt $a^2$, 
         en samen met \textbf{\cref{lemma1}.} volgt dat $p$ deelt $a$. \newline 
         Omdat $p$ deelt $a$, is $a$ te schrijven als 
         $a = pk$, met $k$ een willekeurig getal in $\mathbb{Z}$.
@@ -66,8 +67,8 @@ Gegeven is het volgende lemma:
         Nu kan er aan allebei de kanten een $p$ worden weggestreept, 
         om het volgende te vinden: $b^2q = pk^2$. Waaruit blijkt dat $p$ deelt $b^2q$.
 
-        Vanuit \textbf{\cref{lemma1}.} weten we dat dit impliceert dat $p$ deelt $b^2$, 
-        of $p$ deelt $q$. Maar omdat $q$ priem is, kan $p$ deelt $q$ niet,
+        Vanuit \textbf{\cref{lemma1}.} weten we dat dit impliceert dat $p \mid b^2$, 
+        of $p \mid q$. Maar omdat $q$ priem is, en $p \neq q$ kan $p$ deelt $q$ niet,
         wat leidt tot het feit dat $p$ deelt $b^2$ 
         en dus (opnieuw volgens \textbf{\cref{lemma1}.}) ook $p$ deelt $b$.
 
@@ -82,7 +83,7 @@ Gegeven is het volgende lemma:
     \newpage
     \item 
     \begin{shortclaim}\label{claim1}
-        \textbf{Theorem \ref{TheoremA}.} 
+        \textbf{Stelling \ref{TheoremA}.} 
         blijft gelden wanneer de twee getallen $p$ en $q$ niet priem zijn.  
     \end{shortclaim}
 
