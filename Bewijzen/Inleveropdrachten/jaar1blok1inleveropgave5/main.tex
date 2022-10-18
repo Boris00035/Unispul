@@ -1,7 +1,7 @@
 \documentclass[12pt, dutch, a4paper]{article}
 
 \usepackage[hidelinks]{hyperref}
-\usepackage[tmargin=0.65in,bmargin=0.7in]{geometry}
+\usepackage[tmargin=0.6in,bmargin=0.77in]{geometry}
 \usepackage{parskip}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -29,151 +29,69 @@
 
 \begin{document}
 
-\title{Bewijzen - Inleveropgave 4}
+\title{Bewijzen - Inleveropgave 5}
 \author{B.H.J. van Boxtel}
-\date{12 Oktober 2022 - Week 41} 
+\date{19 Oktober 2022 - Week 42} 
 
 \maketitle
 \pagenumbering{arabic} 
 
-Gegeven is het volgende lemma:
-\begin{lemmalos}\label{lemma1}
-    Zij $m,n \in \mathbb{Z}$ en $p$ een priemgetal. Als $p \mid mn$, 
-    dan geldt dat $p \mid m$ of $\; p \mid n$.
-\end{lemmalos}
+We bekijken een spel dat wordt gespeeld door twee spelers, Alice en Bob. 
+Zij kiezen een natuurlijk getal $n$ en maken dan een stapel met $n$ muntjes. 
+Omstebeurt mogen ze 1, 2 of 3 muntjes van deze stapel pakken. 
+Degene die het laatste muntje pakt verliest. Alice begint. 
+Stel dat $n \equiv 1 \pmod{4}$. We bewijzen dat Bob altijd kan winnen, wat Alice ook doet.
 
-Ook gegeven is de volgende relatie $R$ op $\mathbb{Z}$, 
-voor gehele getallen $a$ en $b$ door de voorwaarde dat $a\,R\,b$ dan en slechts dan als
-$b - a$ deelbaar is door zowel $p$ als $q$. \newline
-\begin{enumerate}[(a).]
-  \item 
-  \begin{shortthm}
-    $R$ is een equivalentierelatie.
-  \end{shortthm}
+We weten dat $n \equiv 1 \pmod{4}$, 
+dus $n$ is te schrijven als $n = 4k + 1$ met $k \in \mathbb{Z}$.
+We bewijzen nu dat Alice verliest voor elke $n$ van deze vorm,
+door met inductie te bewijzen dat Alice verliest voor elke $k$.  
 
-  Om te laten zien dat $R$ een equivalentierelatie is, 
-  moeten we laten zien dat $R$ reflexief, symmetrisch en transitief is.
+\begin{proof} $ $ \newline
+  Bij $k = 0$ verliest Alice, want haar enige optie is het laatste muntje pakken.
 
-  \begin{itemize}
-    \item 
-    \begin{shortclaim} 
-      $R$ is reflexief. In andere woorden er geldt $a\,R\,a$.
-    \end{shortclaim}
-    \begin{proof} $ $ \newline
-      We weten dat $q \mid 0$. \newline
-      Dus $q \mid a - a$. \newline
-      Ook weten we dat $p \mid 0$. \newline
-      Dus $p \mid a - a$. \newline
-      Dus $a\,R\,a$. \newline
-      Dus $R$ is reflexief. \newline
-    \end{proof}
+  Neem aan dat Alice verliest als zij aan de beurt is en de stapel van de vorm $n = 4k + 1$ is.
 
-    \item 
-    \begin{shortclaim} 
-      $R$ is symmetrisch. Dat wil zeggen $a\,R\,b$ impliceert $b\,R\,a$. 
-    \end{shortclaim}
-    \begin{proof} $ $ \newline
-      Neem aan $a\,R\,b$. \newline
-      Volgens de definitie van $R$ geldt dan $q \mid b - a$. \newline
-      Dus $b - a$ is te schrijven als $b - a = kq$ voor een $k \in \mathbb{Z}$. \newline
-      Dus $a - b = -kq$. \newline
-      Dus $q \mid a - b$.
+  Beschouw nu het geval dat $n = 4(k + 1) + 1 = 4k + 5$.
+  Gegeven is dat Alice begint. We kunnen nu 3 gevallen onderscheiden, 
+  voor elke keuze die Alice kan maken.
+  \begin{case}
+    Alice pakt 1 muntje van de stapel. 
+    De stapel is nu van de vorm $n = 4k + 4$. 
+    Bob kan nu 3 muntjes van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$. 
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
+    waarvan we vanuit de aanname weten dat ze verliest. 
+  \end{case}
 
-      Volgens de definitie van $R$ geldt $p \mid b - a$. \newline
-      Dus $b - a$ is te schrijven als $b - a = mp$ voor een $m \in \mathbb{Z}$. \newline
-      Dus $a - b = -kp$. \newline
-      Dus $p \mid a - b$.
+  \begin{case}
+    Alice pakt 2 muntjes van de stapel.
+    De stapel is nu van de vorm $n = 4k + 3$. 
+    Bob kan nu 2 muntjes van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$.
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
+    waarvan we vanuit de aanname weten dat ze verliest. 
+  \end{case}
 
-      Dus $q \mid a - b$ en $p \mid a - b$, dus $b\,R\,a$. \newline
-      We zien dat $b\,R\,a$ volgt uit $a\,R\,b$, dus $R$ is symmetrisch. \newline
-    \end{proof}
-    \newpage
-    \item 
-    \begin{shortclaim}
-      $R$ is transitief. Dat wil zeggen dat wanneer $a\,R\,b$ en $b\,R\,c$,
-      dan $a\,R\,c$.
-    \end{shortclaim}
+  \begin{case}
+    Alice pakt 3 muntjes van de stapel.
+    De stapel is nu van de vorm $n = 4k + 2$. 
+    Bob kan nu 1 muntje van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$.
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
+    waarvan we vanuit de aanname weten dat ze verliest. 
+  \end{case}
 
-    \begin{proof} $ $ \newline
-      Neem aan $a\,R\,b$ en $b\,R\,c$.
-      Vanuit de definitie van $R$ volgt dan dat $q$ een deler is van $b - a$,
-      en dat $q$ een deler is van $c - b$. \newline
-      Dus $b - a$ is te schrijven als $b - a = kq$ met $k \in \mathbb{Z}$. \newline
-      En $c - b$ is te schrijven als $c - b = mq$ met $m \in \mathbb{Z}$.
-    
-      Wanneer we deze twee vergelijkingen bij elkaar optellen, 
-      vinden we dat $c - a = q(k + m)$. \newline 
-      Omdat $(k + m) \in \mathbb{Z}$, geldt nu dus dat $q \mid c - a$.
+  Dus het feit dat geldt dat Alice verliest als ze 
+  en aan de beurt is, en de stapel van de vorm $n = 4k + 1$ is,
+  impliceert dat Alice ook verliest als ze 
+  en aan de beurt is, en de stapel van de vorm $n = 4k + 5$ is.
 
-      Vanuit de definitie van $R$ volgt ook dat $p$ een deler is van $b - a$,
-      en dat $p$ een deler is van $c - b$. \newline
-      Dus $b - a$ is te schrijven als $b - a = np$ met $n \in \mathbb{Z}$. \newline
-      En $c - b$ is te schrijven als $c - b = lp$ met $l \in \mathbb{Z}$.
+  Samen met het feit dat Alice verliest in het geval dat en $k = 0$, 
+  en dat ze aan de beurt is, betekent dit dat Alice verliest voor alle $k$, 
+  en dus voor alle stapels waarvoor geldt $n \equiv 1 \pmod{4}$. 
 
-      Wanneer we deze twee vergelijkingen bij elkaar optellen, 
-      vinden we dat $c - a = p(n + l)$. \newline  
-      Omdat $(n + l) \in \mathbb{Z}$, geldt nu dus dat $p \mid c - a$.
+\end{proof} 
 
-      Dus omdat $q \mid c - a$ en $p \mid c - a$, geldt $a\,R\,c$. \newline
-      Dus $a\,R\,b$ en $b\,R\,c$ impliceert $a\,R\,c$. \newline 
-      Dus $R$ is transitief. \newline
-    \end{proof}
-  \end{itemize}
-  
-  \setcounter{claim}{0}
-  Dus $R$ is een equivalentierelatie. \newline
-  \item 
-  \begin{shortthm} \label{theorem2}
-    De relatie $a\,R\,b$ geldt dan en slechts dan als $a \equiv b \pmod{pq}$.
-  \end{shortthm}
 
-  Dit is een biconditionele implicatie, dus de implicatie moet allebei de kanten op gelden.
-  Eerst bewijs ik de implicatie van links naar rechts, 
-  dat wil zeggen $a\,R\,b$ impliceert $a \equiv b \pmod{pq}$.
 
-  \begin{proof} $ $ \newline
-    Neem aan $a\,R\,b$. \newline
-    Dan geldt vanuit de definitie van $R$ dat $p \mid b - a$ en $q \mid b - a$. 
-
-    Omdat $p$ en $q$ priemgetallen zijn, kunnen dit geen delers van elkaar zijn. \newline
-    Omdat geldt $p \mid b - a$ \'en $q \mid b - a$, 
-    kunnen we $b - a$ schrijven als $b - a = kpq$ voor een $k \in \mathbb{Z}$.
-
-    Dus $b - a \equiv 0 \pmod{pq}$ en $b \equiv a \pmod{pq}$. \newline
-  \end{proof}
-
-  Om het bewijs van \textbf{Theorem \ref{theorem2}.} af te maken, 
-  bewijzen we nu de implicatie de andere kant op. 
-  Dat wil zeggen $a \equiv b \pmod{pq}$ impliceert $a\,R\,b$.
-  
-  \begin{proof} $ $ \newline
-    Neem aan $a \equiv b \pmod{pq}$. \newline
-    Dus $a - b \equiv 0 \pmod{pq}$. \newline
-    Dus $b - a \equiv 0 \pmod{pq}$. \newline
-    Dus $pq \mid b - a$. \newline  
-    Dan kunnen we $  - a$ schrijven als $b - a = kpq$ voor een $k \in \mathbb{Z}$. \newline
-    Dus $p \mid b - a$ en $q \mid b - a$. \newline
-  \end{proof}
-
-  \item 
-  \begin{shortthm}
-    De verzameling van equivalentieklassen van $R$ is gelijk aan $\mathbb{Z}_{pq}$.
-  \end{shortthm}
-
-  \begin{proof} $ $ \newline
-    Volgens \textbf{Theorem \ref{theorem2}.} geldt $a\,R\,b$ dan en slechts dan als 
-    $a \equiv b \pmod{pq}$. 
-    Dit betekent dat een getal $b$ alleen equivalent kan zijn aan $a$ dan en slechts dan 
-    als $b$ congruent is aan $a \pmod{pq}$.
-    Dus alle getallen in de equivalentieklassen van $R$ met representant $a$,
-    zitten ook in de equivalentieklassen van de getallen $\pmod{pq}$ met representant $a$. 
-    Ook geldt dat  
-    alle getallen in de equivalentieklassen van de getallen $\pmod{pq}$ met representant $a$
-    in de equivalentieklassen van $R$ met representant $a$ zitten. 
-    Dus de verzameling van equivalentieklassen van $R$ is gelijk aan $\mathbb{Z}_{pq}$.  
-    \newline
-  \end{proof}
-\end{enumerate}
 
 
 
