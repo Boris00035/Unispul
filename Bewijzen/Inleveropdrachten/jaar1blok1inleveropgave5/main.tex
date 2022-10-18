@@ -1,7 +1,7 @@
 \documentclass[12pt, dutch, a4paper]{article}
 
 \usepackage[hidelinks]{hyperref}
-\usepackage[tmargin=0.6in,bmargin=0.77in]{geometry}
+\usepackage[tmargin=0.4in,bmargin=0.77in]{geometry}
 \usepackage{parskip}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -43,14 +43,17 @@ Degene die het laatste muntje pakt verliest. Alice begint.
 Stel dat $n \equiv 1 \pmod{4}$. We bewijzen dat Bob altijd kan winnen, wat Alice ook doet.
 
 We weten dat $n \equiv 1 \pmod{4}$, 
-dus $n$ is te schrijven als $n = 4k + 1$ met $k \in \mathbb{Z}$.
+dus $n$ is te schrijven als $n = 4k + 1$ met $k \in \mathbb{N}$, 
+waar we ook nemen dat $0 \in \mathbb{N}$.  
 We bewijzen nu dat Alice verliest voor elke $n$ van deze vorm,
 door met inductie te bewijzen dat Alice verliest voor elke $k$.  
 
 \begin{proof} $ $ \newline
-  Bij $k = 0$ verliest Alice, want haar enige optie is het laatste muntje pakken.
+  Bij $k = 0$ is de stapel van de vorm $n = 1$. 
+  Dus haar enige optie is het laatste muntje pakken, en verliest ze.
 
-  Neem aan dat Alice verliest als zij aan de beurt is en de stapel van de vorm $n = 4k + 1$ is.
+  Neem aan dat Alice verliest als zij 
+  en aan de beurt is, en de stapel van de vorm $n = 4k + 1$ is.
 
   Beschouw nu het geval dat $n = 4(k + 1) + 1 = 4k + 5$.
   Gegeven is dat Alice begint. We kunnen nu 3 gevallen onderscheiden, 
@@ -59,33 +62,33 @@ door met inductie te bewijzen dat Alice verliest voor elke $k$.
     Alice pakt 1 muntje van de stapel. 
     De stapel is nu van de vorm $n = 4k + 4$. 
     Bob kan nu 3 muntjes van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$. 
-    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
-    waarvan we vanuit de aanname weten dat ze verliest. 
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$.
+    Vanuit de aanname weten we dat ze nu verliest.
   \end{case}
 
   \begin{case}
     Alice pakt 2 muntjes van de stapel.
     De stapel is nu van de vorm $n = 4k + 3$. 
     Bob kan nu 2 muntjes van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$.
-    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
-    waarvan we vanuit de aanname weten dat ze verliest. 
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$.
+    Vanuit de aanname weten we dat ze nu verliest.
   \end{case}
 
   \begin{case}
     Alice pakt 3 muntjes van de stapel.
     De stapel is nu van de vorm $n = 4k + 2$. 
     Bob kan nu 1 muntje van de stapel halen. De stapel is nu van de vorm $n = 4k + 1$.
-    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$, 
-    waarvan we vanuit de aanname weten dat ze verliest. 
+    Alice is nu aan de beurt, en de stapel is van de vorm $n = 4k + 1$.
+    Vanuit de aanname weten we dat ze nu verliest.
   \end{case}
 
-  Dus het feit dat geldt dat Alice verliest als ze 
+  Dus het feit dat Alice verliest als ze 
   en aan de beurt is, en de stapel van de vorm $n = 4k + 1$ is,
   impliceert dat Alice ook verliest als ze 
   en aan de beurt is, en de stapel van de vorm $n = 4k + 5$ is.
 
-  Samen met het feit dat Alice verliest in het geval dat en $k = 0$, 
-  en dat ze aan de beurt is, betekent dit dat Alice verliest voor alle $k$, 
+  Samen met het feit dat Alice verliest in het geval dat ze en aan de beurt is, en $k = 0$, 
+  betekent dit dat Alice verliest voor alle $k$, 
   en dus voor alle stapels waarvoor geldt $n \equiv 1 \pmod{4}$. 
 
 \end{proof} 
