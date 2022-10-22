@@ -13,21 +13,22 @@
 
 \theoremstyle{definition}
 
-\newtheorem{theorem}{Stelling} %\refname{Stelling}??
+\newtheorem{theorem}{Stelling}
 \newtheorem{lemma}{Lemma}[theorem]
 \newtheorem{lemmalos}{Lemma}
 \newtheorem{sublemma}{Lemma}[lemma]
 \newtheorem{case}{Geval}
 \newtheorem{claim}{Claim}
 
-% refname van de theorem veranderen
-
 \newenvironment{shortclaim}
-  {\refstepcounter{claim}\textbf{Claim~\theclaim.}}% \begin{shortthm}
+  {\refstepcounter{claim}\textbf{Claim~\theclaim.}}
 {\enskip}
 \newenvironment{shortthm}
-  {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}% \begin{shortthm}
+  {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}
 {\enskip}
+
+\crefname{Stelling}{Stelling}{Stelling}
+\crefalias{theorem}{Stelling}
 
 \begin{document}
 
@@ -72,7 +73,7 @@ $b - a$ deelbaar is door zowel $p$ als $q$. \newline
 
     \item 
     \begin{shortclaim} 
-      $R$ is symmetrisch. Dat wil zeggen $a\,R\,b$ impliceert $b\,R\,a$. 
+      $R$ is symmetrisch. Dat wil zeggen als $a\,R\,b$, dan $b\,R\,a$. 
     \end{shortclaim}
     \begin{proof} $ $ \newline
       Neem aan $a\,R\,b$. \newline
@@ -92,9 +93,10 @@ $b - a$ deelbaar is door zowel $p$ als $q$. \newline
     \newpage
     \item 
     \begin{shortclaim}
-      $R$ is transitief. Dat wil zeggen dat wanneer $a\,R\,b$ en $b\,R\,c$,
+      $R$ is transitief. Dat wil zeggen als $a\,R\,b$ en $b\,R\,c$,
       dan $a\,R\,c$.
     \end{shortclaim}
+    \setcounter{claim}{0}
 
     \begin{proof} $ $ \newline
       Neem aan $a\,R\,b$ en $b\,R\,c$.
@@ -121,9 +123,8 @@ $b - a$ deelbaar is door zowel $p$ als $q$. \newline
       Dus $R$ is transitief. \newline
     \end{proof}
   \end{itemize}
+  Dus $R$ is een equivalentierelatie.
   
-  \setcounter{claim}{0}
-  Dus $R$ is een equivalentierelatie. \newline
   \item 
   \begin{shortthm} \label{theorem2}
     De relatie $a\,R\,b$ geldt dan en slechts dan als $a \equiv b \pmod{pq}$.
@@ -137,14 +138,21 @@ $b - a$ deelbaar is door zowel $p$ als $q$. \newline
     Neem aan $a\,R\,b$. \newline
     Dan geldt vanuit de definitie van $R$ dat $p \mid b - a$ en $q \mid b - a$. 
 
-    Omdat $p$ en $q$ priemgetallen zijn, kunnen dit geen delers van elkaar zijn. \newline
-    Omdat geldt $p \mid b - a$ \'en $q \mid b - a$, 
-    kunnen we $b - a$ schrijven als $b - a = kpq$ voor een $k \in \mathbb{Z}$.
+    Omdat $q \mid b - a$, is $b - a$ te schrijven als $b - a = lq$ 
+    voor een $l \in \mathbb{Z}$. \newline 
+    Omdat ook geldt dat $p \mid b - a$, geldt $p \mid lq$. \newline
+    Door \textbf{\cref{lemma1}.} weten we nu dat of $p \mid l$, of $p \mid q$. \newline
+    Omdat $p$ en $q$ priemgetallen zijn, 
+    kunnen dit geen delers van elkaar zijn. \newline
+    Dus $p \mid q$ kan niet, wat betekent dat $p \mid l$ moet gelden. \newline
+    Dat betekent dat $l$ te schrijven is als $l = kp$ voor een $k \in \mathbb{Z}$. \newline
+    dus $b - a = kpq$ en $pq \mid b - a$. 
 
     Dus $b - a \equiv 0 \pmod{pq}$ en $b \equiv a \pmod{pq}$. \newline
   \end{proof}
 
-  Om het bewijs van \textbf{Stelling \ref{theorem2}.} af te maken, 
+  \newpage
+  Om het bewijs van \textbf{\cref{theorem2}.} af te maken, 
   bewijzen we nu de implicatie de andere kant op. 
   Dat wil zeggen $a \equiv b \pmod{pq}$ impliceert $a\,R\,b$.
   
@@ -163,7 +171,7 @@ $b - a$ deelbaar is door zowel $p$ als $q$. \newline
   \end{shortthm}
 
   \begin{proof} $ $ \newline
-    Volgens \textbf{Stelling \ref{theorem2}.} geldt $a\,R\,b$ dan en slechts dan als 
+    Volgens \textbf{\cref{theorem2}.} geldt $a\,R\,b$ dan en slechts dan als 
     $a \equiv b \pmod{pq}$. 
     Dit betekent dat een getal $b$ alleen equivalent kan zijn aan $a$ dan en slechts dan 
     als $b$ congruent is aan $a \pmod{pq}$.
