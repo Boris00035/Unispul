@@ -1,0 +1,132 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in, bmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{pgfplots}
+\pgfplotsset{width=7.5cm, compat=1.18}
+\usepackage{amsthm}
+
+\title{Inleveropgave 2 Linalg}
+\author{Boris van Boxtel en Brechtje Poppen}
+\date{Oktober 2022}
+
+\begin{document}
+
+\maketitle 
+
+\begin{enumerate}[(a.)]
+\item  \underline{Stelling:} \newline 
+
+Laat $U$ en $V$ twee lineaire deelruimten zijn van $\mathbf{R}$$^n$. Dan geldt dat $U + V$ = \{$\vec u$ + $\vec v$ $\vert$ $\vec u$ $\in$ $U$, $\vec v$ $\in$ $V$\} ook een lineaire deelruimte is van $\mathbf{R}$$^n$. \newline
+
+\underline{Bewijs:}\begin{proof}[\unskip\nopunct]
+Er moeten drie eigenschappen bewezen worden, namelijk:
+\begin{enumerate}[1.]
+\item $\vec{0}$ $\in$ $U + V$
+\item Als $\vec{x}$, $\vec{y}$ $\in$ $U + V$, dan geldt ook $\vec{x}$ + $\vec{y}$ $\in$ $U + V$.
+\item Als $\vec{x}$ $\in$ $U + V$ en $\lambda$ $\in$ $\mathbf{R}$ dan $\lambda$ $\cdot$ $\vec{x}$ $\in$ $U + V$. \\
+\end{enumerate}
+Belangrijk om op te merken is dat voor $\vec{a}$ $\in$ $U$ en $\vec{b}$ $\in$ $V$ en $\vec{a}$ + $\vec{b}$ = $\vec{c}$ geldt dat $\vec{c}$ $\in$ $U + V$. \\
+
+We bewijzen eerst de eerste eigenschap. 
+
+Gegeven was dat $U$ en $V$ beide deelruimtes zijn van $\mathbf{R}$$^n$. Uit de definitie van een deelruimte volgt dan dat $\vec{0}$ $\in$ $U$ en $\vec{0}$ $\in$ $V$. Er geldt dat $\vec{0}$ = $\vec{0}$ + $\vec{0}$, dus als $\vec{0}$ $\in$ $U$ en $\vec{0}$ $\in$ $V$, dan geldt ook dat $\vec{0}$ $\in$ $U + V$. \\
+
+Nu kijken we naar de tweede eigenschap.
+
+Neem een $\vec{x}$ $\in$ $U + V$. Er geldt dan dat $\vec{x}$ = $\vec{x_{u}}$ + $\vec{x_{v}}$ met $\vec{x_{u}}$ $\in$ $U$ en $\vec{x_{v}}$ $\in$ $V$. Neem ook een $\vec{y}$ $\in$ $U + V$, waarvoor dan geldt dat $\vec{y}$ = $\vec{y_{u}}$ + $\vec{y_{v}}$ met $\vec{y_{u}}$ $\in$ $U$ en $\vec{y_{v}}$ $\in$ $V$. Additie van $\vec{x}$ en $\vec{y}$ geeft $\vec{x}$ + $\vec{y}$ = ($\vec{x_{u}}$ + $\vec{x_{v}}$) + ($\vec{y_{u}}$ + $\vec{y_{v}}$). Dit is ook te schrijven als $\vec{x}$ + $\vec{y}$ = ($\vec{x_{u}}$ + $\vec{y_{u}}$) + ($\vec{u_{v}}$ + $\vec{y_{v}}$). Hierbij geldt dat $\vec{x_{u}}$ $\in$ $U$ en $\vec{y_{u}}$ $\in$ $U$, en aangezien $U$ een deelruimte van $\mathbf{R}$$^n$ is geldt $\vec{x_{u}}$ + $\vec{y_{u}}$ $\in$ $U$. Een soortgelijk argument leidt tot $\vec{x_{v}}$ + $\vec{y_{v}}$ $\in$ $V$. Uit $\vec{x_{u}}$ + $\vec{y_{u}}$ $\in$ $U$ en $\vec{x_{v}}$ + $\vec{y_{v}}$ $\in$ $V$ volgt dat ($\vec{x_{u}}$ + $\vec{y_{u}}$) + ($\vec{u_{v}}$ + $\vec{y_{v}}$) $\in$ $U + V$, dus als $\vec{x}$, $\vec{y}$ $\in$ $U + V$, dan geldt ook $\vec{x}$ + $\vec{y}$ $\in$ $U + V$. \\ 
+
+Ten slotte bewijzen we nog dat de laatste eigenschap geldig is. 
+
+Neem een $\vec{x}$ $\in$ $U + V$ en een $\lambda$ $\in$ $\mathbf{R}$. Er geldt voor $\vec{x}$ dat $\vec{x}$ = $\vec{x_{u}}$ + $\vec{x_{v}}$ met $\vec{x_{u}}$ $\in$ $U$ en $\vec{x_{v}}$ $\in$ $V$. Als we bij de gelijkheid $\vec{x}$ = $\vec{x_{u}}$ + $\vec{x_{v}}$ een scalaire vermenigvuldiging met $\lambda$ uitvoeren krijgen we $\lambda$ $\cdot$ $\vec{x}$ = $\lambda$ $\cdot$ ($\vec{x_{u}}$ + $\vec{x_{v}}$). Dit is ook te schrijven als $\lambda$ $\cdot$ $\vec{x}$ = $\lambda$ $\cdot$ $\vec{x_{u}}$ + $\lambda$ $\cdot$ $\vec{x_{v}}$. Aangezien $U$ een deelruimte is van $\mathbf{R}$$^n$ en er geldt dat $\vec{x_{u}}$ $\in$ $U$, geldt ook dat $\lambda$ $\cdot$ $\vec{x_{u}}$ $\in$ $U$. Hetzelfde argument leidt tot $\lambda$ $\cdot$ $\vec{x_{v}}$ $\in$ $V$. Uit $\lambda$ $\cdot$ $\vec{x_{u}}$ $\in$ $U$ en $\lambda$ $\cdot$ $\vec{x_{v}}$ $\in$ $V$ volgt dat $\lambda$ $\cdot$ $\vec{x}$ $\in$ $U + V$, dus als $\vec{x}$ $\in$ $U + V$ en $\lambda$ $\in$ $\mathbf{R}$ dan geldt ook dat $\lambda$ $\cdot$ $\vec{x}$ $\in$ $U + V$. \\
+
+Er is nu dus bewezen dat elk van de drie eigenschappen geldt, dus is $U + V$ een lineaire deelruimte van $\mathbf{R}$$^n$.\end{proof} 
+\end{enumerate}
+
+\begin{enumerate}[(b.)]
+\item Gegeven is de matrix A =
+$\begin{pmatrix}
+1 & 1 & 1 & 2 & -1\\
+0 & 2 & 0 & 0 & 4\\
+0 & 0 & 0 & 2 & 2\\
+\end{pmatrix}$. 
+Laat $U$ de lineaire deelruimte van $\mathbf{R}$$^3$ zijn opgespannen door de eerste drie kolommen van $A$. Een basis $B_{U}$ van $U$ met $B_{U}$ $\subseteq$ $U$ is een basis van $U$ als er geldt dat:
+
+\begin{enumerate}[1.]
+\item $B_{U}$ onafhankelijk is, en
+\item elke $\vec{u_{i}}$ $\in$ $U$ afhankelijk is van $B_{U}$. \end{enumerate}
+
+We kunnen nu dus een basis $B_{U}$ van $U$ kiezen en als we kunnen aantonen dat voor $B_{U}$ de bovenstaande eigenschappen gelden, dan is $B_{U}$ een geldige basis van $U$.
+
+Kies 
+$B_{U}$ =
+$\begin{Bmatrix}$
+$\begin{pmatrix}$
+1\\
+0\\
+0
+$\end{pmatrix}$,
+$\begin{pmatrix}$
+1\\
+2\\
+0
+$\end{pmatrix}$
+$\end{Bmatrix}$.
+
+Deze basis voldoet aan de beschreven eigenschappen. $B_{U}$ is namelijk onafhankelijk want er bestaat tussen de vectoren $(1, 0, 0)$$^t$ en $(1, 2, 0)$$^t$ geen lineaire relatie zodat  $\lambda_{1}$ $\cdot$ $(1, 0, 0)$$^t$ + $\lambda_{2}$ $\cdot$ $(1, 2, 0)$$^t$ = 0 met  $\lambda_{r}$ $\in$ $\mathbf{R}$.
+
+Ook voldoet $B_{U}$ aan de tweede eigenschap. Elke vector $\vec{u_{i}}$ $\in$ $U$ is afhankelijk van $B_{U}$. Neem namelijk $\vec{u_{1}}$ = $(1, 0, 0)$$^t$ met $\vec{u_{1}}$ $\in$ $U$, $\vec{u_{2}}$ = $(1, 2, 0)$$^t$ met $\vec{u_{2}}$ $\in$ $U$ en $\vec{u_{3}}$ = $(1, 0, 0)$$^t$ met $\vec{u_{3}}$ $\in$ $U$ en neem $\vec{b_{1}}$ = $(1, 0, 0)$$^t$ met $\vec{b_{1}}$ $\in$ $B_{U}$ en $\vec{b_{2}}$ = $(1, 2, 0)$$^t$ met $\vec{b_{2}}$ $\in$ $B_{U}$. Dan gelden de lineaire relaties $\vec{u_{1}}$ - $\vec{b_{1}}$ = 0, $\vec{u_{2}}$ - $\vec{b_{2}}$ = 0 en $\vec{u_{3}}$ - $\vec{b_{1}}$ = 0 oftewel $\vec{u_{1}}$ = $\vec{b_{1}}$, $\vec{u_{2}}$ = $\vec{b_{2}}$ en $\vec{u_{3}}$ = $\vec{b_{1}}$. Elke vector $\vec{u_{i}}$ $\in$ $U$ is dus afhankelijk van $B_{U}$. 
+
+De dimensie van $U$ is 2. $U$ bevat namelijk maximaal twee onafhankelijke vectoren, namelijk $\vec{u_{1}}$ en $\vec{u_{2}}$. of $\vec{u_{2}}$ en $\vec{u_{3}}$. (meer bewijs nodig????)
+\end{enumerate}
+
+\begin{enumerate}[(c.)]
+\item Beschouw opnieuw de matrix A uit opdracht b. Laat $V$ de lineaire deelruimte van $\mathbf{R}$$^3$ zijn opgespannen door de laatste twee kolommen van $A$. Net als bij opdracht b, is $B_{V}$ met $B_{V}$ $\subseteq$ $V$ een basis van $V$ als er geldt dat: 
+\begin{enumerate}[1.]
+\item $B_{V}$ onafhankelijk is, en
+\item elke $\vec{v_{i}}$ $\in$ $V$ afhankelijk is van $B_{V}$. 
+\end{enumerate}
+
+Kies 
+$B_{V}$ =
+$\begin{Bmatrix}$
+$\begin{pmatrix}$
+2\\
+0\\
+2
+$\end{pmatrix}$,
+$\begin{pmatrix}$
+-1\\
+4\\
+2
+$\end{pmatrix}$
+$\end{Bmatrix}$.
+
+Deze basis voldoet aan de beschreven eigenschappen. $B_{V}$ is namelijk onafhankelijk want er bestaat tussen de vectoren $(2, 0, 2)$$^t$ en $(-1, 4, 2)$$^t$ geen lineaire relatie zodat  $\lambda_{1}$ $\cdot$ $(2, 0, 2)$$^t$ + $\lambda_{2}$ $\cdot$ $(-1, 4, 2)$$^t$ = 0 met $\lambda_{r}$ $\in$ $\mathbf{R}$.
+
+Ook voldoet $B_{V}$ aan de tweede eigenschap. Elke vector $\vec{v_{i}}$ $\in$ $V$ is afhankelijk van $B_{V}$. Neem namelijk $\vec{v_{1}}$ = $(2, 0, 2)$$^t$ met $\vec{v_{1}}$ $\in$ $V$ en $\vec{v_{2}}$ = $(-1, 4, 2)$$^t$ met $\vec{v_{2}}$ $\in$ $V$ en neem $\vec{b_{1}}$ = $(2, 0, 2)$$^t$ met $\vec{b_{1}}$ $\in$ $B_{V}$ en $\vec{b_{2}}$ = $(-1, 4, 2)$$^t$ met $\vec{b_{2}}$ $\in$ $B_{V}$. Dan gelden de lineaire relaties $\vec{v_{1}}$ - $\vec{b_{1}}$ = 0 en $\vec{v_{2}}$ - $\vec{b_{2}}$ = 0 oftewel $\vec{v_{1}}$ = $\vec{b_{1}}$ en $\vec{v_{2}}$ = $\vec{b_{2}}$. Elke vector $\vec{v_{i}}$ $\in$ $V$ is dus afhankelijk van $B_{V}$. 
+
+De dimensie van $V$ is 2. $V$ bevat namelijk maximaal twee onafhankelijke vectoren, namelijk $\vec{v_{1}}$ en $\vec{v_{2}}$. (meer bewijs nodig????)
+\end{enumerate}
+
+\begin{enumerate}[(d.)]
+\item De maximale dimensie van $U$ $\cap$ $V$ is 2. Stel namelijk dat $U$ en $V$ gelijk zijn, dan zou de intersectie van $U$ en $V$ gelijk zijn aan $U$ en ook gelijk aan $V$, dus dan zou de dimensie van de intersectie 2 zijn. Als $U$ en $V$ niet gelijk aan elkaar zijn, dan is er dus, zonder verlies van algemeenheid, ten minste 1 $\vec{u_{i}}$ $\in$ $U$ die niet afhangt van ten minste 1 $\vec{v_{r}}$ $\in$ $V$. Hieruit volgt dat de intersectie minder vectoren bevat dan de basis van $U$ en dus ook een kleinere rang heeft dan de basis van $U$. Als $U$ en $V$ niet gelijk aan elkaar zijn, is de dimensie dus kleiner dan 2.
+\end{enumerate}
+
+\begin{enumerate}[(e.)]
+
+\item Er geldt $U$ $\cap$ $V$ = \{$\vec w$ $\vert$ $\vec w$ $\in$ $U$ en $\vec w$ $\in$ $V$\}. Aan matrix $A$ is echter te zien dat er geen enkele $\vec w$\ is waarvoor geldt $\vec w$ $\in$ $U$ en $\vec w$ $\in$ $V$, dus $U$ $\cap$ $V$ = \{$\vec 0$\}. De basis van $U$ $\cap$ $V$ is dus ook \{$\vec 0$\}. 
+
+De dimensie van \{$\vec 0$\} is 0, dus de dimensie van $U$ $\cap$ $V$ is ook 0. 
+\end{enumerate}
+
+
+
+
+
+\end{document}
