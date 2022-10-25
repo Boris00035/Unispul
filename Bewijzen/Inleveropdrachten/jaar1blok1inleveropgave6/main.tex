@@ -1,0 +1,122 @@
+\documentclass[12pt, dutch, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in, bmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Stelling}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{lemmalos}{Lemma}
+\newtheorem{sublemma}{Lemma}[lemma]
+\newtheorem{case}{Geval}
+\newtheorem{claim}{Claim}
+
+\newenvironment{shortclaim}
+  {\refstepcounter{claim}\textbf{Claim~\theclaim.}}% \begin{shortthm}
+{\enskip}
+\newenvironment{shortthm}
+  {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}% \begin{shortthm}
+{\enskip}
+
+\title{Bewijzen - Inleveropgave 6}
+\author{B.H.J. van Boxtel}
+\date{25 Oktober 2022 - Week 43} 
+
+\begin{document}
+
+\maketitle  
+\pagenumbering{arabic} 
+
+Gegeven is de functie 
+$f: \mathbb{R} \longrightarrow \mathbb{R}, \: \: x \mapsto 3x^5$.
+Een functie $g(x)$ is continu in $a$ als $\lim_{x\to a} g(x) = g(a)$.
+
+\begin{theorem}
+  Zij $a \geq 0$ willekeurig maar vast, dan is $f$ continu in $a$.
+\end{theorem}
+
+In andere woorden, er moet worden bewezen dat $\lim_{x\to a} f(x) = f(a)$, 
+oftewel $\lim_{x\to a}3x^5 = 3a^5$.
+
+Dit is te bewijzen doormiddel van een $\epsilon-\delta$-bewijs.
+\begin{proof} $ $ \newline
+  Kies \[\delta = 
+  \min{\left\{1,\frac{\epsilon}{15a^4 + 30a^4 + 30a^2 + 15a + 3}\right\}}\]
+
+  Neem nu aan:
+  \begin{equation} \label{start}
+    \lvert x - a \rvert < \delta 
+  \end{equation}
+  We willen laten zien dat hieruit volgt dat:
+  \begin{equation} \label{goal}
+    \lvert 3x^5 - 3a^5 \rvert < \epsilon
+  \end{equation}
+  Door onze keuze van $\delta$, geldt het volgende:
+  \begin{equation}
+    \delta \leq 1 
+  \end{equation}
+  En hierdoor geldt ook:
+  \begin{equation} \label{xbound}
+    x \leq a + 1
+  \end{equation}
+  We zien dat we het linkerdeel van \cref{goal} kunnen herschrijven als:
+  \begin{equation} \label{buitenhaken}
+    \lvert 3x^5 - 3a^5 \rvert = 
+    \lvert x - a \rvert \lvert 3x^4 + 3x^3a + 3x^2a^2 + 3xa^3 + 3a^4 \rvert 
+  \end{equation}
+  Door de driehoeks ongelijkheid kunnen we schrijven:
+  \begin{equation}
+    \lvert 3x^4 + 3x^3a + 3x^2a^2 + 3xa^3 + 3a^4 \rvert \leq
+    \lvert 3x^4\rvert + \lvert3x^3a\rvert + \lvert3x^2a^2\rvert + 
+    \lvert3xa^3\rvert + \lvert3a^4 \rvert
+  \end{equation}
+  Door \cref{xbound} geldt het volgende:
+  \begin{multline}
+    \lvert 3x^4 + 3x^3a + 3x^2a^2 + 3xa^3 + 3a^4 \rvert \\ \leq 
+    \lvert 3(a + 1)^4\rvert + \lvert3(a + 1)^3a\rvert + \lvert3(a + 1)^2a^2\rvert + 
+    \lvert3(a + 1)a^3\rvert + \lvert3a^4 \rvert
+  \end{multline}
+  Gegeven is dat $a \geq 0$, 
+  dus we kunnen aan de rechterkant de absoluutstrepen weglaten, 
+  en vervolgens de hele vergelijking simplificeren tot:
+  \begin{equation}
+    \lvert 3x^4 + 3x^3a + 3x^2a^2 + 3xa^3 + 3a^4 \rvert \leq
+    15a^4 + 30a^3 + 30a^2 + 15a + 3
+  \end{equation}
+  Wanneer we dit samennemen met \cref{start} vinden we:
+  \begin{equation}
+    \lvert x - a \rvert 
+    \lvert 3x^4 + 3x^3a + 3x^2a^2 + 3xa^3 + 3a^4 \rvert \leq
+    \delta(15a^4 + 30a^3 + 30a^2 + 15a + 3)
+  \end{equation}
+  Door \cref{buitenhaken} 
+  kunnen we het linkerdeel van de ongelijheid als volgt schrijven:
+  \begin{equation} \label{bijnaklaar}
+    \lvert 3x^5 - 3a^5 \rvert \leq \delta(15a^4 + 30a^3 + 30a^2 + 15a + 3)
+  \end{equation}
+  Door onze keuze van $\delta$ weten we dat:
+  \begin{equation}
+    \delta \leq \frac{\epsilon}{15a^4 + 30a^4 + 30a^2 + 15a + 3}
+  \end{equation}
+  Hierdoor kunnen we \cref{bijnaklaar} ook schrijven als:
+  \begin{equation}
+    \lvert 3x^5 - 3a^5 \rvert \leq 
+    \frac{\epsilon (15a^4 + 30a^4 + 30a^2 + 15a + 3)}
+    {15a^4 + 30a^4 + 30a^2 + 15a + 3}
+  \end{equation}
+  Dus:
+  \begin{equation}
+    \lvert 3x^5 - 3a^5 \rvert \leq \epsilon 
+  \end{equation}
+
+\end{proof}
+\end{document}
