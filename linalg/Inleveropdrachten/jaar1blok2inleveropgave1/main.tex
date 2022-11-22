@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in, bmargin=1in,]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{pgfplots}
+\pgfplotsset{width=7.5cm, compat=1.18}
+\usepackage{amsthm}
+\usepackage{cleveref}
+
+\title{Inlever 1 Lial 2}
+\author{Boris van Boxtel en Lotte Gritter}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle 
+
+\begin{enumerate}[(a).]
+    \item \label{a}
+    Lemma 7.3.2. De kern van een lineaire afbeelding $A: V \rightarrow W$ is een lineaire deelruimte van $V$. \newline 
+    De kern van $A$ is de verzameling van alle elementen in $A$ waarvoor geldt dat $A(x)=0$. We gaan bewijzen dat ker$(A)$ een lineaire deelruimte van V is door te laten zien dat ker$(A)$ niet leeg is, en dat optelling en scalaire vermenigvuldiging gedefiniëerd zijn.
+
+        \begin{proof}\leavevmode
+            \begin{enumerate}[1.]
+                \item De kern van $A$ bevat de nulvector. 
+                
+                \item Stel $x,y$ in ker$(A)$. Dan geldt dat $A(x+y)=A(x)+A(y)= \mathbf{0} + \mathbf{0}=\mathbf{0}$. Dus $x+y$ zit in ker$(A)$. 
+                
+                \item Stel $\lambda$ in $\mathbb{R}$ en $x$ in ker$(A)$. Vanwege lineairiteit geldt dat $A(\lambda x)=\lambda A(x) = \lambda \mathbf{0} = \mathbf{0}$.
+            \end{enumerate}
+        \end{proof}
+
+    \item \label{b}
+    Lemma 7.3.5. Zij $V, W$ een tweetal vectorruimten en $A: V \rightarrow W$ een lineaire afbeelding. Dan is $A(V)$ een lineaire deelruimte van $W$.
+    \newline Het bewijs hiervoor lijkt op het bewijs bij \ref{a}
+
+        \begin{proof}\leavevmode
+          \begin{enumerate}[1.]
+            \item $A(V)$ is niet leeg, want $\mathbf{0}=A(0) \in A(V)$.
+            
+            \item
+          \end{enumerate} 
+        \end{proof}
+
+    \item \label{c}
+     Laat $V$ een vectorruimte zijn van dimensie $n$ en $B$ een basis van $V$. (hier moet nog tekst). \newline
+     We gaan bewijzen dat $f_B$ een isomorfisme geeft tussen $V$ en $\mathbb{R}_n$.
+
+        % \begin{proof}
+        % Als $f_B$ isomorfisme geeft tussen $V$ en $\mathbb{R}n$, dan is $f_B: V \rightarrow \mathbb{R}_n$ een bijectieve lineaire afbeelding. Als $f_B: V \rightarrow \mathbb{R}_n$ een bijectieve lineaire afbeelding is betekent dat dat de omgekeerde afbeelding $f_B^{-1} \mathbb{R}_n \rightarrow V$ ook een lineaire afbeelding is (stelling 7.3.4, bewezen in het dictaat).
+        % % Omdat het eigenlijk alleen een verandering van basis is en de nieuwe coördinaten/lineaire combinatie die dan ontstaat per x in V uniek is, en de omgekeerde afbeelding ook een verandering van basis is is het bijectief, maar dat moet ik nog netjes in wiskundigere termen uitschrijven.
+        % \end{proof}
+
+ 
+        \item \label{d}
+    
+\begin{proof}
+   
+\end{proof}
+
+\end{enumerate}
+\end{document}
