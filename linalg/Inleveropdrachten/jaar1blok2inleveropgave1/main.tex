@@ -1,6 +1,6 @@
 \documentclass[12pt, a4paper]{article}
 \usepackage[hidelinks]{hyperref}
-\usepackage[tmargin=0.8in, bmargin=1in]{geometry}
+\usepackage[tmargin=0.8in, bmargin=1in,]{geometry}
 \usepackage{parskip}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -22,65 +22,151 @@
 
 \begin{enumerate}[(a).]
     \item \label{a}
-        Lemma 7.3.2. De kern van een lineaire afbeelding $A: V \rightarrow W$ is een lineaire deelruimte van $V$. \newline 
-        De kern van $A$ is de verzameling van alle elementen in $A$ waarvoor geldt dat $A(\mathbf{x})=0$. We gaan bewijzen dat ker$(A)$ een lineaire deelruimte van V is door te laten zien dat ker$(A)$ niet leeg is, en dat optelling en scalaire vermenigvuldiging gedefiniëerd zijn.
+    Lemma 7.3.2. De kern van een lineaire afbeelding $A: V \rightarrow W$ is een lineaire deelruimte van $V$. \newline 
+    De kern van $A$ is de verzameling van alle elementen in $A$ waarvoor geldt dat $A(x)=0$. We gaan bewijzen dat ker$(A)$ een lineaire deelruimte van $V$ is door te laten zien dat de nulvector in de kern van $A$ zit, en dat de kern van $A$ gesloten is onder optelling en scalaire vermenigvuldiging.
 
         \begin{proof}\leavevmode
             \begin{enumerate}[1.]
-                \item De kern van $A$ bevat de nulvector. 
+                \item De kern van $A$ bevat de nulvector omdat $A(\mathbf{0_v})=\mathbf{0_v}$.
+   % Dit is vanzelfsprekend en ik weet niet zo goed hoe ik dat zou moeten bewijzen...             
+                \item Stel dat $x,y$ elementen zijn in ker$(A)$. Dan geldt dat $A(x+y)=A(x)+A(y)= \mathbf{0} + \mathbf{0}=\mathbf{0}$. Dus $x+y$ zit in ker$(A)$. 
                 
-                \item Stel $\mathbf{x},\mathbf{y}$ in ker$(A)$. Dan geldt dat $A(\mathbf{x}+\mathbf{y})=A(\mathbf{x})+A(\mathbf{y})= \mathbf{0} + \mathbf{0}=\mathbf{0}$. Dus $x+y$ zit in ker$(A)$. 
-                
-                \item Stel $\lambda$ in $\mathbb{R}$ en $\mathbf{x}$ in ker$(A)$. Vanwege lineairiteit geldt dat $A(\lambda \mathbf{x})=\lambda A(\mathbf{x}) = \lambda \mathbf{0} = \mathbf{0}$.
+                \item Stel $\lambda$ in $\mathbb{R}$ en $x$ in ker$(A)$. A is een lineaire afbeelding, dus vanwege lineairiteit geldt dat $A(\lambda x)=\lambda A(x) = \lambda \mathbf{0} = \mathbf{0}$.
             \end{enumerate}
         \end{proof}
 
     \item \label{b}
-        Lemma 7.3.5. Zij $V, W$ een tweetal vectorruimten en $A: V \rightarrow W$ een lineaire afbeelding. Dan is $A(V)$ een lineaire deelruimte van $W$.
-        \newline Het bewijs hiervoor lijkt op het bewijs bij \ref{a}
+    Lemma 7.3.5. Zij $V, W$ een tweetal vectorruimten en $A: V \rightarrow W$ een lineaire afbeelding. Dan is $A(V)$ een lineaire deelruimte van $W$.
+    \newline Het bewijs hiervoor lijkt op het bewijs bij \ref{a}
 
         \begin{proof}\leavevmode
-            \begin{enumerate}[1.]
-            \item $A(V)$ is niet leeg, want $\mathbf{0}=A(0) \in A(V)$.
-            
-            \item
-            \end{enumerate} 
+          \begin{enumerate}[1.]
+            \item Stel $\mathbf{x}$ en $\mathbf{y}$ zijn elementen in $V$. Dan is $\mathbf{x+y}$ ook een element in $V$. Dus $x+y=A(x)+A(y)=A(x+y)$, en $A(V)$ is dus gesloten onder optelling.
+
+            \item Stel $\lambda$ is een reëel getal en $\mathbf{x}$ is een element in $V$. Dan is $\lambda \mathbf{x}$ ook een element in $V$. Er bestaat een element $y$ waarvoor geldt dat $A(x)=y$. Hieruit volgt dat $\lambda \mathbf{y}=\lambda A(x)= A(\lambda x)$. De lineaire afbeelding is dus gesloten onder scalaire vermenigvuldiging.
+
+            \item Stel $\mathbf{0_v}$ is de nulvector in $V$. We weten dat $\mathbf{0_v}+\mathbf{0_v}=\mathbf{0_v}$. Hieruit, en uit lineairiteit, volgt dat 
+            \begin{equation}
+                A(\mathbf{0_v})=A(\mathbf{0_v}+\mathbf{0_v})=A(\mathbf{0_v})+A(\mathbf{0_v})
+            \end{equation} \newline
+            We trekken nu aan beide kanten van de vergelijking $A(\mathbf{0_v})$ af, dit geeft: 
+            \begin{equation}
+                \mathbf{0_w}=A(\mathbf{0_v})
+            \end{equation}
+            Dus A(V) bevat de nulvector.
+          \end{enumerate} 
         \end{proof}
 
     \item \label{c}
         Laat $V$ een vectorruimte zijn van dimensie $n$ en $B$ een basis van $V$. (hier moet nog tekst). \newline
-        We gaan bewijzen dat $f_B$ een isomorfisme geeft tussen $V$ en $\mathbb{R}_n$, in andere woorden dat $f_B$ een bijectieve lineare functie is.
+        We gaan bewijzen dat $f_B$ een isomorfisme geeft tussen $V$ en $\mathbb{R}_n$, in andere woorden dat $f_B$ een lineare en bijectieve functie is.
 
-        het bewijs hiervoor bestaat uit drie delen, het eerste dat de functie linear is, het tweede het bewijs dat $f_B$ injectief is, en het derde dat $f_B$ surjectief is.
+        We bewijzen eerst dat de functie linear is.
 
-        \newpage
         \begin{proof}\leavevmode
             \begin{enumerate}[1.]
                 \item 
-                Neem aan: 
+                Bekijk $f_B(\mathbf{x} + \mathbf{y})$ met $\mathbf{x}, \mathbf{y} \in V$. Met de definitie van $f_B$ uit het dictaat zien we dat dit het volgende geeft:
+                \begin{equation}
+                    f_B(\mathbf{x} + \mathbf{y}) = (x_1 + y_1) \mathbf{b_1} + (x_2 + y_2) \mathbf{b_2} + \ldots + (x_n + y_n) \mathbf{b_n}.   
+                \end{equation}
+                Door distributiviteit van het scalair veelvoud over optelling in het lichaam kunnen we dit ook schrijven als:
+                \begin{align*}
+                    f_B(\mathbf{x} + \mathbf{y}) & = 
+                    x_1 \mathbf{b_1} + y_1 \mathbf{b_1} + 
+                    x_2 \mathbf{b_2} + y_2 \mathbf{b_2} + 
+                    \ldots + x_n \mathbf{b_n} + y_n \mathbf{b_n} \\
+                    & = 
+                    x_1 \mathbf{b_1} + x_2 \mathbf{b_2} + \ldots + x_n \mathbf{b_n} +
+                    y_1 \mathbf{b_1} + y_2 \mathbf{b_2} + \ldots + y_n \mathbf{b_n} \\
+                    & = f_B(\mathbf{x}) + f_B(\mathbf{y}).
+                \end{align*}
+
+                \item 
+                Bekijk nu $f_B(\lambda \mathbf{x})$ met $\mathbf{x}, \mathbf{y} \in V$. Vanuit de definitie van $f_B$ is dit te schrijven als:
+                \begin{equation}
+                    f_B(\lambda \mathbf{x})= 
+                    \lambda x_1 \mathbf{b_1} + \lambda x_2 \mathbf{b_2} + \ldots + \lambda x_n \mathbf{b_n}
+                \end{equation}
+                Door distributiviteit van het scalair veelvoud over vector optelling kunnen we dit ook schrijven als:
+                \begin{equation}
+                    f_B(\lambda \mathbf{x})= 
+                    \lambda ( x_1 \mathbf{b_1} + x_2 \mathbf{b_2} + \ldots + x_n \mathbf{b_n}) 
+                    = \lambda f_B(\textbf{x}). 
+                \end{equation}
+            \end{enumerate}
+            Uit deze twee punten concluderen we dat $f_B$ een lineare functie is.
+
+        \end{proof}
+        Nu bewijzen we dat $f_B$ een bijectie is.
+        \begin{proof}\leavevmode
+            \begin{enumerate}[1.]
+                \item 
+                We beginnen met bewijzen dat $f_B$ injectief is. Neem aan: 
                 \begin{equation} \label{verg1}
                     f_B(\mathbf{x}) = f_B(\mathbf{y})
                 \end{equation}
                 
-                met $\mathbf{x}, \mathbf{y} \in V$. Gegeven is dat $B$ een basis is van $V$. Met de definitie van $f_B$ gegeven in het dictaat, kunnen we dit ook schrijven als:
-                % \begin{equation}
-                    
-                % \end{equation}
+                met $\mathbf{x}, \mathbf{y} \in V$. Vanuit de definitie van $f_B$ is dit te schrijven als:
+                \begin{equation}
+                    x_1 \mathbf{b_1} + x_2 \mathbf{b_2} + \ldots + x_n \mathbf{b_n} = 
+                    y_1 \mathbf{b_1} + y_2 \mathbf{b_2} + \ldots + y_n \mathbf{b_n}
+                \end{equation}
+                Door de rechterkant naar de linkerkant te halen, en door distributiviteit van het scalair veelvoud over optelling in het lichaam kunnen we dit ook schrijven als:
+                \begin{equation}
+                    (x_1 - y_1) \mathbf{b_1} + (x_2 - y_2) \mathbf{b_2} + 
+                    \ldots + (x_n - y_n) \mathbf{b_n} = 0
+                \end{equation}
+                Per definitie zijn $\{\mathbf{b_1},\mathbf{b_2}, \ldots, \mathbf{b_n}\}$ onafhankelijk, dus volgens Stelling 7.2.1 uit het dictaat is de enige oplossing van deze vergelijking de triviale oplossing. Dus er geldt:
+                \begin{align*}
+                    x_1 & = y_1 \\
+                    x_2 & = y_1 \\
+                    & \ \: \vdots  \\
+                    x_n & = y_n.
+                \end{align*}
+                Dus $f_B(\mathbf{x}) = f_B(\mathbf{y})$ impliceert $\mathbf{x} = \mathbf{y}$, dus $f_B$ is injectief.
+
+                \item 
+                We bewijzen nu dat $f_B$ surjectief is. Dit betekent dat voor elke $\mathbf{x}_B \in W$ er een $\mathbf{x} \in V$ bestaat zodat $f(\mathbf{x}) = \mathbf{x}_B$. We willen dus een $\mathbf{x}$ vinden zodat $f(\mathbf{x}) = \mathbf{x}_B$. We bewijzen dat de volgende $\mathbf{x}$ hieraan voldoet: 
+                \begin{equation} 
+                    \mathbf{x} = 
+                    x_{B, 1} \mathbf{b}_1 + 
+                    x_{B, 2} \mathbf{b}_2 + \ldots + 
+                    x_{B, n} \mathbf{b}_n
+                \end{equation}
+                waar $x_{B, k}$ staat voor het $k$de element van de coördinatenkolom $\mathbf{x}_B$. Bekijk $f_B(\mathbf{x})$. We zien uit de definitie van $f_B$ dat:
+                \begin{equation}
+                    f_B(\mathbf{x}) = (x_{B, 1}, x_{B, 2}, \ldots , x_{B, n})^t
+                \end{equation}
+                De rechterzijde van de vergelijking is precies de vector $\mathbf{x}_B$, dus we zien dat:
+                \begin{equation}
+                    f_B(\mathbf{x}) = \mathbf{x}_B
+                \end{equation}
+                We kunnen dus voor elke $\mathbf{x}_B \in W$ een $\mathbf{x} \in V$ vinden zodat $f_B(\mathbf{x}) = \mathbf{x}_B$. Dus $f_B$ is surjectief.
 
             \end{enumerate}
+            Deze twee punten maakt samen dat $f_B$ bijectief is.
+        \end{proof}
+        Dit samen maakt dat $f_B$ een lineare bijectieve functie is en dus een isomorfisme geeft tussen $V$ en $\mathbb{R}^n$. 
+
+        \item \label{d}
+        Neem $V = \mathbb{R}[X]_3$ en gegeven is $B = \{1 + X, X + X^2, X^2 + X^3, X^3 \}$ een basis van $V$. Neem ook $P_1(X) = 2 + 6X +3X^2 + 4X^3$. We laten zien dat $f_B(P_1(X)) = (2, 4, -1, 5)^t$.
+        \begin{proof}
+            Gegeven is: 
+            \begin{equation}
+                P_1(X) = 2 + 6X +3X^2 + 4X^3.
+            \end{equation}
+            We kunnen dit ook schrijven als:
+            \begin{equation}
+                P_1(X) = 2(1 + X) + 4(X + X^2) -1(X^2 + X^3) + 5(X^3).
+            \end{equation}
+            We hebben nu $P_1(X)$ geschreven als lineare combinatie van de gegeven basis $B$, dus we zien dat:
+            \begin{equation}
+                f_B(P_1(X)) = (2, 4, -1, 5)^t
+            \end{equation}
+
         \end{proof}
 
-        % \begin{proof}
-        % Als $f_B$ isomorfisme geeft tussen $V$ en $\mathbb{R}n$, dan is $f_B: V \rightarrow \mathbb{R}_n$ een bijectieve lineaire afbeelding. Als $f_B: V \rightarrow \mathbb{R}_n$ een bijectieve lineaire afbeelding is betekent dat dat de omgekeerde afbeelding $f_B^{-1} \mathbb{R}_n \rightarrow V$ ook een lineaire afbeelding is (stelling 7.3.4, bewezen in het dictaat).
-        % % Omdat het eigenlijk alleen een verandering van basis is en de nieuwe coördinaten/lineaire combinatie die dan ontstaat per x in V uniek is, en de omgekeerde afbeelding ook een verandering van basis is is het bijectief, maar dat moet ik nog netjes in wiskundigere termen uitschrijven.
-        % \end{proof}
-
- 
-        \item \label{d}
-    
-\begin{proof}
-   
-\end{proof}
 
 \end{enumerate}
 \end{document}
