@@ -40,14 +40,3 @@ deeltgem = np.mean(valtijdenknp, axis=0)
 tdeelgem = np.mean(deeltgem)
 
 tdeelstd = np.std(deeltgem,ddof=1)
-
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    

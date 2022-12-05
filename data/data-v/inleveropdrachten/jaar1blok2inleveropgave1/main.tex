@@ -10,9 +10,6 @@
 \selectlanguage{dutch}
 \usepackage{amsthm}
 \usepackage{cleveref}
-\usepackage{listings}
-% \usepackage{pygmentize}
-% \usepackage{minted}
 
 \theoremstyle{definition}
 
@@ -29,6 +26,13 @@
 \newenvironment{shortthm}
   {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}% \begin{shortthm}
 {\enskip}
+
+\usepackage[newfloat]{minted}
+\usepackage{caption}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{placement=htp}
+\SetupFloatingEnvironment{listing}{name=Code blok}
 
 \title{Data V - inleveropdracht 1}
 \author{Boris van Boxtel, Brechtje Poppen, \\  Floris Oostenbrug, Lotte Gritter}
@@ -80,13 +84,16 @@ Wanneer namelijk het gemiddelde van vier valtijden genomen wordt ligt de uitkoms
 
 \end{enumerate}
 
-\lstinputlisting[
-  frame=lines, 
-  title=\lstname, 
-  breaklines, 
-  language=Python
-]{code/DataV_inlever1.py}
-
-% \inputminted{python}{code/DataV_inlever1.py}
+% \begin{code}
+%   \caption{caption}
+%   \inputminted[
+%     % title=,
+%     % listingscaption=test,
+%     firstline=0,
+%     % lastline=10,
+%     frame=lines, 
+%     breaklines,
+%     ]{python}{code/DataV_inlever1.py}
+% \end{code}
 
 \end{document}
