@@ -1,10 +1,17 @@
 import numpy as np 
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 #a 
 #onderstaande numpy array bevat de gemten valtijden t1 tot t40
 
 valtijden = np.array([63, 58, 74, 78, 70, 74, 75, 82, 68, 69, 76, 62, 72, 88, 65, 81, 79, 77, 66, 76, 86, 72, 79, 77, 60, 70, 65, 69, 73, 77, 72, 79, 65, 66, 70, 74, 84, 76, 80, 69])
+
+# bereik_metingen = max(valtijden) - min(valtijden)
+# aantal_bins = 10
+# bin_grootte = bereik_metingen / aantal_bins
+
+plt.hist(valtijden, 15, density=True, range=(min(valtijden) - 0.5, max(valtijden) + 0.5))
+plt.savefig('normalized_histogram_valtijden.png')
 
 #Nu berekenen we de gemiddelde valtijd, tgem
 tgem = np.mean(valtijden)
@@ -40,3 +47,5 @@ deeltgem = np.mean(valtijdenknp, axis=0)
 tdeelgem = np.mean(deeltgem)
 
 tdeelstd = np.std(deeltgem,ddof=1)
+
+plt.show()
