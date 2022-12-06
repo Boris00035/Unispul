@@ -10,6 +10,7 @@
 \selectlanguage{dutch}
 \usepackage{amsthm}
 \usepackage{cleveref}
+\usepackage{graphicx}
 
 \theoremstyle{definition}
 
@@ -28,7 +29,9 @@
 {\enskip}
 
 \usepackage[newfloat]{minted}
-\usepackage{caption}
+\usepackage[
+  % skip=2pt
+  ]{caption}
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{placement=htp}
@@ -44,13 +47,36 @@
 \pagenumbering{arabic} 
 
 \begin{enumerate}[(a.)]
-\item Om de gemiddelde valtijd te berekenen gebruiken we python. Ook berekenen we de standaarddeviatie door middel van python. Dit geeft een waarde voor de gemiddelde valtijd ($\bar t$) van 72.9 in honderdste secondes en voor de standaarddeviatie ($\sigma_t$) van 7.037627805461519 in honderdste secondes. 
+\item \label{opdrA} Om de gemiddelde valtijd te berekenen gebruiken we python. Ook berekenen we de standaarddeviatie door middel van python. Dit geeft een waarde voor de gemiddelde valtijd ($\bar t$) van 72.9 in honderdste secondes en voor de standaarddeviatie ($\sigma_t$) van 7.037627805461519 in honderdste secondes. 
+
+Dit doen we met de volgende code:
+\newline
+\begin{code}
+  \caption{Code opdracht \ref{opdrA}}
+  \inputminted[
+    firstline=5,
+    lastline=25,
+    frame=lines, 
+    breaklines,
+    linenos,
+    ]{python}{code/DataV_inlever1.py}
+\end{code}
 
 We gebruiken nu de tien procent regel om de standaarddeviatie correct af te ronden. Hiertoe ronden we de onzekerheid eerst af op twee decimalen, dus $\sigma_t$ = 7.04/100 s. Wanneer we dit nu op één decimaal afronden krijgen we 7.0/100 s. Volgens de tien procent regel mag je alleen op één decimaal afronden als hierdoor de afrondingsfout kleiner is dan tien procent van de onzekerheid in twee decimalen omdat er dan geen significant verlies van informatie is. Tien procent van de onzekerheid in twee decimalen is 0.704/100 s en de afrondingsfout is 0.04/100 s, wat veel kleiner is dan 0.704/100 s. De onzekerheid is dus 7.0/100 s. Dit betekent dat de gemiddelde valtijd afgerond moet worden op 73/100 s. 
 
 De waarde van $\bar t$ is dus $(73 \pm 7.0)/100$ s.
 
-\item  We berekenen nu  $\bar t_1$, ...,  $\bar t_{10}$ voor de 4 metingen in elk van de 10 kolommen door middel van python. 
+\item \label{opdrB} 
+We laten de meetresultaten hier in de vorm van een genormeerd histogram zien. We hebben gekozen voor 15 bins, (omdat?)
+
+\begin{figure}[h]
+  \caption{Histogram van valtijden}
+  \vspace*{-4mm}
+  \includegraphics[scale=0.8]{images/normalized_histogram_valtijden.png}  
+  \centering
+\end{figure}
+
+We berekenen nu  $\bar t_1$, ...,  $\bar t_{10}$ voor de 4 metingen in elk van de 10 kolommen door middel van python. 
 Dit geeft de waardes:
 $\bar t_1$ = 74.25/100 s,
 $\bar t_2$ = 67.75/100 s,
@@ -58,13 +84,39 @@ $\bar t_3$ = 72.5/100 s,
 $\bar t_4$ = 77.25/100 s,
 $\bar t_5$ = 66.25/100 s,
 $\bar t_6$ = 74.75/100 s,
-$\bar t_7$ = 75.75/ 100 s,
-$\bar t_8$ = 76./100 s,
+$\bar t_7$ = 75.75/100 s,
+$\bar t_8$ = 76.00/100 s,
 $\bar t_9$ = 71.75/100 s en
 $\bar t_{10}$ = 72.75/100 s.
+
+Dit hebben we gevonden met de volgende code:
+\newline
+\begin{code}
+  \caption{Code opdracht \ref{opdrB}}
+  \inputminted[
+    firstline=28,
+    lastline=36,
+    frame=lines, 
+    breaklines,
+    linenos,
+    ]{python}{code/DataV_inlever1.py}
+\end{code}
  
-\item 
+\item \label{opdrC}
 We hebben in python het gemiddelde ($\bar t_{deel}$) en de bijbehorende standaarddeviatie ($\sigma_{deel}$) berekend. Dit gaf de waardes $\bar t_{deel}$ = 72.9 in honderste secondes en $\sigma_{deel}$ = 3.561366778827103 in honderste secondes. 
+
+Dit hebben we gevonden met de volgende code:
+\newline
+\begin{code}
+  \caption{Code opdracht \ref{opdrC}}
+  \inputminted[
+    firstline=47,
+    lastline=52,
+    frame=lines, 
+    breaklines,
+    linenos,
+    ]{python}{code/DataV_inlever1.py}
+\end{code}
 
 We gebruiken nu de van procent regel om de standaarddeviatie goed af te ronden. We ronden de standaarddeviatie eerst af op 3.56/100 s. Wanneer we dit op 3.6/100 s afronden is de afrondfout gelijk aan 0.04/100 s. Tien procent van 3.56/100 s is gelijk aan 0.356/100 s. De afrondingsfout van 0.04/100 s is veel kleiner dan 0.356/100 s dus we ronden de standaarddeviatie af op 3.56/100 s. Dit betekent dat $\bar t_{deel}$ afgerond wordt naar 73/100 s. 
 
@@ -80,20 +132,8 @@ Het is echter niet te verwachten dat de uitkomst voor de standaarddeviatie bij (
 
 Wanneer namelijk het gemiddelde van vier valtijden genomen wordt ligt de uitkomst dichter bij de werkelijke valtijd dan elk van de vier losse metingen. De waardes waarvan het gemiddelde werd genomen in (c.) lagen dus allemaal al dichter bij de werkelijke valtijd dan de losse metingen bij (a.). Hoe dichter de waardes waarover de standaarddeviatie wordt berekend bij het werkelijke gemiddelde liggen, hoe kleiner de standaarddeviatie. De standaarddeviaitie bij (c.) was inderdaad kleiner dan bij (a.).
 
-\item Er geldt: $t_5 = (70 \pm 7.0)/100$ s en $t_8 = (68 \pm 7.0)/100$ s. Wanneer twee metingen consistent zijn met elkaar kunnen ze door de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben, zelfs niet wanneer er rekening gehouden wordt met de onzekerheid. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebbem. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
+\item \label{opdrD} Er geldt: $t_5 = (70 \pm 7.0)/100$ s en $t_8 = (68 \pm 7.0)/100$ s. Wanneer twee metingen consistent zijn met elkaar kunnen ze door de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben, zelfs niet wanneer er rekening gehouden wordt met de onzekerheid. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebbem. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
 
 \end{enumerate}
-
-% \begin{code}
-%   \caption{Berekening}
-%   \inputminted[
-%     % title=,
-%     % listingscaption=test,
-%     firstline=0,
-%     % lastline=10,
-%     frame=lines, 
-%     breaklines,
-%     ]{python}{code/DataV_inlever1.py}
-% \end{code}
 
 \end{document}
