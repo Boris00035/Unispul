@@ -42,7 +42,7 @@ print(deeltgem)
 plt.xlabel('Valtijden in honderdste s')
 plt.ylabel('Genormeerd aantal keer gemeten')
 plt.hist(valtijden, 15, density=True, range=(min(valtijden) - 0.5, max(valtijden) + 0.5))
-plt.savefig('../images/normalized_histogram_valtijden.png', bbox_inches='tight', dpi=200)
+# plt.savefig('../images/normalized_histogram_valtijden.png', bbox_inches='tight', dpi=200)
 
 #c
 

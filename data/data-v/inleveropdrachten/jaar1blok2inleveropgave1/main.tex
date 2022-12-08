@@ -11,6 +11,7 @@
 \usepackage{amsthm}
 \usepackage{cleveref}
 \usepackage{graphicx}
+\usepackage{siunitx}
 
 \theoremstyle{definition}
 
@@ -131,7 +132,13 @@ Het is echter niet te verwachten dat de uitkomst voor de standaarddeviatie bij \
 
 Wanneer namelijk het gemiddelde van vier valtijden genomen wordt ligt de uitkomst dichter bij de werkelijke valtijd dan elk van de vier losse metingen. De waardes waarvan het gemiddelde werd genomen in \ref{opdrC} lagen dus allemaal al dichter bij de werkelijke valtijd dan de losse metingen bij \ref{opdrA}. Hoe dichter de waardes waarover de standaarddeviatie wordt berekend bij het werkelijke gemiddelde liggen, hoe kleiner de standaarddeviatie. De standaarddeviaitie bij \ref{opdrC} was inderdaad kleiner dan bij \ref{opdrA}.
 
-\item \label{opdrD} Er geldt: $t_5 = (70 \pm 7.0)/100$ s en $t_8 = (68 \pm 7.0)/100$ s. Wanneer twee metingen consistent zijn met elkaar kunnen ze door de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben, zelfs niet wanneer er rekening gehouden wordt met de onzekerheid. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebben. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
+\newpage
+\item \label{opdrD} 
+Twee metingen $x_1, x_2$ van de valtijd zijn consistent met elkaar als het volgende geldt: $\lvert x_1 - x_2 \rvert \leq 2\sigma_{t}$. Twee metingen zijn strijdig als geldt $\lvert x_1 - x_2 \rvert > 2\sigma_{t}$. Twee correcte metingen kunnen strijdig zijn, er bestaat namelijk een kleine kans dat twee metingen meer dan $2\sigma_{t}$ uit elkaar liggen. De standaard deviatie $\sigma_{t}$ is bij \ref{opdrA} berekent en bedraagt 7.0/100 s. Er geldt voor $t_5$ en $t_8$ dat $\lvert t_5 - t_8 \rvert = \lvert 70/100 \unit{\second} - 82/100 \unit{\second} \rvert = 12/100 \unit{\second} < 14/100 \unit{\second} = 2\sigma_{t}$. De twee metingen zijn dus niet strijdig. 
+
+% Wanneer twee metingen consistent zijn met elkaar kunnen ze door rekening te houden met de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben wanneer er rekening gehouden wordt met de onzekerheid. Er geldt: $t_5 = (70 \pm 7.0)/100$ s en $t_8 = (68 \pm 7.0)/100$ s. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebben. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
+
+% Wanneer twee metingen consistent zijn met elkaar kunnen ze door de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben, zelfs niet wanneer er rekening gehouden wordt met de onzekerheid. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebben. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
 
 \end{enumerate}
 
