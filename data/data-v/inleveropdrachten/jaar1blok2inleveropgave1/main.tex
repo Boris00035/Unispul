@@ -120,13 +120,13 @@ Dit hebben we gevonden met de volgende code:
 
 We gebruiken nu de van procent regel om de standaarddeviatie goed af te ronden. We ronden de standaarddeviatie eerst af op 3.56/100 s. Wanneer we dit op 3.6/100 s afronden is de afrondfout gelijk aan 0.04/100 s. Tien procent van 3.56/100 s is gelijk aan 0.356/100 s. De afrondingsfout van 0.04/100 s is veel kleiner dan 0.356/100 s dus we ronden de standaarddeviatie af op 3.56/100 s. Dit betekent dat $\bar t_{deel}$ afgerond wordt naar 73/100 s. 
 
-Het is wel te verwachten dat het gemiddelde van de valtijden berekend in \ref{opdrA} gelijk is aan het zojuist berekende $\bar t_{deel}$. Dit is ook het geval. Dit is te verwachten omdat we bij opdracht \ref{opdrA} de som van $t_1, ..., t_{40}$ hebben gedeeld door 40. We hebben dus de berekening $\frac{1}{40}\Sigma_{n=1}^{40} t_i = \bar t$ gedaan om $\bar t$ te krijgen. 
+Het is wel te verwachten dat het gemiddelde van de valtijden berekend in \ref{opdrA} gelijk is aan het zojuist berekende $\bar t_{deel}$. Dit is ook het geval. Dit is te verwachten omdat we bij opdracht \ref{opdrA} de som van $t_1, ..., t_{40}$ hebben gedeeld door 40. We hebben dus de berekening $\frac{1}{40}\Sigma_{n=1}^{40} t_n = \bar t$ gedaan om $\bar t$ te krijgen. 
 
-In opdracht \ref{opdrB} hebben we toen de berekeningen $\frac{1}{4}\Sigma_{n=1}^{4} t_i = \bar t_1$, $\frac{1}{4}\Sigma_{n=5}^{8} t_i = \bar t_2$, .. , $\frac{1}{4}\Sigma_{n=37}^{40} t_i = \bar t_{10}$ gedaan om $\bar t_1, ..., \bar t_{10}$ te krijgen. 
+In opdracht \ref{opdrB} hebben we toen de berekeningen $\frac{1}{4}\Sigma_{n=1}^{4} t_n = \bar t_1$, $\frac{1}{4}\Sigma_{n=5}^{8} t_n = \bar t_2$, .. , $\frac{1}{4}\Sigma_{n=37}^{40} t_n = \bar t_{10}$ gedaan om $\bar t_1, ..., \bar t_{10}$ te krijgen. 
 
-Toen hebben we in opdracht \ref{opdrC} de berekening $\frac{1}{10}\Sigma_{n=1}^{10} \bar t_i = \bar t_{deel}$ gedaan om $\bar t_{deel}$ te krijgen. 
+Toen hebben we in opdracht \ref{opdrC} de berekening $\frac{1}{10}\Sigma_{n=1}^{10} \bar t_n = \bar t_{deel}$ gedaan om $\bar t_{deel}$ te krijgen. 
 
-De berekening die in opdracht \ref{opdrC} is gedaan is te schrijven als $\frac{1}{10} \cdot (\frac{1}{4}\Sigma_{n=1}^{4} t_i + \frac{1}{4}\Sigma_{n=5}^{8} t_i + ... + \frac{1}{4}\Sigma_{n=37}^{40} t_i) = \frac{1}{40} \cdot (\Sigma_{n=1}^{4} t_i + \Sigma_{n=5}^{8} t_i + ... + \Sigma_{n=37}^{40} t_i) =  \frac{1}{40} \Sigma_{n=1}^{40} t_i$. De berekening die we bij \ref{opdrC} hebben gedaan is dus gelijk aan de berekening die we bij \ref{opdrA} deden en dus is het te verwachten dat de uitkomst gelijk is.
+De berekening die in opdracht \ref{opdrC} is gedaan is te schrijven als $\frac{1}{10} \cdot (\frac{1}{4}\Sigma_{n=1}^{4} t_n + \frac{1}{4}\Sigma_{n=5}^{8} t_n + ... + \frac{1}{4}\Sigma_{n=37}^{40} t_n) = \frac{1}{40} \cdot (\Sigma_{n=1}^{4} t_n + \Sigma_{n=5}^{8} t_n + ... + \Sigma_{n=37}^{40} t_n) =  \frac{1}{40} \Sigma_{n=1}^{40} t_i$. De berekening die we bij \ref{opdrC} hebben gedaan is dus gelijk aan de berekening die we bij \ref{opdrA} deden en dus is het te verwachten dat de uitkomst gelijk is.
 
 Het is echter niet te verwachten dat de uitkomst voor de standaarddeviatie bij \ref{opdrA} en \ref{opdrC} gelijk zou zijn. Dit is ook niet het geval. 
 
@@ -134,7 +134,7 @@ Wanneer namelijk het gemiddelde van vier valtijden genomen wordt ligt de uitkoms
 
 \newpage
 \item \label{opdrD} 
-Twee metingen $x_1, x_2$ van de valtijd zijn consistent met elkaar als het volgende geldt: $\lvert x_1 - x_2 \rvert \leq 2\sigma_{t}$. Twee metingen zijn strijdig als geldt $\lvert x_1 - x_2 \rvert > 2\sigma_{t}$. Twee correcte metingen kunnen strijdig zijn, er bestaat namelijk een kleine kans dat twee metingen meer dan $2\sigma_{t}$ uit elkaar liggen. De standaard deviatie $\sigma_{t}$ is bij \ref{opdrA} berekent en bedraagt 7.0/100 s. Er geldt voor $t_5$ en $t_8$ dat $\lvert t_5 - t_8 \rvert = \lvert 70/100 \unit{\second} - 82/100 \unit{\second} \rvert = 12/100 \unit{\second} < 14/100 \unit{\second} = 2\sigma_{t}$. De twee metingen zijn dus niet strijdig. 
+Twee metingen $x_1, x_2$ van de valtijd zijn consistent met elkaar als het volgende geldt: $\lvert x_1 - x_2 \rvert \leq 2\sigma_{t}$. Twee metingen zijn strijdig als geldt $\lvert x_1 - x_2 \rvert > 2\sigma_{t}$. Twee correcte metingen kunnen strijdig zijn, er bestaat namelijk een kleine kans dat twee metingen meer dan $2\sigma_{t}$ uit elkaar liggen. De standaarddeviatie $\sigma_{t}$ is bij \ref{opdrA} berekend en bedraagt 7.0/100 s. Er geldt voor $t_5$ en $t_8$ dat $\lvert t_5 - t_8 \rvert = \lvert 70/100 \unit{\second} - 82/100 \unit{\second} \rvert = 12/100 \unit{\second} < 14/100 \unit{\second} = 2\sigma_{t}$. De twee metingen zijn dus niet strijdig. 
 
 % Wanneer twee metingen consistent zijn met elkaar kunnen ze door rekening te houden met de onzekerheid dezelfde waarde hebben. Wanneer twee metingen strijdig zijn kunnen ze niet dezelfde waarde hebben wanneer er rekening gehouden wordt met de onzekerheid. Er geldt: $t_5 = (70 \pm 7.0)/100$ s en $t_8 = (68 \pm 7.0)/100$ s. Aangezien de waarde van $t_5$ tussen 63.0/100 s en 77.0/100 s ligt en die van $t_8$ tussen 61.0/100 s en 75.0/100 s kunnen ze dezelfde waarde hebben. De resultaten $t_5$ en $t_8$ zijn dus consistent. (niet af)
 
