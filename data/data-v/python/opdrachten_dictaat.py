@@ -1,5 +1,16 @@
-# import numpy as np
-# import matplotlib.pyplot as plt
+import numpy as np
+import math
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+
+def average(list):
+    avg = sum(list) / len(list)
+    return avg
+
+def std_dev_avg(list):
+    std_dev = math.sqrt(1/len(list)) * average(list)
+    return std_dev
+
 
 # fig = plt.figure()
 # ax = fig.add_subplot(111)
@@ -43,3 +54,28 @@
 #         if num % pot_divisor == 0:
 #             print(num, "Not a prime")
 #             break
+
+# # opdracht 3.9
+
+# array = [98.7, 95.3, 95.9, 98.3, 96.3, 93, 100.2, 96.4, 98.9, 93.2]
+# error = [0.4, 1.6, 3.0, 0.4, 2.8, 7, 1.0, 1.2, 0.8, 6.2]
+# x = np.linspace(0, len(array), len(array))
+
+# plt.errorbar(x, array, yerr=error, fmt='.k')
+# # plt.show()
+# print(average(array))
+# print(std_dev_avg(array))
+
+# # opdracht 4.2
+
+# mu1 = 2
+# sigma1 = 1
+# mu2 = 1
+# sigma2 = 2
+# x = np.linspace(mu2 - 3*sigma2, mu1 + 3*sigma2, 100)
+# plt.plot(x, norm.pdf(x, mu1, sigma1))
+# plt.plot(x, norm.pdf(x, mu2, sigma2))
+
+# # plt.show()
+
+# print(norm.cdf(mu1 + sigma1/1.5, mu1, sigma1) - norm.cdf(mu1 - sigma1/1.5, mu1, sigma1))
