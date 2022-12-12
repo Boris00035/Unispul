@@ -1,3 +1,7 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
 # # opdracht 2.1.1
 # def ex_or(input1, input2):
     # if (input1 or input2) and not (input1 and input2):
@@ -11,7 +15,6 @@
 # print(ex_or(False,False))
 
 # opdracht 2.3.1
-# import math
 # input = int(input("Geef een positief getal: "))
 
 # if input >= 0:
@@ -46,8 +49,82 @@
 #     a=b
 #     b=c
     
+# # opdracht 2.5.2
 
+# n = 5
 
+# for i in range(2, n):
+#     if n % i == 0:
+#         break
+    
+#     if i == n - 1:
+#         print(n, 'prime')
+
+# # opdracht 3.1.1
+
+# k = 10
+
+# arr = np.arange(0, k, 1)
+# arr1 = []
+
+# for n in arr:
+#     arr1.append(arr[n]**arr[n])
+
+# avg = max(arr1) / len(arr1)
+# print(avg)
+
+# # opdracht 3.3.1 oplossing 1
+
+# y = np.arange(30)
+# np.random.shuffle(y)
+
+# y1 = np.array([])
+
+# for i in y:
+#     if i % 2 == 1:
+#         y1 = np.insert(y1, 0, i)
+#     else:
+#         y1 = np.append(y1, i)
+#     # print(y1)
+
+# y = y1
+# y = np.sort(y.reshape(2,15))
+# print(y)
+            
+# opdracht 3.3.1 oplossing 2
+
+# y = np.arange(30)
+# np.random.shuffle(y)
+
+# y.sort()
+
+# print(y.reshape(15,2).T)
+
+# f, (ax1, ax2, ax3) = plt.subplots(3, sharex=True, sharey=True)
+
+# x = np.linspace(0,2*np.pi)
+
+# ax1.plot(x,np.cos(x)**2)
+# ax2.plot(x,np.sin(x)**2)
+# ax3.plot(x,np.cos(x)*np.sin(x))
+
+# # f.subplots_adjust(hspace=0.1)
+# plt.xticks()
+
+# f.suptitle("Drie plotjes tegelijk")
+# plt.show()
+
+# f, axarr = plt.subplots(2, 2, sharex='col', sharey='row')
+
+# x = np.linspace(0,2*np.pi)
+
+# axarr[0,0].plot(x,np.cos(x)**2)              
+# axarr[0,1].plot(x,np.sin(x)**2)            
+# axarr[1,0].plot(x,np.cos(x)*np.sin(x))        
+# axarr[1,1].plot(x,np.cos(x)**2*np.sin(x)**2)   
+
+# f.suptitle("Vier plotjes tegelijk")
+# plt.imshow()
 
 
 
