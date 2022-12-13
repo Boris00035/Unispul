@@ -2,6 +2,11 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+import csv
+
 # # opdracht 2.1.1
 # def ex_or(input1, input2):
     # if (input1 or input2) and not (input1 and input2):
@@ -126,16 +131,56 @@ import matplotlib.pyplot as plt
 # f.suptitle("Vier plotjes tegelijk")
 # plt.imshow()
 
-np.random.seed(43890)
-aantal_samples = 10000
+# # opdracht 3.7.1 random getallen en pi
 
-unif = np.random.rand(aantal_samples,2)
-masker = [1 if math.sqrt(j[0]**2 + j[1]**2) < 1 else 0 for j in unif]
+# np.random.seed(43892)
+# max_aantal_samples = 1000
 
-aantal_in_cirkel = masker.count(1)
-ratio = np.average(masker)
+# def calculate_pi(aantal_samples):
+#     unif = np.random.rand(int(aantal_samples),2)
+#     masker = [1 if math.sqrt(j[0]**2 + j[1]**2) < 1 else 0 for j in unif]
 
-print(4 * ratio)
+#     ratio = np.average(masker)
+#     return 4 * ratio
+
+# x_as = np.linspace(0,max_aantal_samples, max_aantal_samples)
+# y_as = []
+
+# for i in x_as:
+#     print(i)
+#     y_as.append(np.pi - calculate_pi(i))
+
+# # plt.xscale('log')
+# # plt.yscale('log')
+
+# plt.plot(x_as,y_as)
+
+# plt.show()
+
+# writing to csv files
+
+# f = open('test.csv', 'w', newline='')
+
+# writer = csv.writer(f)
+
+# row = ['x_as', 'y_as']
+# writer.writerow(row)
+
+# test_inputs = np.linspace(0,10,11)
+# test_metingen = np.random.rand(11)
+
+# test_metingen_sci_format = []
+
+# for i in range(0, len(test_metingen)):
+#     test_metingen_sci_format.append(np.format_float_scientific(test_metingen[i], 3))
+
+# twod_data_matrix = np.array([test_inputs, test_metingen_sci_format])
+
+# writer.writerows(np.transpose(twod_data_matrix))
+
+
+# f.close()
+
 
 
 
