@@ -126,6 +126,17 @@ import matplotlib.pyplot as plt
 # f.suptitle("Vier plotjes tegelijk")
 # plt.imshow()
 
+np.random.seed(43890)
+aantal_samples = 10000
+
+unif = np.random.rand(aantal_samples,2)
+masker = [1 if math.sqrt(j[0]**2 + j[1]**2) < 1 else 0 for j in unif]
+
+aantal_in_cirkel = masker.count(1)
+ratio = np.average(masker)
+
+print(4 * ratio)
+
 
 
 
