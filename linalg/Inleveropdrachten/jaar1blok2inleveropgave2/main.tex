@@ -1,0 +1,93 @@
+\documentclass[12pt, dutch, a4paper]{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[tmargin=0.8in, bmargin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dutch]{babel}
+\selectlanguage{dutch}
+\usepackage{amsthm}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\theoremstyle{definition}
+
+\newtheorem{theorem}{Stelling}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{lemmalos}{Lemma}
+\newtheorem{sublemma}{Lemma}[lemma]
+\newtheorem{case}{Geval}
+\newtheorem{claim}{Claim}
+
+\newenvironment{shortclaim}
+  {\refstepcounter{claim}\textbf{Claim~\theclaim.}}% \begin{shortthm}
+{\enskip}
+\newenvironment{shortthm}
+  {\refstepcounter{theorem}\textbf{Stelling~\thetheorem.}}% \begin{shortthm}
+{\enskip}
+
+\usepackage[newfloat]{minted}
+\usepackage[
+  skip=0pt
+  ]{caption}
+
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{placement=htp}
+\SetupFloatingEnvironment{listing}{name=Code blok}
+
+\title{Inlever 2 Lial 2}
+\author{Boris van Boxtel en Lotte Gritter}
+\date{21 December 2022}
+
+\begin{document}
+
+\maketitle 
+
+\begin{enumerate}[\text{Opgave} 1.]
+    \item \label{opdracht1}
+    Gegeven zijn twee eindig dimensionale vectorruimten 
+    $V$ en $W$ en een lineare afbeelding $A\colon V \to W$. 
+    Er wordt bewezen dat als $\dim(V) > \dim(W)$, $A$ niet injectief is.
+    
+    \begin{proof} $ $ \newline
+        Volgens de dimensiestelling geldt de volgende vergelijking:
+        \begin{equation}
+            \dim(V) = \dim(\ker(A)) + \dim(A(V))
+        \end{equation}
+        Hieruit volgt de volgende vergelijking:
+        \begin{equation} \label{dimensiestelling}
+            \dim(V) - \dim(A(V)) = \dim(\ker(A)).
+        \end{equation}
+        Per definitie geldt het volgende: 
+        (komt omdat $A(V) \subseteq W$, moet meer uitleg bij?)
+        \begin{equation}
+            \dim(W) \geq \dim(A(V))
+        \end{equation}
+        En samen met het gegeven dat $\dim(V) > \dim(W)$,
+        gelden de volgende ongelijkheden:
+        \begin{equation}
+            \dim(V) > \dim(W) \geq \dim(A(V))
+        \end{equation}
+        \begin{equation}
+            \dim(V) > \dim(A(V))
+        \end{equation}
+        Hieruit volgt dat
+        \begin{equation}
+            \dim(V) - \dim(A(V)) > 0.
+        \end{equation}
+        Vanuit \cref{dimensiestelling} volgt dus dat $\dim(\ker(A)) > 0$.
+        Samen met \textbf{Stelling 7.3.3} 
+        concluderen we dat $A$ niet injectief is. 
+
+    \end{proof}
+    
+    
+    \item \label{opdracht2}
+
+
+\end{enumerate}
+\end{document}
+

@@ -79,3 +79,6 @@ def std_dev_avg(list):
 # # plt.show()
 
 # print(norm.cdf(mu1 + sigma1/1.5, mu1, sigma1) - norm.cdf(mu1 - sigma1/1.5, mu1, sigma1))
+
+# opdracht 5.1
+
