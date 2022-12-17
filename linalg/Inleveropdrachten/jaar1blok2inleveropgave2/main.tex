@@ -38,6 +38,12 @@
 \SetupFloatingEnvironment{listing}{placement=htp}
 \SetupFloatingEnvironment{listing}{name=Code blok}
 
+% \usepackage{mathtools}
+% \newcommand\SetSymbol[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
+% \providecommand\given{} % to make it exist
+% \DeclarePairedDelimiterX\Set[1]\{\}{\renewcommand\given{\SetSymbol[\delimsize]}#1}
+
+
 \title{Inlever 2 Lial 2}
 \author{Boris van Boxtel en Lotte Gritter}
 \date{21 December 2022}
@@ -80,14 +86,127 @@
         \end{equation}
         Vanuit \cref{dimensiestelling} volgt dus dat $\dim(\ker(A)) > 0$.
         Samen met \textbf{Stelling 7.3.3} 
-        concluderen we dat $A$ niet injectief is. 
+        is de conclusie dat $A$ niet injectief is. 
 
     \end{proof}
     
-    
     \item \label{opdracht2}
+    Het doel is de oplossingsverzameling van de vergelijking
+    \begin{equation}\label{maineq}
+        2x^2 - 4xy + 5y^2 = 36
+    \end{equation}
+    om te schrijven naar een vorm 
+    \begin{equation}
+        a(x')^2 + b(y')^2 = 36
+    \end{equation}
+    met behulp van lineare algebra. We geven eerst een beeld van de aanpak om dit bereiken. 
+    
+    We beginnen met het schrijven van \cref{maineq} in de volgende vorm:
+    \begin{equation}\label{quadform}
+        \mathbf{x}^T A \mathbf{x} = 36
+    \end{equation}
+    Waar $\mathbf{x} = (x, y)^T$ en $A$ een $2\times 2$ matrix, namelijk 
+    $A = \begin{pmatrix}
+        2 & -2 \\
+        -2 & 5
+    \end{pmatrix}$. We zoeken nu een basis van eigenvectoren van $A$, zodat we $A$ kunnen diagonaliseren. Wanneer we deze hebben gevonden, kan $A$ geschreven worden als $A = S^{-1} D S$. Voor een coördinatentransformatie matrix $S$ en een diagonaalmatrix $D$. Als we dit invullen in \cref{quadform} vinden we de volgende vergelijking: 
+    \begin{equation}\label{diagonalized}
+        \mathbf{x}^T S^{-1} D S \mathbf{x} = 36.
+    \end{equation} 
+    Vervolgens bewijzen we dat $S^{-1} = S^T$, waardoor we \cref{diagonalized} kunnen schrijven als:
+    \begin{equation}
+        \mathbf{x}^T S^T D S \mathbf{x} = 36.
+    \end{equation} 
+    wat we volgens \textbf{Stelling 3.1.1} kunnen schrijven als volgt:
+    \begin{equation}
+        (S \mathbf{x})^T D S \mathbf{x} = 36.
+    \end{equation}
+    Hier zien we in dat we aan de linker en rechterkant nu nieuwe coördinaten $S\mathbf{x} = \mathbf{x'} = (x', y')^T$ hebben, dus we vinden het volgende:
+    \begin{equation} \label{transed_eq}
+        \mathbf{x'}^T D \mathbf{x'} = 36.
+    \end{equation}
+    Per definitie is $D$ een diagonaal matrix, dus vinden we een polynoom in de coördinaten $(x', y')^T$ zonder kruistermen. Nu volgt de uitvoering voor de gegeven vergelijking.
 
+    Voor een basis van eigenvectoren van $A$ beginnen we bij het zoeken van eigenwaarden van $A$. Dit doen we door de vergelijking $\det(A - \lambda I) = 0$ op te lossen. Dit geeft de volgende vergelijking in $\lambda$:
+    \begin{equation}
+        (2 - \lambda)(5 - \lambda) -4 = 0
+    \end{equation}
+    De oplossingen hiervan zijn $\lambda_1 = 1, \lambda_2 = 6$, met beide $\lambda_1, \lambda_2$ een algebraïsche multipliciteit van 1. We vinden de eigenvectoren bij de eigenwaarden $\lambda_1$ en  $\lambda_2$ door een basis te vinden van $\ker (A - \lambda_1 I) = E_1$ en $\ker (A - \lambda_2 I) = E_2$ respectievelijk. Dit doen we door Gauss-Jordan toe te passen op de matrix $A - \lambda I$, en vervolgens een basis op te stellen. We vinden de volgende bases van de eigenruimtes:
+    \begin{align}
+        B_1 &= \left\{ 
+            \begin{pmatrix}
+            \frac{2}{\sqrt{5}} \\
+            \frac{1}{\sqrt{5}}
+            \end{pmatrix}\right\}
+        \\
+        B_6 &= \left\{ 
+            \begin{pmatrix}
+            -\frac{1}{\sqrt{5}} \\
+            \frac{2}{\sqrt{5}}
+            \end{pmatrix}\right\}
+    \end{align}
+    Waar $B_1$ de basis is van $E_1$ en $B_6$ de basis van $E_6$. Deze specifieke vectoren zijn zo gekozen zodat de lengte 1 is. We zien dat deze bases beide uit 1 vector bestaan. Dus geldt dat de dimensie van $E_1$ en $E_6$ beide gelijk is aan 1. Dus voor elke eigenwaarde geldt dat de algebraïsche multipliciteit gelijk is aan de meetkundige multipliciteit, dus $A$ is diagonalizeerbaar. We zien dat het inproduct van de twee vectoren in $B_1$ en $B_6$ 0 is, dus ze staan loodrecht op elkaar en vormen dus een basis van $\mathbb{R}^n$. De coördinatentransformatie matrix $S$ en de diagonaal matrix $D$ zijn gegeven door:
+    \begin{align}
+        S &= 
+        \begin{pmatrix}
+            \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
+            -\frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+        \end{pmatrix} &
+        D &= 
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 6
+        \end{pmatrix} 
+    \end{align}   
+    We laten nu zien dat $S^{-1} = S^T$.
+    \begin{proof} $ $ \newline
+        We kunnen beide matrices berekenen, en vinden het volgende.
+        \begin{align}
+            S^{-1} &= 
+            \begin{pmatrix}
+                \frac{2}{\sqrt{5}} & -\frac{1}{\sqrt{5}} \\
+                \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+            \end{pmatrix} & 
+            S^T &= 
+            \begin{pmatrix}
+                \frac{2}{\sqrt{5}} & -\frac{1}{\sqrt{5}} \\
+                \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+            \end{pmatrix} 
+        \end{align}
+        We zien dus dat voor deze $S$ geldt dat $S^{-1} = S^T$.
 
+    \end{proof}
+    
+    We hebben alle benodigde componenten gevonden. Als we de gevonden matrix voor $D$ invullen in \cref{transed_eq} vinden we het volgende:
+    \begin{equation}
+        \mathbf{x'}^T 
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & 6
+        \end{pmatrix} 
+        \mathbf{x'} = 36
+    \end{equation}
+    en dit kunnen we schrijven als:
+    \begin{equation} \label{transed_eq2}
+        {x'}^2 + 6{y'}^2 = 36.
+    \end{equation}
+    We hebben de orginele vraag beantwoord met oplossing $a = 1$ en $b = 6$.
+
+    Ook zien we dat de volgende vergelijking geldt: 
+    \begin{equation}
+        S\mathbf{x} = 
+        \mathbf{x'} = 
+        \begin{pmatrix}
+            x' \\
+            y'
+        \end{pmatrix}
+        = \frac{1}{\sqrt{5}}
+        \begin{pmatrix}
+            2x + y \\
+            -x + 2y
+        \end{pmatrix}.
+    \end{equation}
+    Als we ter controle deze twee vergelijking van $x'$ en $y'$ invullen in \cref{transed_eq2}, vinden we zoals verwacht \cref{maineq} terug.
 \end{enumerate}
 \end{document}
 
