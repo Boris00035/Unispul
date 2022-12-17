@@ -12,6 +12,7 @@
 \usepackage{cleveref}
 \usepackage{graphicx}
 \usepackage{siunitx}
+\usepackage{pst-func}
 
 \theoremstyle{definition}
 
@@ -30,18 +31,11 @@
 {\enskip}
 
 \usepackage[newfloat]{minted}
-\usepackage[
-  skip=0pt
-  ]{caption}
+\usepackage[skip=0pt]{caption}
 
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{placement=htp}
 \SetupFloatingEnvironment{listing}{name=Code blok}
-
-% \usepackage{mathtools}
-% \newcommand\SetSymbol[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
-% \providecommand\given{} % to make it exist
-% \DeclarePairedDelimiterX\Set[1]\{\}{\renewcommand\given{\SetSymbol[\delimsize]}#1}
 
 
 \title{Inlever 2 Lial 2}
@@ -207,6 +201,19 @@
         \end{pmatrix}.
     \end{equation}
     Als we ter controle deze twee vergelijking van $x'$ en $y'$ invullen in \cref{transed_eq2}, vinden we zoals verwacht \cref{maineq} terug.
+
+    Hieronder staat een plot van de oplossingsverzameling van \cref{transed_eq2}.
+    \begin{center}
+        \begin{pspicture}(-6.5,-3.5)(7,3.5)
+            \psaxes{->}(0,0)(-6.5,-3)(6.5,3)[$x'$,0][$y'$,90]
+            \psplotImp[
+            linecolor=red,
+            stepFactor=0.1,
+            algebraic,
+            ](-6.5,-3)(6.5,3){x^2 +6*y^2 - 36}
+        \end{pspicture}
+    \end{center}
+    
 \end{enumerate}
 \end{document}
 
