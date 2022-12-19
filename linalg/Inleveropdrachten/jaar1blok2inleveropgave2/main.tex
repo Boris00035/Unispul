@@ -13,6 +13,7 @@
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage{pst-func}
+\usepackage{tikz}
 
 \theoremstyle{definition}
 
@@ -139,12 +140,12 @@
             \frac{2}{\sqrt{5}}
             \end{pmatrix}\right\}
     \end{align}
-    Waar $B_1$ de basis is van $E_1$ en $B_6$ de basis van $E_6$. Deze specifieke vectoren zijn zo gekozen zodat de lengte 1 is. We zien dat deze bases beide uit 1 vector bestaan. Dus geldt dat de dimensie van $E_1$ en $E_6$ beide gelijk is aan 1. Dus voor elke eigenwaarde geldt dat de algebraïsche multipliciteit gelijk is aan de meetkundige multipliciteit, dus $A$ is diagonalizeerbaar. We zien dat het inproduct van de twee vectoren in $B_1$ en $B_6$ 0 is, dus ze staan loodrecht op elkaar en vormen dus een basis van $\mathbb{R}^n$. De coördinatentransformatie matrix $S$ en de diagonaal matrix $D$ zijn gegeven door:
+    Waar $B_1$ de basis is van $E_1$ en $B_6$ de basis van $E_6$. Deze specifieke vectoren zijn zo gekozen zodat de lengte 1 is. We zien dat deze bases beide uit 1 vector bestaan. Dus geldt dat de dimensie van $E_1$ en $E_6$ beide gelijk is aan 1. Dus voor elke eigenwaarde geldt dat de algebraïsche multipliciteit gelijk is aan de meetkundige multipliciteit, dus $A$ is diagonalizeerbaar. We zien dat het inproduct van de twee vectoren in $B_1$ en $B_6$ 0 is, dus ze staan loodrecht op elkaar en vormen dus een basis van $\mathbb{R}^n$. De coördinatentransformatie matrix $S$ en de diagonaal matrix $D$ zijn dus gegeven door:
     \begin{align}
         S &= 
         \begin{pmatrix}
-            \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
-            -\frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+            \frac{2}{\sqrt{5}} & -\frac{1}{\sqrt{5}} \\
+            \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
         \end{pmatrix} &
         D &= 
         \begin{pmatrix}
@@ -158,13 +159,13 @@
         \begin{align}
             S^{-1} &= 
             \begin{pmatrix}
-                \frac{2}{\sqrt{5}} & -\frac{1}{\sqrt{5}} \\
-                \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+                \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
+                -\frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
             \end{pmatrix} & 
             S^T &= 
             \begin{pmatrix}
-                \frac{2}{\sqrt{5}} & -\frac{1}{\sqrt{5}} \\
-                \frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
+                \frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
+                -\frac{1}{\sqrt{5}} & \frac{2}{\sqrt{5}}
             \end{pmatrix} 
         \end{align}
         We zien dus dat voor deze $S$ geldt dat $S^{-1} = S^T$.
@@ -202,19 +203,41 @@
     \end{equation}
     Als we ter controle deze twee vergelijking van $x'$ en $y'$ invullen in \cref{transed_eq2}, vinden we zoals verwacht \cref{maineq} terug.
 
-    Hieronder staat een plot van de oplossingsverzameling van \cref{maineq}.
-    \begin{center}
-        \begin{pspicture}(-6.5,-4.5)(7,4.5)
+    Merk op dat we $S$ kunnen opvatten als rotatiematrix. We zien namelijk dat:
+    \begin{align}
+        \theta &= \arccos \left( \frac{2}{\sqrt{5}} \right) \approx 0.4636\dots & 
+        S &= 
+        \begin{pmatrix}
+            \cos \theta & -\sin \theta \\
+            \sin \theta & \cos \theta
+        \end{pmatrix}
+    \end{align}
+    In de volgende figuren is te zien hoe de relatie tussen $x,y$ en $x',y'$ een rotatie over de oorsprong is.
+
+    \newpage
+    Hieronder is een plot te zien van de oplossingsverzameling van \cref{maineq}, waar $\hat{x}'$ en $\hat{y}'$ staan voor de eenheidsvectoren in de richting van $x'$ en $y'$.
+
+    \begin{figure}[h!]
+        \begin{pspicture}(-7.5,-4.5)(7,4.5)
             \psaxes{->}(0,0)(-6.5,-4)(6.5,4)[$x$,0][$y$,90]
             \psplotImp[
             linecolor=red,
             stepFactor=0.5,
             algebraic,
             ](-6.5,-4)(6.5,4){2*x^2 - 4*x*y + 5*y^2 - 36}
+            \psline[arrows=->, linewidth=1.5pt](0,0)(0.89442,0.44721359) %kinda hurts ngl
+            \uput[r](0.89442,0.44721359){$\hat{x}'$}
+
+            \psline[arrows=->, linewidth=1.5pt](0,0)(-0.447213,0.89442)
+            \uput[l](-0.447213,0.89442){$\hat{y}'$}
         \end{pspicture}
-    \end{center}
-    En hieronder een plot van de oplossingverzameling van \cref{transed_eq2}.
-    \begin{center}
+        \caption{\Cref{maineq} in het $xy$-vlak}
+    \end{figure}
+
+    En hieronder is een plot te zien van de oplossingverzameling van \cref{transed_eq2}, waar $\hat{x}$ en $\hat{y}$ staan voor de eenheidsvectoren in de richting van $x$ en $y$.
+    
+    \begin{figure}[h!]
+        \centering
         \begin{pspicture}(-6.5,-4.5)(7,4.5)
             \psaxes{->}(0,0)(-6.5,-4)(6.5,4)[$x'$,0][$y'$,90]
             \psplotImp[
@@ -222,9 +245,15 @@
             stepFactor=0.5,
             algebraic,
             ](-6.5,-4)(6.5,4){x^2 + 6*y^2 - 36}
+            \psline[arrows=->, linewidth=1.5pt](0,0)(0.89442,-0.44721359) %kinda hurts ngl
+            \uput[r](0.5,-0.72){$\hat{x}$}
+
+            \psline[arrows=->, linewidth=1.5pt](0,0)(0.447213,0.89442)
+            \uput[r](0.447213,0.89442){$\hat{y}$}
         \end{pspicture}
-    \end{center}
-    
+        \caption{\Cref{transed_eq2} in het $x'y'$-vlak}
+    \end{figure}
+
 \end{enumerate}
 \end{document}
 
