@@ -104,7 +104,7 @@
     $A = \begin{pmatrix}
         2 & -2 \\
         -2 & 5
-    \end{pmatrix}$. We zoeken nu een basis van eigenvectoren van $A$, zodat we $A$ kunnen diagonaliseren. Wanneer we deze hebben gevonden, kan $A$ geschreven worden als $A = S^{-1} D S$. Voor een coördinatentransformatie matrix $S$ en een diagonaalmatrix $D$. Als we dit invullen in \cref{quadform} vinden we de volgende vergelijking: 
+    \end{pmatrix}$. We zoeken nu een basis van eigenvectoren van $A$, zodat we $A$ kunnen diagonalizeren. Wanneer we deze hebben gevonden, kan $A$ geschreven worden als $A = S^{-1} D S$ voor een coördinatentransformatie matrix $S$ en een diagonaalmatrix $D$. Als we dit invullen in \cref{quadform} vinden we de volgende vergelijking: 
     \begin{equation}\label{diagonalized}
         \mathbf{x}^T S^{-1} D S \mathbf{x} = 36.
     \end{equation} 
@@ -215,7 +215,7 @@
     In de volgende figuren is te zien hoe de relatie tussen $x,y$ en $x',y'$ een rotatie over de oorsprong is.
 
     \newpage
-    Hieronder is een plot te zien van de oplossingsverzameling van \cref{maineq}, waar $\hat{x}'$ en $\hat{y}'$ staan voor de eenheidsvectoren in de richting van $x'$ en $y'$.
+    Hieronder is een plot te zien van de oplossingsverzameling van \cref{maineq}, waar $\hat{x}'$ en $\hat{y}'$ staan voor de eenheidsvectoren in de richting van $x'$ en $y'$. De hoek tussen $\hat{x}'$ en de $x$-as is $\theta$.
 
     \begin{figure}[h!]
         \begin{pspicture}(-7.5,-4.5)(7,4.5)
@@ -234,11 +234,11 @@
         \caption{\Cref{maineq} in het $xy$-vlak}
     \end{figure}
 
-    En hieronder is een plot te zien van de oplossingverzameling van \cref{transed_eq2}, waar $\hat{x}$ en $\hat{y}$ staan voor de eenheidsvectoren in de richting van $x$ en $y$.
+    En hieronder is een plot te zien van de oplossingverzameling van \cref{transed_eq2}, waar $\hat{x}$ en $\hat{y}$ staan voor de eenheidsvectoren in de richting van $x$ en $y$. De hoek tussen $\hat{x}$ en de $x'$-as is $-\theta$.
     
     \begin{figure}[h!]
         \centering
-        \begin{pspicture}(-6.5,-4.5)(7,4.5)
+        \begin{pspicture}(-7.5,-4.5)(7,4.5)
             \psaxes{->}(0,0)(-6.5,-4)(6.5,4)[$x'$,0][$y'$,90]
             \psplotImp[
             linecolor=blue,
