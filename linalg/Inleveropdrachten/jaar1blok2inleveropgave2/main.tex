@@ -202,15 +202,26 @@
     \end{equation}
     Als we ter controle deze twee vergelijking van $x'$ en $y'$ invullen in \cref{transed_eq2}, vinden we zoals verwacht \cref{maineq} terug.
 
-    Hieronder staat een plot van de oplossingsverzameling van \cref{transed_eq2}.
+    Hieronder staat een plot van de oplossingsverzameling van \cref{maineq}.
     \begin{center}
-        \begin{pspicture}(-6.5,-3.5)(7,3.5)
-            \psaxes{->}(0,0)(-6.5,-3)(6.5,3)[$x'$,0][$y'$,90]
+        \begin{pspicture}(-6.5,-4.5)(7,4.5)
+            \psaxes{->}(0,0)(-6.5,-4)(6.5,4)[$x$,0][$y$,90]
             \psplotImp[
             linecolor=red,
-            stepFactor=0.1,
+            stepFactor=0.5,
             algebraic,
-            ](-6.5,-3)(6.5,3){x^2 +6*y^2 - 36}
+            ](-6.5,-4)(6.5,4){2*x^2 - 4*x*y + 5*y^2 - 36}
+        \end{pspicture}
+    \end{center}
+    En hieronder een plot van de oplossingverzameling van \cref{transed_eq2}.
+    \begin{center}
+        \begin{pspicture}(-6.5,-4.5)(7,4.5)
+            \psaxes{->}(0,0)(-6.5,-4)(6.5,4)[$x'$,0][$y'$,90]
+            \psplotImp[
+            linecolor=blue,
+            stepFactor=0.5,
+            algebraic,
+            ](-6.5,-4)(6.5,4){x^2 + 6*y^2 - 36}
         \end{pspicture}
     \end{center}
     
