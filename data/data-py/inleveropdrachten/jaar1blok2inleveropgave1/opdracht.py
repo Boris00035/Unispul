@@ -1,6 +1,6 @@
 import numpy as np
 
-def my_plot(t, A_n, f_0, phi_n = None, t_0 = 0):
+def fourierreeks(t, A_n, f_0, phi_n = None, t_0 = 0):
     if phi_n is None:
         phi_n = np.zeros(len(A_n))
     elif len(A_n) != len(phi_n):
@@ -13,6 +13,6 @@ def my_plot(t, A_n, f_0, phi_n = None, t_0 = 0):
 
     return y_t_list
 
-print( my_plot(np.array([0.25, 0.25]), np.array([1,2]), 1) )
+print( fourierreeks(np.array([0.25, 0.25]), np.array([1,2]), 1) )
 
 
