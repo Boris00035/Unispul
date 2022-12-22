@@ -148,6 +148,12 @@ plt.show()
 t = np.linspace(0,1,num=1000)
 # kwadratische verschillen zaagtandgolf driehoeksgolf:
 print('Driehoeksgolf:')
+# We maken hieronder gebruik van de mogelijkheid om met numpy arrays te rekenen.
+# We geven bij driehoek_golf(t, f_0=1) een numpy lijst aan driehoek_golf 
+# en krijgen een array met de functie waarden terug. 
+# Dit doen we op dezelfe manier bij fourierreeks(t, gen_coefs_driehoeksgolf(2), 1)),
+# en zo kunnen we het totale kwadratische verschil nemen van deze twee arrays.  
+
 # Bereken en print het kwadratisch verschil bij 2 Fourier coeffiecienten
 print( 'Het totale kwadratisch verschil bij 2 Fourier coefficienten is:', 
         tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(2), 1)) ) 
@@ -190,7 +196,9 @@ n = np.linspace(1,50,num=50)
                                                             
 out_list_driehoek = np.array([])        # Initializeer de lijsten.
 out_list_zaagtand = np.array([])
-# Bereken de kwadratische verschillen (moet nog wat bij)
+# Bereken de kwadratische verschillen. De lijn code bestaat uit een append statement van numpy.
+# Die neemt als argument de lijst waar je iets bij wilt hebben, en het element dat je erbij wilt voegen.
+# Dat element is het kwadratische verschil, berekend op dezelfde manier als bij de individuele berekeningen bij de print statements.
 for i in n:
     out_list_driehoek = np.append(out_list_driehoek, tot_kwadratisch_verschil( driehoek_golf(t, f_0 = 1), fourierreeks( t, gen_coefs_driehoeksgolf(int(i)), 1 ) ))
     out_list_zaagtand = np.append(out_list_zaagtand, tot_kwadratisch_verschil( zaagtand_golf(t, f_0 = 1), fourierreeks( t, gen_coefs_zaagtandgolf(int(i)), 1 ) ))
