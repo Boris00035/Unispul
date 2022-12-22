@@ -62,16 +62,16 @@
     \end{cases}.
   \end{equation}
   We berekenen de eerste $n$ van deze coëfficiënten van de driehoeksgolf met de volgende python code:
-  \begin{code}
-    \inputminted[
-      firstline=43,
-      lastline=50,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-    \caption{Code voor het genereren van de coëfficiënten bij \cref{trianglewave}}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=43,
+  %     lastline=50,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  %   \caption{Code voor het genereren van de coëfficiënten bij \cref{trianglewave}}
+  % \end{code}
 
   Ook is gegeven dat de coëfficiënten van de Fourierreeks van de zaagtandgolf gegeven worden door:
   \begin{equation} \label{sawtooth}
@@ -80,28 +80,28 @@
   We berekenen de eerste $n$ van de coëfficiënten van de zaagtandgolf met de volgende python code:
 
   \newpage
-  \begin{code}
-    \inputminted[
-      firstline=53,
-      lastline=58,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-    \caption{Code voor het genereren van de coëfficiënten bij \cref{sawtooth}}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=53,
+  %     lastline=58,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  %   \caption{Code voor het genereren van de coëfficiënten bij \cref{sawtooth}}
+  % \end{code}
 
   We kunnen met deze functies en de volgende code een illustratie maken van de Fourier transform van de driehoeksgolf:
-  \begin{code}
-    \inputminted[
-      firstline=69,
-      lastline=95,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-    \caption{Code voor het genereren van Figuur 1}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=69,
+  %     lastline=95,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  %   \caption{Code voor het genereren van Figuur 1}
+  % \end{code}
 
   Het plaatje dat hiermee wordt gegenereerd is het volgende:
   \begin{figure}[h] \label{driehoekfiguur}
@@ -117,26 +117,26 @@
   \end{figure}
   \item
   We gebruiken de volgende functie om het totale kwadratische verschil van twee array's te berekenen:
-  \begin{code}
-    \inputminted[
-      firstline=59,
-      lastline=65,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-    \caption{Code voor het berekenen van het totale kwadratische verschil}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=59,
+  %     lastline=65,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  %   \caption{Code voor het berekenen van het totale kwadratische verschil}
+  % \end{code}
   We vinden het totale kwadratische verschil van bijvoorbeeld de driehoeksgolf met zijn Fourier transform met 2 coëfficiënten als volgt:
-  \begin{code}
-    \inputminted[
-      firstline=130,
-      lastline=130,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=130,
+  %     lastline=130,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  % \end{code}
 
   Deze code geeft de volgende waarden voor de totale kwadratische verschillen voor een verschillend aantal Fourier coëfficiënten $n$:
 
@@ -172,15 +172,15 @@
 
   \item
   Tot slot kunnen we met de volgende code de totale kwadratische verschillen van zowel de driehoeksgolf als de zaagtandgolf weergeven. We kunnen hier helaas geen gebruik maken van numpy's vermogen om met array's te rekenen, dus we maken gebruik van een for loop.
-  \begin{code}
-    \inputminted[
-      firstline=141,
-      lastline=157,
-      frame=lines, 
-      breaklines,
-      linenos,
-      ]{python}{code/Data_py_week_5.py}
-  \end{code}
+  % \begin{code}
+  %   \inputminted[
+  %     firstline=141,
+  %     lastline=157,
+  %     frame=lines, 
+  %     breaklines,
+  %     linenos,
+  %     ]{python}{code/Data_py_week_5.py}
+  % \end{code}
 
   De figuur is het volgende:
   \begin{figure}[h]

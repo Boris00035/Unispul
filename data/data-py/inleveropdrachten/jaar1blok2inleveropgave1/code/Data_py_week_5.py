@@ -12,9 +12,9 @@ import matplotlib.pyplot as plt
 def fourierreeks(t, A_n, f_0, phi_n = None, t_0 = 0):
     if phi_n == None:                                   # De default waarde phi_n is een array van nullen, met dezelfde lengte als A_n.
         phi_n = np.zeros(len(A_n))                      # Omdat de default waarde niet in de functie definitie kan afhangen van A_n,
-    elif len(A_n) != len(phi_n):                        # maken we de default None en vervangen we deze met de goede array.
+    elif len(A_n) != len(phi_n):                        # maken we de default None en vervangen we deze met een array van nullen.
         print("De lijsten zijn niet even groot")        # Als de waarde van phi_n niet None is, testen we hier ook of de gegeven array
-        return                                          # wel van de goede grootte is.
+        return                                          # wel van de goede grootte is, en geven anders een error.
 
     y_t_list = np.array([])                             # Hier wordt de lijst waar alle functie waardes in terechtkomen geinitialiseerd.
     for i in t:                                         # Bereken voor elke waarde in de lijst t de functie waarden.
@@ -89,11 +89,13 @@ ax[1,1].plot(t,  driehoek_golf(t, f_0=1), label = 'D(t)')
 ax[1,1].plot(t, fourierreeks(t, gen_coefs_driehoeksgolf(15), 1), label = 'Fourier D(t)')
 ax[1,1].legend()
 ax[1,1].set_title('n = 15')
-plt.gcf().set_size_inches(8, 6)                                                            # De default grootte waarmee matplotlib een foto opslaat
-# is aan de kleine kant, hiermee pas ik de grootte aan van het plaatje. 
+
+fig.suptitle('Illustratie Fourierseries driehoeksgolf')
+
+plt.gcf().set_size_inches(8, 6)                                                            # De default grootte waarmee matplotlib een foto opslaat is aan de kleine kant, hiermee pas ik de grootte aan van het plaatje. 
 fig.savefig('../images/Fourier_driehoekgolf.png', bbox_inches='tight', dpi=200)  
 # En als laatste sla het plaatje op.
-# plt.show()
+plt.show()
 
 # zaagtand
 t = np.linspace(0,1,num=1000)                                                               # Maakt een linspace aan.
@@ -119,45 +121,68 @@ ax[1,1].plot(t,  zaagtand_golf(t, f_0=1), label = 'Z(t)')
 ax[1,1].plot(t, fourierreeks(t, gen_coefs_zaagtandgolf(15), 1), label = 'Fourier Z(t)')
 ax[1,1].legend()
 ax[1,1].set_title('n = 15')
-plt.gcf().set_size_inches(8, 6)                                                            # De default grootte waarmee matplotlib een foto opslaat
-# is aan de kleine kant, hiermee pas ik de grootte aan van het plaatje. 
+
+fig.suptitle('Illustratie Fourierserie zaagtandgolf')
+
+plt.gcf().set_size_inches(8, 6)                                                             # De default grootte waarmee matplotlib een foto opslaat is aan de kleine kant, hiermee pas ik de grootte aan van het plaatje. 
 fig.savefig('../images/Fourier_zaagtandgolf.png', bbox_inches='tight', dpi=200)  
 # En als laatste sla het plaatje op.
+plt.show()
 
 # 6.3b
-t = np.linspace(0,1,num=1000)                                                                           # Maak een linspace aan
-# Driehoeksgolf:
-print( tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(2), 1)) )   # Bereken het kwadratisch verschil bij 2 Fourier coeffiecienten
-print( tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(5), 1)) )   # ... bij 5 Fourier coefficienten
-print( tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(10), 1)) )  # etc
-print( tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(15), 1)) )
+t = np.linspace(0,1,num=1000)                                                                                # Maakt een linspace aan
+# kwadratische verschillen zaagtandgolf driehoeksgolf:
+print('Driehoeksgolf:')
+print( 'Het totale kwadratisch verschil bij 2 Fourier coefficienten is:', 
+        tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(2), 1)) )   # Bereken  en print het kwadratisch verschil bij 2 Fourier coeffiecienten
 
-# zaagtandgolf:
-print( tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(2), 1)) )   
-print( tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(5), 1)) )   
-print( tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(10), 1)) )  
-print( tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(15), 1)) )
+print( 'Het totale kwadratisch verschil bij 5 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(5), 1)) )   # ... bij 5 Fourier coefficienten
 
-n = np.linspace(1,100,num=100)                                                              # Maakt een linspace aan.
+print( 'Het totale kwadratisch verschil bij 10 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(10), 1)) )  # etc
 
-fig, ax = plt.subplots(1, 2)                                                                
+print( 'Het totale kwadratisch verschil bij 15 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(driehoek_golf(t, f_0=1), fourierreeks(t, gen_coefs_driehoeksgolf(15), 1)) )
+
+# kwadratische verschillen zaagtandgolf:
+print('Zaagtandgolf:')
+print( 'Het totale kwadratisch verschil bij 2 Fourier coefficienten is:', 
+        tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(2), 1)) )  
+
+print( 'Het totale kwadratisch verschil bij 5 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(5), 1)) )  
+
+print( 'Het totale kwadratisch verschil bij 10 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(10), 1)) )  
+
+print( 'Het totale kwadratisch verschil bij 15 Fourier coefficienten is:',
+        tot_kwadratisch_verschil(zaagtand_golf(t, f_0=1), fourierreeks(t, gen_coefs_zaagtandgolf(15), 1)) )
+
+# 6.3c
+t = np.linspace(0,1,num=1000)                                                               # Maakt een linspace aan voor het vergelijken van het kwadratisch verschil.
+n = np.linspace(1,50,num=50)                                                                # Maakt een linspace aan voor het aantal Fourier coefficienten.
+                                                            
 out_list_driehoek = np.array([])                                                            # Initializeer de lijsten.
 out_list_zaagtand = np.array([])
 for i in n:                                                                                 # Bereken de kwadratische verschillen
-    out_list_driehoek = np.append(out_list_driehoek, tot_kwadratisch_verschil( driehoek_golf(n), fourierreeks( n, gen_coefs_driehoeksgolf(int(i)), 1 ) ))
-    out_list_zaagtand = np.append(out_list_zaagtand, tot_kwadratisch_verschil( zaagtand_golf(n), fourierreeks( n, gen_coefs_zaagtandgolf(int(i)), 1 ) ))
+    out_list_driehoek = np.append(out_list_driehoek, tot_kwadratisch_verschil( driehoek_golf(t, f_0 = 1), fourierreeks( t, gen_coefs_driehoeksgolf(int(i)), 1 ) ))
+    out_list_zaagtand = np.append(out_list_zaagtand, tot_kwadratisch_verschil( zaagtand_golf(t, f_0 = 1), fourierreeks( t, gen_coefs_zaagtandgolf(int(i)), 1 ) ))
+
+fig, ax = plt.subplots(1, 2)                                                                # Initializeert het matplotlib figuur.
 ax[0].plot(n, out_list_driehoek)                                                            # Plot het verschil tegen het aantal coefficienten
 ax[0].set_yscale('log')                                                                     # Zet de yas op log schaal
-ax[0].title.set_text('Kwadratisch verschil driehoeksgolf', loc='bottom')                    # Zet de titel van de subplot
+ax[0].title.set_text('Kwadratisch verschil driehoeksgolf')                                  # Zet de titel van de subplot
+
 ax[1].plot(n, out_list_zaagtand)
 ax[1].set_yscale('log')
-ax[1].title.set_text('Kwadratisch verschil driehoeksgolf', loc='bottom')
+ax[1].title.set_text('Kwadratisch verschil Zaagtandgolf')
 
 plt.gcf().set_size_inches(8, 3.5)                           
 fig.savefig('../images/tot_kwadratisch_verschil.png', bbox_inches='tight', dpi=200)         # Sla het bestand op
+plt.show()
 
 
-# Alles dat hierboven staat liever niet veranderen! je kan er wel onder werken, als je het erboven zet is lateX de weg kwijt :)
 
 
 
@@ -176,36 +201,14 @@ fig.savefig('../images/tot_kwadratisch_verschil.png', bbox_inches='tight', dpi=2
 # plt.xlabel("t")
 
 
-#opdracht 6.2b, plot van D(t), Z(t) en S(t)
+# opdracht 6.2b, plot van D(t), Z(t) en S(t)
 # t = np.linspace(0,1,num=1000)
 # plt.figure() 
 # plt.plot(t,  driehoek_golf(t, f_0=1), label = 'D(t)')
 # plt.plot(t, zaagtand_golf(t, f_0=1), label = 'Z(t)')
 # plt.plot(t, sinus_golf(t, f_0=1), label = 'S(t)')
-
-
-# opdracht 6.3a
-# t = np.linspace(0,3,num=1000)
-# plt.figure()
-
-# plt.plot(t, fourierreeks(t, gen_coefs_driehoeksgolf(10), 1), label = 'Fourier D(t)')
-# plt.plot(t, fourierreeks(t, gen_coefs_zaagtandgolf(10), 1), label = 'Fourier Z(t)')
-
-
-# opdracht 6.3b beetje klooien met tot_kwadratisch_verschil
-
-# # opdracht 6.3c
-# n = np.linspace(1,100,num=100)
-# out_list = np.array([])
-# for i in n:
-#     out_list = np.append(out_list, tot_kwadratisch_verschil( driehoek_golf(n), fourierreeks( n, gen_coefs_driehoeksgolf(int(i)), 1 ) ))
-# plt.plot(n, out_list)
-
-
-# plt.yscale('log')
-# plt.legend()
-# plt.xlabel("t")
 # plt.show()
+
 
 
 
