@@ -67,13 +67,14 @@ def tot_kwadratisch_verschil(arr1, arr2):
 
 # opdracht 6.2b, plot van D(t), Z(t) en S(t)
 t = np.linspace(0,1,num=1000)
-plt.figure() 
+fig, ax = plt.subplots() 
 plt.plot(t,  driehoek_golf(t, f_0=1), label = 'D(t)')
 plt.plot(t, zaagtand_golf(t, f_0=1), label = 'Z(t)')
 plt.plot(t, sinus_golf(t, f_0=1), label = 'S(t)')
 plt.legend()
 plt.title('Plot van D(t), Z(t) en S(t)')
-plt.show()
+ax.set_xlabel('t')
+# plt.show()
 
 # opdracht 6.3a
 # Hieronder wordt een figuur met een illustratie van de Fourierserie van de een driehoeksgolf getekend.
@@ -96,11 +97,13 @@ ax[1,0].plot(t,  driehoek_golf(t, f_0=1), label = 'D(t)')
 ax[1,0].plot(t, fourierreeks(t, gen_coefs_driehoeksgolf(10), 1), label = 'Fourier D(t)')
 ax[1,0].legend()
 ax[1,0].set_title('n = 10')
+ax[1,0].set_xlabel('t')
 
 ax[1,1].plot(t,  driehoek_golf(t, f_0=1), label = 'D(t)')
 ax[1,1].plot(t, fourierreeks(t, gen_coefs_driehoeksgolf(15), 1), label = 'Fourier D(t)')
 ax[1,1].legend()
 ax[1,1].set_title('n = 15')
+ax[1,1].set_xlabel('t')
 
 fig.suptitle('Illustratie Fourierseries driehoeksgolf')
 
@@ -108,7 +111,7 @@ fig.suptitle('Illustratie Fourierseries driehoeksgolf')
 plt.gcf().set_size_inches(8, 6)                                                  
 # En als laatste sla het plaatje op.           
 fig.savefig('../images/Fourier_driehoekgolf.png', bbox_inches='tight', dpi=200)  
-plt.show()
+# plt.show()
 
 # Hieronder wordt een figuur met een illustratie van de Fourierserie van de een zaagtandgolf getekend.
 t = np.linspace(0,1,num=1000)                                                               # Maakt een linspace aan.
@@ -129,11 +132,13 @@ ax[1,0].plot(t,  zaagtand_golf(t, f_0=1), label = 'Z(t)')
 ax[1,0].plot(t, fourierreeks(t, gen_coefs_zaagtandgolf(10), 1), label = 'Fourier Z(t)')
 ax[1,0].legend()
 ax[1,0].set_title('n = 10')
+ax[1,0].set_xlabel('t')
 
 ax[1,1].plot(t,  zaagtand_golf(t, f_0=1), label = 'Z(t)')
 ax[1,1].plot(t, fourierreeks(t, gen_coefs_zaagtandgolf(15), 1), label = 'Fourier Z(t)')
 ax[1,1].legend()
 ax[1,1].set_title('n = 15')
+ax[1,1].set_xlabel('t')
 
 fig.suptitle('Illustratie Fourierserie zaagtandgolf')
 
@@ -141,7 +146,7 @@ fig.suptitle('Illustratie Fourierserie zaagtandgolf')
 plt.gcf().set_size_inches(8, 6)                                                  
 # En als laatste sla het plaatje op.           
 fig.savefig('../images/Fourier_zaagtandgolf.png', bbox_inches='tight', dpi=200)  
-plt.show()
+# plt.show()
 
 # 6.3b
 # Maakt een linspace aan met 1000 punten tussen 0 en 1.
@@ -207,12 +212,13 @@ fig, ax = plt.subplots(1, 2)                                # Initializeert het 
 ax[0].plot(n, out_list_driehoek)                            # Plot het verschil tegen het aantal coefficienten
 ax[0].set_yscale('log')                                     # Zet de yas op log schaal
 ax[0].title.set_text('Kwadratisch verschil driehoeksgolf')  # Zet de titel van de subplot
-
+ax[0].set_xlabel('t')
 ax[1].plot(n, out_list_zaagtand)                            
 ax[1].set_yscale('log')
 ax[1].title.set_text('Kwadratisch verschil Zaagtandgolf')
+ax[1].set_xlabel('t')
 
-plt.gcf().set_size_inches(8, 3.5)                           
+plt.gcf().set_size_inches(9, 4)                           
 fig.savefig('../images/tot_kwadratisch_verschil.png', bbox_inches='tight', dpi=200)         # Sla het bestand op
 plt.show()
 
